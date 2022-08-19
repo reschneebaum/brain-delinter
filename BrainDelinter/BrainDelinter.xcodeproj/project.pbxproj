@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
+		A187991728AF1DBE00223F6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ContentView.swift */; };
+		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
+		A187991C28AF1DBF00223F6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991B28AF1DBF00223F6F /* Preview Assets.xcassets */; };
+		A187992628AF1DBF00223F6F /* BrainDelinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992528AF1DBF00223F6F /* BrainDelinterTests.swift */; };
+		A187993028AF1DBF00223F6F /* BrainDelinterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */; };
+		A187993228AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A187992228AF1DBF00223F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A187990928AF1DBE00223F6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A187991028AF1DBE00223F6F;
+			remoteInfo = BrainDelinter;
+		};
+		A187992C28AF1DBF00223F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A187990928AF1DBE00223F6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A187991028AF1DBE00223F6F;
+			remoteInfo = BrainDelinter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
+		A187991628AF1DBE00223F6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A187991828AF1DBF00223F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A187991B28AF1DBF00223F6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A187992128AF1DBF00223F6F /* BrainDelinterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainDelinterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A187992528AF1DBF00223F6F /* BrainDelinterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterTests.swift; sourceTree = "<group>"; };
+		A187992B28AF1DBF00223F6F /* BrainDelinterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainDelinterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITests.swift; sourceTree = "<group>"; };
+		A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A187990E28AF1DBE00223F6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A187991E28AF1DBF00223F6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A187992828AF1DBF00223F6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A187990828AF1DBE00223F6F = {
+			isa = PBXGroup;
+			children = (
+				A187991328AF1DBE00223F6F /* BrainDelinter */,
+				A187992428AF1DBF00223F6F /* BrainDelinterTests */,
+				A187992E28AF1DBF00223F6F /* BrainDelinterUITests */,
+				A187991228AF1DBE00223F6F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A187991228AF1DBE00223F6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A187991128AF1DBE00223F6F /* BrainDelinter.app */,
+				A187992128AF1DBF00223F6F /* BrainDelinterTests.xctest */,
+				A187992B28AF1DBF00223F6F /* BrainDelinterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A187991328AF1DBE00223F6F /* BrainDelinter */ = {
+			isa = PBXGroup;
+			children = (
+				A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */,
+				A187991628AF1DBE00223F6F /* ContentView.swift */,
+				A187991828AF1DBF00223F6F /* Assets.xcassets */,
+				A187991A28AF1DBF00223F6F /* Preview Content */,
+			);
+			path = BrainDelinter;
+			sourceTree = "<group>";
+		};
+		A187991A28AF1DBF00223F6F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A187991B28AF1DBF00223F6F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A187992428AF1DBF00223F6F /* BrainDelinterTests */ = {
+			isa = PBXGroup;
+			children = (
+				A187992528AF1DBF00223F6F /* BrainDelinterTests.swift */,
+			);
+			path = BrainDelinterTests;
+			sourceTree = "<group>";
+		};
+		A187992E28AF1DBF00223F6F /* BrainDelinterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */,
+				A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */,
+			);
+			path = BrainDelinterUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A187991028AF1DBE00223F6F /* BrainDelinter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A187993528AF1DBF00223F6F /* Build configuration list for PBXNativeTarget "BrainDelinter" */;
+			buildPhases = (
+				A187990D28AF1DBE00223F6F /* Sources */,
+				A187990E28AF1DBE00223F6F /* Frameworks */,
+				A187990F28AF1DBE00223F6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BrainDelinter;
+			productName = BrainDelinter;
+			productReference = A187991128AF1DBE00223F6F /* BrainDelinter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A187992028AF1DBF00223F6F /* BrainDelinterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A187993828AF1DBF00223F6F /* Build configuration list for PBXNativeTarget "BrainDelinterTests" */;
+			buildPhases = (
+				A187991D28AF1DBF00223F6F /* Sources */,
+				A187991E28AF1DBF00223F6F /* Frameworks */,
+				A187991F28AF1DBF00223F6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A187992328AF1DBF00223F6F /* PBXTargetDependency */,
+			);
+			name = BrainDelinterTests;
+			productName = BrainDelinterTests;
+			productReference = A187992128AF1DBF00223F6F /* BrainDelinterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A187992A28AF1DBF00223F6F /* BrainDelinterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A187993B28AF1DBF00223F6F /* Build configuration list for PBXNativeTarget "BrainDelinterUITests" */;
+			buildPhases = (
+				A187992728AF1DBF00223F6F /* Sources */,
+				A187992828AF1DBF00223F6F /* Frameworks */,
+				A187992928AF1DBF00223F6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A187992D28AF1DBF00223F6F /* PBXTargetDependency */,
+			);
+			name = BrainDelinterUITests;
+			productName = BrainDelinterUITests;
+			productReference = A187992B28AF1DBF00223F6F /* BrainDelinterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A187990928AF1DBE00223F6F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					A187991028AF1DBE00223F6F = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					A187992028AF1DBF00223F6F = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = A187991028AF1DBE00223F6F;
+					};
+					A187992A28AF1DBF00223F6F = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = A187991028AF1DBE00223F6F;
+					};
+				};
+			};
+			buildConfigurationList = A187990C28AF1DBE00223F6F /* Build configuration list for PBXProject "BrainDelinter" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A187990828AF1DBE00223F6F;
+			productRefGroup = A187991228AF1DBE00223F6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A187991028AF1DBE00223F6F /* BrainDelinter */,
+				A187992028AF1DBF00223F6F /* BrainDelinterTests */,
+				A187992A28AF1DBF00223F6F /* BrainDelinterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A187990F28AF1DBE00223F6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A187991C28AF1DBF00223F6F /* Preview Assets.xcassets in Resources */,
+				A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A187991F28AF1DBF00223F6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A187992928AF1DBF00223F6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A187990D28AF1DBE00223F6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A187991728AF1DBE00223F6F /* ContentView.swift in Sources */,
+				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A187991D28AF1DBF00223F6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A187992628AF1DBF00223F6F /* BrainDelinterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A187992728AF1DBF00223F6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A187993228AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift in Sources */,
+				A187993028AF1DBF00223F6F /* BrainDelinterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A187992328AF1DBF00223F6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A187991028AF1DBE00223F6F /* BrainDelinter */;
+			targetProxy = A187992228AF1DBF00223F6F /* PBXContainerItemProxy */;
+		};
+		A187992D28AF1DBF00223F6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A187991028AF1DBE00223F6F /* BrainDelinter */;
+			targetProxy = A187992C28AF1DBF00223F6F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A187993328AF1DBF00223F6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A187993428AF1DBF00223F6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A187993628AF1DBF00223F6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Preview Content\"";
+				DEVELOPMENT_TEAM = 8K928H3KGT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reschneebaum.BrainDelinter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A187993728AF1DBF00223F6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Preview Content\"";
+				DEVELOPMENT_TEAM = 8K928H3KGT;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reschneebaum.BrainDelinter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A187993928AF1DBF00223F6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8K928H3KGT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reschneebaum.BrainDelinterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainDelinter.app/BrainDelinter";
+			};
+			name = Debug;
+		};
+		A187993A28AF1DBF00223F6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8K928H3KGT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reschneebaum.BrainDelinterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrainDelinter.app/BrainDelinter";
+			};
+			name = Release;
+		};
+		A187993C28AF1DBF00223F6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8K928H3KGT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reschneebaum.BrainDelinterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BrainDelinter;
+			};
+			name = Debug;
+		};
+		A187993D28AF1DBF00223F6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8K928H3KGT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.reschneebaum.BrainDelinterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BrainDelinter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A187990C28AF1DBE00223F6F /* Build configuration list for PBXProject "BrainDelinter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A187993328AF1DBF00223F6F /* Debug */,
+				A187993428AF1DBF00223F6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A187993528AF1DBF00223F6F /* Build configuration list for PBXNativeTarget "BrainDelinter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A187993628AF1DBF00223F6F /* Debug */,
+				A187993728AF1DBF00223F6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A187993828AF1DBF00223F6F /* Build configuration list for PBXNativeTarget "BrainDelinterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A187993928AF1DBF00223F6F /* Debug */,
+				A187993A28AF1DBF00223F6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A187993B28AF1DBF00223F6F /* Build configuration list for PBXNativeTarget "BrainDelinterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A187993C28AF1DBF00223F6F /* Debug */,
+				A187993D28AF1DBF00223F6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A187990928AF1DBE00223F6F /* Project object */;
+}
