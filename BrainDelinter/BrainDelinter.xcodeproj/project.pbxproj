@@ -14,6 +14,7 @@
 		A187992628AF1DBF00223F6F /* BrainDelinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992528AF1DBF00223F6F /* BrainDelinterTests.swift */; };
 		A187993028AF1DBF00223F6F /* BrainDelinterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */; };
 		A187993228AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */; };
+		A187994128AF34EC00223F6F /* DelinterNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = A187994028AF34EC00223F6F /* DelinterNavigation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A187992B28AF1DBF00223F6F /* BrainDelinterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainDelinterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITests.swift; sourceTree = "<group>"; };
 		A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A187993E28AF201300223F6F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A187994128AF34EC00223F6F /* DelinterNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +77,12 @@
 		A187990828AF1DBE00223F6F = {
 			isa = PBXGroup;
 			children = (
+				A187993E28AF201300223F6F /* README.md */,
 				A187991328AF1DBE00223F6F /* BrainDelinter */,
 				A187992428AF1DBF00223F6F /* BrainDelinterTests */,
 				A187992E28AF1DBF00223F6F /* BrainDelinterUITests */,
 				A187991228AF1DBE00223F6F /* Products */,
+				A187993F28AF34EC00223F6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +132,13 @@
 			path = BrainDelinterUITests;
 			sourceTree = "<group>";
 		};
+		A187993F28AF34EC00223F6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +155,9 @@
 			dependencies = (
 			);
 			name = BrainDelinter;
+			packageProductDependencies = (
+				A187994028AF34EC00223F6F /* DelinterNavigation */,
+			);
 			productName = BrainDelinter;
 			productReference = A187991128AF1DBE00223F6F /* BrainDelinter.app */;
 			productType = "com.apple.product-type.application";
@@ -583,6 +598,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A187994028AF34EC00223F6F /* DelinterNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DelinterNavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A187990928AF1DBE00223F6F /* Project object */;
 }
