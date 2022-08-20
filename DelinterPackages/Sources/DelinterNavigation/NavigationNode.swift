@@ -40,7 +40,7 @@ indirect enum NavigationNode<Screen: Equatable, ScreenView: View>: View {
                         .hidden()
                 )
                 .sheet(isPresented: isSheetPresented, onDismiss: onDismiss, content: { nextNode })
-                .inNavigationView(inNavigation)
+//                .inNavigationView(inNavigation)
         } else {
             EmptyView()
         }

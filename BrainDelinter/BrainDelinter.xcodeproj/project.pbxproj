@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
-		A187991728AF1DBE00223F6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ContentView.swift */; };
+		A187991728AF1DBE00223F6F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ListView.swift */; };
 		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
 		A187991C28AF1DBF00223F6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991B28AF1DBF00223F6F /* Preview Assets.xcassets */; };
 		A187992628AF1DBF00223F6F /* BrainDelinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992528AF1DBF00223F6F /* BrainDelinterTests.swift */; };
 		A187993028AF1DBF00223F6F /* BrainDelinterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */; };
 		A187993228AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */; };
 		A187994128AF34EC00223F6F /* DelinterNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = A187994028AF34EC00223F6F /* DelinterNavigation */; };
+		A187994328B02B7000223F6F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994228B02B7000223F6F /* ItemView.swift */; };
+		A187994528B02BF700223F6F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994428B02BF700223F6F /* Item.swift */; };
+		A187994728B0353300223F6F /* DelinterComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A187994628B0353300223F6F /* DelinterComponents */; };
+		A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */; };
+		A1F6E95828B05CD600FACCDA /* SetAlarmTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95728B05CD600FACCDA /* SetAlarmTimeView.swift */; };
+		A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95928B167D200FACCDA /* SettingsRow.swift */; };
+		A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */; };
+		A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */; };
+		A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95F28B17B1100FACCDA /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,7 @@
 /* Begin PBXFileReference section */
 		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
-		A187991628AF1DBE00223F6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A187991628AF1DBE00223F6F /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		A187991828AF1DBF00223F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A187991B28AF1DBF00223F6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A187992128AF1DBF00223F6F /* BrainDelinterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainDelinterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +55,14 @@
 		A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITests.swift; sourceTree = "<group>"; };
 		A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A187993E28AF201300223F6F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A187994228B02B7000223F6F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		A187994428B02BF700223F6F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterConstants.swift; sourceTree = "<group>"; };
+		A1F6E95728B05CD600FACCDA /* SetAlarmTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmTimeView.swift; sourceTree = "<group>"; };
+		A1F6E95928B167D200FACCDA /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
+		A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouterView.swift; sourceTree = "<group>"; };
+		A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationState.swift; sourceTree = "<group>"; };
+		A1F6E95F28B17B1100FACCDA /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A187994128AF34EC00223F6F /* DelinterNavigation in Frameworks */,
+				A187994728B0353300223F6F /* DelinterComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,10 +117,10 @@
 		A187991328AF1DBE00223F6F /* BrainDelinter */ = {
 			isa = PBXGroup;
 			children = (
-				A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */,
-				A187991628AF1DBE00223F6F /* ContentView.swift */,
-				A187991828AF1DBF00223F6F /* Assets.xcassets */,
-				A187991A28AF1DBF00223F6F /* Preview Content */,
+				A1F6E95228B0577D00FACCDA /* App */,
+				A1F6E94F28B0571D00FACCDA /* Views */,
+				A1F6E95028B0572700FACCDA /* Models */,
+				A1F6E95128B0576A00FACCDA /* Resources */,
 			);
 			path = BrainDelinter;
 			sourceTree = "<group>";
@@ -139,6 +157,62 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A1F6E94F28B0571D00FACCDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1F6E95628B05C7F00FACCDA /* Alarm */,
+				A1F6E95528B05C7600FACCDA /* List */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1F6E95028B0572700FACCDA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A187994428B02BF700223F6F /* Item.swift */,
+				A1F6E95F28B17B1100FACCDA /* Tab.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1F6E95128B0576A00FACCDA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A187991828AF1DBF00223F6F /* Assets.xcassets */,
+				A187991A28AF1DBF00223F6F /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A1F6E95228B0577D00FACCDA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */,
+				A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */,
+				A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A1F6E95528B05C7600FACCDA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A187991628AF1DBE00223F6F /* ListView.swift */,
+				A187994228B02B7000223F6F /* ItemView.swift */,
+				A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		A1F6E95628B05C7F00FACCDA /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				A1F6E95728B05CD600FACCDA /* SetAlarmTimeView.swift */,
+				A1F6E95928B167D200FACCDA /* SettingsRow.swift */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,6 +231,7 @@
 			name = BrainDelinter;
 			packageProductDependencies = (
 				A187994028AF34EC00223F6F /* DelinterNavigation */,
+				A187994628B0353300223F6F /* DelinterComponents */,
 			);
 			productName = BrainDelinter;
 			productReference = A187991128AF1DBE00223F6F /* BrainDelinter.app */;
@@ -272,8 +347,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A187991728AF1DBE00223F6F /* ContentView.swift in Sources */,
+				A187994528B02BF700223F6F /* Item.swift in Sources */,
+				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
+				A1F6E95828B05CD600FACCDA /* SetAlarmTimeView.swift in Sources */,
+				A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */,
+				A187994328B02B7000223F6F /* ItemView.swift in Sources */,
+				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
+				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,
+				A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */,
+				A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +514,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 8K928H3KGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -460,7 +543,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 8K928H3KGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -603,6 +686,10 @@
 		A187994028AF34EC00223F6F /* DelinterNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DelinterNavigation;
+		};
+		A187994628B0353300223F6F /* DelinterComponents */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DelinterComponents;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,5 @@
 import XCTest
-@testable import DelinterPackages
+@testable import DelinterNavigation
 
 final class DelinterNavigationTests: XCTestCase {
     func testExample() throws {
