@@ -15,11 +15,11 @@ struct ListView: View {
     
     var body: some View {
         VStack {
-            LazyVStack(alignment: .center, spacing: 12, pinnedViews: .sectionHeaders) {
+            LazyVStack(alignment: .center, spacing: Padding.medium.rawValue, pinnedViews: .sectionHeaders) {
                 Section {
                     if !items.isEmpty {
                         ForEach($items) { $item in
-                            ItemView(item: $item)
+                            ListItemView(item: $item)
                         }
                     }
                 } header: {
@@ -29,20 +29,20 @@ struct ListView: View {
             
             Spacer()
         }
-        .padding(.horizontal, 12)
+        .padding(.horizontal, Padding.medium.rawValue)
         .navigationTitle("🧼 🧠")
         .navigationBarTitleDisplayMode(.inline)
     }
     
     var header: some View {
         VStack(spacing: 12) {
-            Text("get the lint out!")
+            Text("List.title")
             
-            Text("add it to the list so you don't have to think about it anymore")
+            Text("List.description")
                 .font(.system(size: 14, weight: .light, design: .rounded))
-                .padding(.horizontal, 4)
+                .padding(.horizontal, Padding.xSmall.rawValue)
             
-            TextField("add some lint", text: $newItemText)
+            TextField("List.textFieldLabel", text: $newItemText)
                 .textInputAutocapitalization(.never)
                 .submitLabel(.done)
                 .onSubmit {
@@ -50,16 +50,15 @@ struct ListView: View {
                     items.append(.init(description: newItemText))
                     newItemText = ""
                 }
-                .padding(.all, 12)
+                .padding(.all, Padding.medium.rawValue)
                 .background(
-                    RoundedRectangle(cornerRadius: 12)
+                    RoundedRectangle(cornerRadius: Padding.medium.rawValue)
                         .strokeBorder(lineWidth: 1.2)
                         .foregroundColor(.blue.opacity(0.6))
                         .foregroundColor(.white)
-                        
             )
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, Padding.small.rawValue)
     }
 }
 

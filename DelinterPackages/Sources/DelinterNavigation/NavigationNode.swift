@@ -40,7 +40,7 @@ indirect enum NavigationNode<Screen: Equatable, ScreenView: View>: View {
                         .hidden()
                 )
                 .sheet(isPresented: isSheetPresented, onDismiss: onDismiss, content: { nextNode })
-//                .inNavigationView(inNavigation)
+                .inNavigationView(inNavigation)
         } else {
             EmptyView()
         }
@@ -99,6 +99,21 @@ private extension NavigationNode {
             } set: { isActive in
                 guard !isActive, stack.wrappedValue.count > index + 1 else { return }
                 stack.wrappedValue = Array(stack.wrappedValue.prefix(index + 1))
+            }
+        }
+    }
+}
+
+private extension View {
+    func inNavigationView(_ inNavigation: Bool = true) -> some View {
+        Group {
+            if inNavigation {
+                NavigationView {
+                    self
+                }
+                .navigationViewStyle(.stack)
+            } else {
+                self
             }
         }
     }

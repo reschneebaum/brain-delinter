@@ -12,17 +12,16 @@ struct SettingsRow<Content: View>: View {
     let content: () -> Content
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: Padding.xSmall.rawValue) {
             content()
             
             Text(description)
                 .italic()
                 .font(.caption)
-//                .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(.bottom, 8)
-        .padding(.top, 4)
+        .padding(.bottom, Padding.small.rawValue)
+        .padding(.top, Padding.xSmall.rawValue)
     }
 }
 

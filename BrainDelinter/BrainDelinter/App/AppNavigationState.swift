@@ -12,20 +12,6 @@ class AppNavigationState: ObservableObject {
     let tabs = Tab.allCases
     @Published var selectedTab: Tab?
     @Published var listStackManager: NavigationStackManager<ListRoute> = .init(withRoot: .home)
+    @Published var settingsStackManager: NavigationStackManager<SettingsRoute> = .init(withRoot: .settings)
     // Add other tabs' stack managers
-}
-
-struct NavigationStateKey: EnvironmentKey {
-    static var defaultValue: AppNavigationState = .init()
-}
-
-extension EnvironmentValues {
-    var navigationState: AppNavigationState {
-        get {
-            self[NavigationStateKey.self]
-        }
-        set {
-            self[NavigationStateKey.self] = newValue
-        }
-    }
 }

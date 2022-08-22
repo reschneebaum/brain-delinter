@@ -5,21 +5,26 @@
 //  Created by Rachel Schneebaum on 8/20/22.
 //
 
+import SwiftUI
+
 enum Tab: String, CaseIterable {
     case list
     case stats
     case settings
     
-    var icon: String {
+    var icon: Image {
+        var iconString = ""
         switch self {
         case .list:
-            return "list.star"
+            iconString = "list.star"
         case .stats:
-            return "chart.bar"
+            iconString = "chart.bar"
         case .settings:
-            return "gearshape"
+            iconString = "gearshape"
         }
+        return .init(systemName: iconString)
     }
+    
     var title: String {
         rawValue
     }

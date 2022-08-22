@@ -14,27 +14,23 @@ struct BrainDelinterApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                TabRouterView()
-            }
-            .navigationViewStyle(.stack)
-            .environmentObject(navigationState)
+            TabRouterView()
+                .environmentObject(navigationState)
         }
     }
 }
 
 
-
 private struct TabRouterView: View {
-    @Environment(\.navigationState) var navigationState
+    @EnvironmentObject var navigationState: AppNavigationState
     
     private var selectedBinding: Binding<Tab?> {
         .init {
             navigationState.selectedTab
         } set: {
-            navigationState.selectedTab = $0
+            guard let newValue = $0 else { return }
+            navigationState.selectedTab = newValue
         }
-
     }
     
     var body: some View {
@@ -50,12 +46,11 @@ private struct TabRouterView: View {
                         Color.cyan.opacity(0.7)
                         
                     case .settings:
-                        // TODO: Replace with router
-                        SetAlarmTimeView()
+                        SettingsRouterView()
                     }
                 }
                 .tabItem {
-                    Image(systemName: tab.icon)
+                    tab.icon
                     Text(tab.title)
                 }
             }

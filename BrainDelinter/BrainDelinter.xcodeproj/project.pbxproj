@@ -15,15 +15,18 @@
 		A187993028AF1DBF00223F6F /* BrainDelinterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */; };
 		A187993228AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */; };
 		A187994128AF34EC00223F6F /* DelinterNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = A187994028AF34EC00223F6F /* DelinterNavigation */; };
-		A187994328B02B7000223F6F /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994228B02B7000223F6F /* ItemView.swift */; };
+		A187994328B02B7000223F6F /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994228B02B7000223F6F /* ListItemView.swift */; };
 		A187994528B02BF700223F6F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994428B02BF700223F6F /* Item.swift */; };
 		A187994728B0353300223F6F /* DelinterComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A187994628B0353300223F6F /* DelinterComponents */; };
 		A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */; };
-		A1F6E95828B05CD600FACCDA /* SetAlarmTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95728B05CD600FACCDA /* SetAlarmTimeView.swift */; };
+		A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95728B05CD600FACCDA /* SettingsView.swift */; };
 		A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95928B167D200FACCDA /* SettingsRow.swift */; };
 		A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */; };
 		A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */; };
 		A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95F28B17B1100FACCDA /* Tab.swift */; };
+		A1F6E96228B1940700FACCDA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1F6E96128B1940700FACCDA /* Localizable.strings */; };
+		A1F6E96728B1D14800FACCDA /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E96628B1D14800FACCDA /* LocalizedString.swift */; };
+		A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E96828B1D43600FACCDA /* SettingsRouterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,14 +58,17 @@
 		A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITests.swift; sourceTree = "<group>"; };
 		A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A187993E28AF201300223F6F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		A187994228B02B7000223F6F /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		A187994228B02B7000223F6F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		A187994428B02BF700223F6F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterConstants.swift; sourceTree = "<group>"; };
-		A1F6E95728B05CD600FACCDA /* SetAlarmTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetAlarmTimeView.swift; sourceTree = "<group>"; };
+		A1F6E95728B05CD600FACCDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1F6E95928B167D200FACCDA /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouterView.swift; sourceTree = "<group>"; };
 		A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationState.swift; sourceTree = "<group>"; };
 		A1F6E95F28B17B1100FACCDA /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		A1F6E96128B1940700FACCDA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		A1F6E96628B1D14800FACCDA /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
+		A1F6E96828B1D43600FACCDA /* SettingsRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +166,7 @@
 		A1F6E94F28B0571D00FACCDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A1F6E95628B05C7F00FACCDA /* Alarm */,
+				A1F6E95628B05C7F00FACCDA /* Settings */,
 				A1F6E95528B05C7600FACCDA /* List */,
 			);
 			path = Views;
@@ -171,6 +177,7 @@
 			children = (
 				A187994428B02BF700223F6F /* Item.swift */,
 				A1F6E95F28B17B1100FACCDA /* Tab.swift */,
+				A1F6E96628B1D14800FACCDA /* LocalizedString.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 			children = (
 				A187991828AF1DBF00223F6F /* Assets.xcassets */,
 				A187991A28AF1DBF00223F6F /* Preview Content */,
+				A1F6E96128B1940700FACCDA /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -198,19 +206,20 @@
 			isa = PBXGroup;
 			children = (
 				A187991628AF1DBE00223F6F /* ListView.swift */,
-				A187994228B02B7000223F6F /* ItemView.swift */,
+				A187994228B02B7000223F6F /* ListItemView.swift */,
 				A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
 		};
-		A1F6E95628B05C7F00FACCDA /* Alarm */ = {
+		A1F6E95628B05C7F00FACCDA /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				A1F6E95728B05CD600FACCDA /* SetAlarmTimeView.swift */,
+				A1F6E95728B05CD600FACCDA /* SettingsView.swift */,
 				A1F6E95928B167D200FACCDA /* SettingsRow.swift */,
+				A1F6E96828B1D43600FACCDA /* SettingsRouterView.swift */,
 			);
-			path = Alarm;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A187991C28AF1DBF00223F6F /* Preview Assets.xcassets in Resources */,
+				A1F6E96228B1940700FACCDA /* Localizable.strings in Resources */,
 				A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,9 +359,11 @@
 			files = (
 				A187994528B02BF700223F6F /* Item.swift in Sources */,
 				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
-				A1F6E95828B05CD600FACCDA /* SetAlarmTimeView.swift in Sources */,
+				A1F6E96728B1D14800FACCDA /* LocalizedString.swift in Sources */,
+				A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */,
+				A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */,
 				A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */,
-				A187994328B02B7000223F6F /* ItemView.swift in Sources */,
+				A187994328B02B7000223F6F /* ListItemView.swift in Sources */,
 				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
 				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,

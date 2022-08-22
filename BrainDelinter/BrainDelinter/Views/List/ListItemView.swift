@@ -1,5 +1,5 @@
 //
-//  ItemView.swift
+//  ListItemView.swift
 //  BrainDelinter
 //
 //  Created by Rachel Schneebaum on 8/19/22.
@@ -8,7 +8,7 @@
 import SwiftUI
 import DelinterComponents
 
-struct ItemView: View {
+struct ListItemView: View {
     @Binding var item: Item
     
     var body: some View {
@@ -18,11 +18,11 @@ struct ItemView: View {
                     .strikethrough(item.done, color: .accentColor)
             }
             
-            Color.gray
+            Color.accentColor
                 .opacity(0.7)
                 .frame(height: 1)
         }
-        .padding(.horizontal, 8)
+        .padding(.horizontal, Padding.small.rawValue)
     }
 }
 
@@ -35,7 +35,7 @@ struct ItemView_Previews: PreviewProvider {
         @State private var item: Item = .mocked
         
         var body: some View {
-            ItemView(item: $item)
+            ListItemView(item: $item)
         }
     }
 }
