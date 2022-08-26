@@ -44,13 +44,12 @@ struct SettingsView: View {
                             }
                         }
                     }
-                    
                 } header: {
-                    Text("Settings.Alarm.sectionHeader")
+                    Text(Localized.Settings.Alarm.sectionHeader)
                 }
             }
         }
-        .navigationTitle("Settings")
+        .navigationTitle(Localized.Settings.title)
         .navigationBarTitleDisplayMode(.inline)
     }
     
@@ -78,21 +77,21 @@ enum SettingsItem: String, CaseIterable {
     var title: String {
         switch self {
         case .alarmTime:
-            return "Settings.Alarm.title".localized
+            return Localized.Settings.Alarm.title
         case .snooze:
-            return "Settings.Snooze.title".localized
+            return Localized.Settings.Snooze.title
         case .duration:
-            return "Settings.Duration.title".localized
+            return Localized.Settings.Duration.title
         }
     }
     var description: String {
         switch self {
         case .alarmTime:
-            return "Settings.Alarm.description".localized
+            return Localized.Settings.Alarm.description
         case .snooze:
-            return "Settings.Snooze.description".localized
+            return Localized.Settings.Snooze.description
         case .duration:
-            return "Settings.Duration.description".localized
+            return Localized.Settings.Duration.description
         }
     }
 }
