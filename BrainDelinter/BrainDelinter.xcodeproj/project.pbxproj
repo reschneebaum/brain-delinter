@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A16D3B7E28B9741000DB8EA3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B7D28B9741000DB8EA3 /* Strings.swift */; };
+		A16D3B8A28B9867D00DB8EA3 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B8928B9867D00DB8EA3 /* Assets.swift */; };
 		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
 		A187991728AF1DBE00223F6F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ListView.swift */; };
 		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
-		A187991C28AF1DBF00223F6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991B28AF1DBF00223F6F /* Preview Assets.xcassets */; };
+		A187991C28AF1DBF00223F6F /* PreviewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991B28AF1DBF00223F6F /* PreviewAssets.xcassets */; };
 		A187992628AF1DBF00223F6F /* BrainDelinterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992528AF1DBF00223F6F /* BrainDelinterTests.swift */; };
 		A187993028AF1DBF00223F6F /* BrainDelinterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187992F28AF1DBF00223F6F /* BrainDelinterUITests.swift */; };
 		A187993228AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */; };
@@ -48,11 +49,13 @@
 
 /* Begin PBXFileReference section */
 		A16D3B7D28B9741000DB8EA3 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		A16D3B7F28B97C3100DB8EA3 /* swiftui.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftui.stencil; sourceTree = "<group>"; };
+		A16D3B8928B9867D00DB8EA3 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
 		A187991628AF1DBE00223F6F /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		A187991828AF1DBF00223F6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A187991B28AF1DBF00223F6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A187991B28AF1DBF00223F6F /* PreviewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PreviewAssets.xcassets; sourceTree = "<group>"; };
 		A187992128AF1DBF00223F6F /* BrainDelinterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainDelinterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187992528AF1DBF00223F6F /* BrainDelinterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterTests.swift; sourceTree = "<group>"; };
 		A187992B28AF1DBF00223F6F /* BrainDelinterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrainDelinterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +104,7 @@
 		A16D3B7C28B96FAC00DB8EA3 /* Autogen */ = {
 			isa = PBXGroup;
 			children = (
+				A16D3B8928B9867D00DB8EA3 /* Assets.swift */,
 				A16D3B7D28B9741000DB8EA3 /* Strings.swift */,
 			);
 			path = Autogen;
@@ -140,12 +144,12 @@
 			path = BrainDelinter;
 			sourceTree = "<group>";
 		};
-		A187991A28AF1DBF00223F6F /* Preview Content */ = {
+		A187991A28AF1DBF00223F6F /* PreviewContent */ = {
 			isa = PBXGroup;
 			children = (
-				A187991B28AF1DBF00223F6F /* Preview Assets.xcassets */,
+				A187991B28AF1DBF00223F6F /* PreviewAssets.xcassets */,
 			);
-			path = "Preview Content";
+			path = PreviewContent;
 			sourceTree = "<group>";
 		};
 		A187992428AF1DBF00223F6F /* BrainDelinterTests */ = {
@@ -195,7 +199,8 @@
 			children = (
 				A187991828AF1DBF00223F6F /* Assets.xcassets */,
 				A1F6E96128B1940700FACCDA /* Localizable.strings */,
-				A187991A28AF1DBF00223F6F /* Preview Content */,
+				A16D3B7F28B97C3100DB8EA3 /* swiftui.stencil */,
+				A187991A28AF1DBF00223F6F /* PreviewContent */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -339,7 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A187991C28AF1DBF00223F6F /* Preview Assets.xcassets in Resources */,
+				A187991C28AF1DBF00223F6F /* PreviewAssets.xcassets in Resources */,
 				A1F6E96228B1940700FACCDA /* Localizable.strings in Resources */,
 				A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */,
 			);
@@ -395,6 +400,7 @@
 				A187994328B02B7000223F6F /* ListItemView.swift in Sources */,
 				A16D3B7E28B9741000DB8EA3 /* Strings.swift in Sources */,
 				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
+				A16D3B8A28B9867D00DB8EA3 /* Assets.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
 				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,
 				A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */,
@@ -556,7 +562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Resources/PreviewContent\"";
 				DEVELOPMENT_TEAM = 8K928H3KGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -585,7 +591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Resources/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"BrainDelinter/Resources/PreviewContent\"";
 				DEVELOPMENT_TEAM = 8K928H3KGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

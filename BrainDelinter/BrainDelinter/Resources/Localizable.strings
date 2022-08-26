@@ -1,11 +1,3 @@
-/* 
-  Localizable.strings
-  BrainDelinter
-
-  Created by Rachel Schneebaum on 8/20/22.
-  
-*/
-
 "List.title" = "get the lint out!";
 "List.description" = "add it to the list so you don't have to think about it anymore";
 "List.textFieldLabel" = "add some lint";
