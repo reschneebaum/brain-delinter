@@ -36,13 +36,13 @@ struct ListView: View {
     
     var header: some View {
         VStack(spacing: 12) {
-            Text("List.title")
+            Text(Localized.List.title)
             
-            Text("List.description")
+            Text(Localized.List.description)
                 .font(.system(size: 14, weight: .light, design: .rounded))
                 .padding(.horizontal, Padding.xSmall.rawValue)
             
-            TextField("List.textFieldLabel", text: $newItemText)
+            TextField(Localized.List.textFieldLabel, text: $newItemText)
                 .textInputAutocapitalization(.never)
                 .submitLabel(.done)
                 .onSubmit {

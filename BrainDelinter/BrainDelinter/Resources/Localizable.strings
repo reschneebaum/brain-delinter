@@ -10,6 +10,7 @@
 "List.description" = "add it to the list so you don't have to think about it anymore";
 "List.textFieldLabel" = "add some lint";
 
+"Settings.title" = "Settings";
 "Settings.Alarm.sectionHeader" = "alarm settings";
 "Settings.Alarm.title" = "daily alarm";
 "Settings.Alarm.description" = "pick a time to start Getting Things Done!";
@@ -17,3 +18,7 @@
 "Settings.Snooze.description" = "if checked, we'll notify you again in 5 minutes";
 "Settings.Duration.title" = "how long?";
 "Settings.Duration.description" = "we strongly recommend a 'do things' time of 20 minutes; much longer (or shorter) won't have the desired effect.";
+
+"Tab.list" = "list";
+"Tab.stats" = "stats";
+"Tab.settings" = "settings";

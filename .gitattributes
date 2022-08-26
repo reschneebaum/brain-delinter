@@ -1,0 +1,4 @@
+# Autogen
+
+ **/Autogen/**/*.swift linguist-generated
+ **/Resources/**/*.json linguist-generated

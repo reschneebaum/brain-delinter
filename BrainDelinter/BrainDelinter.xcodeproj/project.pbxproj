@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A16D3B7E28B9741000DB8EA3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B7D28B9741000DB8EA3 /* Strings.swift */; };
 		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
 		A187991728AF1DBE00223F6F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ListView.swift */; };
 		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
@@ -25,7 +26,6 @@
 		A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */; };
 		A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95F28B17B1100FACCDA /* Tab.swift */; };
 		A1F6E96228B1940700FACCDA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A1F6E96128B1940700FACCDA /* Localizable.strings */; };
-		A1F6E96728B1D14800FACCDA /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E96628B1D14800FACCDA /* LocalizedString.swift */; };
 		A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E96828B1D43600FACCDA /* SettingsRouterView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A16D3B7D28B9741000DB8EA3 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
 		A187991628AF1DBE00223F6F /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationState.swift; sourceTree = "<group>"; };
 		A1F6E95F28B17B1100FACCDA /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A1F6E96128B1940700FACCDA /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		A1F6E96628B1D14800FACCDA /* LocalizedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
 		A1F6E96828B1D43600FACCDA /* SettingsRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A16D3B7C28B96FAC00DB8EA3 /* Autogen */ = {
+			isa = PBXGroup;
+			children = (
+				A16D3B7D28B9741000DB8EA3 /* Strings.swift */,
+			);
+			path = Autogen;
+			sourceTree = "<group>";
+		};
 		A187990828AF1DBE00223F6F = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +134,7 @@
 				A1F6E95228B0577D00FACCDA /* App */,
 				A1F6E94F28B0571D00FACCDA /* Views */,
 				A1F6E95028B0572700FACCDA /* Models */,
+				A16D3B7C28B96FAC00DB8EA3 /* Autogen */,
 				A1F6E95128B0576A00FACCDA /* Resources */,
 			);
 			path = BrainDelinter;
@@ -177,7 +186,6 @@
 			children = (
 				A187994428B02BF700223F6F /* Item.swift */,
 				A1F6E95F28B17B1100FACCDA /* Tab.swift */,
-				A1F6E96628B1D14800FACCDA /* LocalizedString.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -186,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				A187991828AF1DBF00223F6F /* Assets.xcassets */,
-				A187991A28AF1DBF00223F6F /* Preview Content */,
 				A1F6E96128B1940700FACCDA /* Localizable.strings */,
+				A187991A28AF1DBF00223F6F /* Preview Content */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 				A187990D28AF1DBE00223F6F /* Sources */,
 				A187990E28AF1DBE00223F6F /* Frameworks */,
 				A187990F28AF1DBE00223F6F /* Resources */,
+				A16D3B7B28B96EBB00DB8EA3 /* Run SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -352,6 +361,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A16D3B7B28B96EBB00DB8EA3 /* Run SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftGen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ $ENABLE_PREVIEWS == \"NO\" ]; then\n  \"${SRCROOT}/../scripts/swiftgen_run_script.sh\"\nelse\n  echo 'Skipping Run SwiftGen run script due to SwiftUI Preview mode.'\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A187990D28AF1DBE00223F6F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -359,11 +389,11 @@
 			files = (
 				A187994528B02BF700223F6F /* Item.swift in Sources */,
 				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
-				A1F6E96728B1D14800FACCDA /* LocalizedString.swift in Sources */,
 				A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */,
 				A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */,
 				A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */,
 				A187994328B02B7000223F6F /* ListItemView.swift in Sources */,
+				A16D3B7E28B9741000DB8EA3 /* Strings.swift in Sources */,
 				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
 				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,
