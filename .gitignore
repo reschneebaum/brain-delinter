@@ -1,0 +1,53 @@
+# Swift .gitignore
+#
+# Source: https://raw.githubusercontent.com/github/gitignore/main/Swift.gitignore
+# Last copied from source on December 10th, 2021
+
+## OS X Folder Attributes
+.DS_Store
+
+## Visual Studio Code
+.vscode/
+
+## Obj-C/Swift Specific
+*.hmap
+
+## App Packaging
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Xcode User Settings
+xcuserdata/
+
+## Xcode Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+## Swift Package Manager
+.build/
+.swiftpm/
+
+## Xcode / SPM
+# Xcode automatically updates Package.resolved, causing it to be
+# unintentionally included in commits. If we notice that gitignoring
+# the file causes problems, we can remove this and find another solution.
+Package.resolved
+
+## fastlane
+fastlane/report.xml
+fastlane/screenshots/**/*.png
+fastlane/test_output
+fastlane/[Pp]rovisioning
+fastlane/[Bb]uild
+fastlane/[Oo]utput
+fastlane/DerivedData
+fastlane/derived_data
+fastlane/screenshots
+fastlane/[Pp]review.html
+fastlane/README.md
+output/
+build/
+
+## Dotenv
+.env.local
