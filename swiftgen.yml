@@ -11,7 +11,7 @@ strings:
   inputs: Resources
   outputs:
     - templateName: structured-swift5
-      output: Strings.swift
+      output: String+Localized.swift
       params:
         enumName: Localized
 
@@ -19,11 +19,19 @@ strings:
 
 xcassets:
   - inputs:
-    - Resources/Assets.xcassets
+    - Resources/Assets/Assets.xcassets
     - Resources/PreviewContent/PreviewAssets.xcassets
     outputs:
       templatePath: BrainDelinter/BrainDelinter/Resources/swiftui.stencil
       output: Assets.swift
+      
+  - inputs: Resources/Assets/Colors.xcassets
+    outputs:
+      templatePath: BrainDelinter/BrainDelinter/Resources/swiftui-colors.stencil
+      output: Color+ColorAssets.swift
+      params:
+        enumName: Color
+    
 
 ## There are other parsers available for you to use depending on your needs, for example:
 ##  - `fonts` (if you have custom ttf/ttc font files)

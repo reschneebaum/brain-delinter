@@ -1,0 +1,44 @@
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+{% if catalogs %}
+import SwiftUI
+{% macro casesBlock assets %}
+  {% for asset in assets %}
+  {% if asset.items and asset.isNamespaced == "true" %}
+  public enum {{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}} {
+    {% filter indent:2 %}{% call casesBlock asset.items %}{% endfilter %}
+  }
+  {% elif asset.items %}
+  {% call casesBlock asset.items %}
+  {% elif asset.type == "color" %}
+  static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Color("{{asset.value}}", bundle: BundleToken.bundle)
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+public extension Color {
+  {% for catalog in catalogs %}
+  {% if catalog.name == "Colors" %}
+  {% call casesBlock catalog.assets %}
+  {% endif %}
+  {% endfor %}
+}
+
+{% if not param.bundle %}
+
+// swiftlint:disable convenience_type
+private final class BundleToken {
+  static let bundle: Bundle = {
+    #if SWIFT_PACKAGE
+    return Bundle.module
+    #else
+    return Bundle(for: BundleToken.self)
+    #endif
+  }()
+}
+
+// swiftlint:enable convenience_type
+{% endif %}
+{% else %}
+// No assets found
+{% endif %}

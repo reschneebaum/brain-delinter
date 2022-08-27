@@ -14,8 +14,7 @@ struct ListItemView: View {
     var body: some View {
         VStack {
             CheckboxToggle(isOn: $item.isComplete) {
-                Text(item.text)
-                    .strikethrough(item.isComplete, color: .accentColor)
+                checkboxContent
             }
             
             Color.accentColor
@@ -23,6 +22,26 @@ struct ListItemView: View {
                 .frame(height: 1)
         }
         .padding(.horizontal, Padding.small.rawValue)
+    }
+}
+
+private extension ListItemView {
+    var checkboxContent: some View {
+        ZStack {
+            HStack {
+                Text(item.text)
+                    .font(item.isComplete ? .Italic.body : .Rounded.Light.body)
+                    .fontWeight(item.isComplete ? .light : .medium)
+                
+                Spacer()
+            }
+            
+            Rectangle()
+                .frame(height: 1.2)
+                .foregroundColor(item.isComplete ? .accentColor : .clear)
+                .animation(.default, value: item.isComplete)
+                .transition(.slide)
+        }
     }
 }
 

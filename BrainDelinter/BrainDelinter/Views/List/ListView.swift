@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DelinterComponents
 
 struct ListView: View {
     @EnvironmentObject var dataStore: LocalDataStore
@@ -65,6 +66,7 @@ struct ListView: View {
                 .padding(.top, Padding.small.rawValue)
         }
         .padding(.vertical, Padding.small.rawValue)
+        .backgroundColorOnWhite(.blue.opacity(0.2))
     }
 }
 
@@ -73,5 +75,6 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView()
         }
+        .environmentObject(LocalDataStore())
     }
 }
