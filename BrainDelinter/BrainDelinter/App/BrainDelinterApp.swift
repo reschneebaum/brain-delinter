@@ -5,24 +5,28 @@
 //  Created by Rachel Schneebaum on 8/18/22.
 //
 
-import SwiftUI
+import CoreData
 import DelinterNavigation
+import SwiftUI
 
 @main
 struct BrainDelinterApp: App {
+    @StateObject private var dataStore: LocalDataStore = .init()
     @StateObject private var navigationState: AppNavigationState = .init()
     
     var body: some Scene {
         WindowGroup {
             TabRouterView()
                 .environmentObject(navigationState)
+                .environment(\.managedObjectContext, dataStore.container.viewContext)
         }
     }
 }
 
-
 private struct TabRouterView: View {
+    @Environment(\.managedObjectContext) var moc
     @EnvironmentObject var navigationState: AppNavigationState
+    @FetchRequest(sortDescriptors: []) var items: FetchedResults<ManagedListItem>
     
     private var selectedBinding: Binding<Tab?> {
         .init {

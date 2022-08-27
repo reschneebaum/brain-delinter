@@ -13,10 +13,12 @@ internal enum Localized {
   internal enum List {
     /// add it to the list so you don't have to think about it anymore
     internal static let description = Localized.tr("Localizable", "List.description", fallback: "add it to the list so you don't have to think about it anymore")
+    /// 🧠 get the lint out! 🧼
+    internal static let subheader = Localized.tr("Localizable", "List.subheader", fallback: "🧠 get the lint out! 🧼")
     /// add some lint
     internal static let textFieldLabel = Localized.tr("Localizable", "List.textFieldLabel", fallback: "add some lint")
-    /// get the lint out!
-    internal static let title = Localized.tr("Localizable", "List.title", fallback: "get the lint out!")
+    /// lint list
+    internal static let title = Localized.tr("Localizable", "List.title", fallback: "lint list")
   }
   internal enum Settings {
     /// Settings

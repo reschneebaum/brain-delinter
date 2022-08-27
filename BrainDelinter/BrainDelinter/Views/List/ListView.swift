@@ -24,21 +24,17 @@ struct ListView: View {
                     header
                 }
             }
-            
         }
         .padding(.horizontal, Padding.medium.rawValue)
         .background(Color.blue.opacity(0.2))
-        .navigationTitle("🧼 🧠")
+        .navigationTitle(Localized.List.title)
         .navigationBarTitleDisplayMode(.inline)
     }
     
-    var header: some View {
+    private var header: some View {
         VStack(spacing: Padding.medium.rawValue) {
-            Text(Localized.List.title)
-            
-            Text(Localized.List.description)
-                .font(.Rounded.Light.body)
-                .padding(.horizontal, Padding.xSmall.rawValue)
+            Text(Localized.List.subheader)
+                .font(.Rounded.Light.subheader)
             
             TextField(Localized.List.textFieldLabel, text: $newItemText)
                 .textInputAutocapitalization(.never)
@@ -55,6 +51,11 @@ struct ListView: View {
                         .foregroundColor(.accentColor.opacity(0.7))
                         .foregroundColor(.white)
             )
+            
+            Text(Localized.List.description)
+                .font(.Rounded.Light.body)
+                .padding(.horizontal, Padding.xSmall.rawValue)
+                .padding(.top, Padding.small.rawValue)
         }
         .padding(.vertical, Padding.small.rawValue)
     }

@@ -12,6 +12,8 @@
 		A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B8E28B98CDB00DB8EA3 /* StatsView.swift */; };
 		A16D3B9128B98CF100DB8EA3 /* StatsRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9028B98CF100DB8EA3 /* StatsRouterView.swift */; };
 		A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */; };
+		A16D3B9628B9E4B600DB8EA3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9428B9E4B600DB8EA3 /* Model.xcdatamodeld */; };
+		A16D3B9828B9E6E000DB8EA3 /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */; };
 		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
 		A187991728AF1DBE00223F6F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ListView.swift */; };
 		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
@@ -57,6 +59,8 @@
 		A16D3B8E28B98CDB00DB8EA3 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A16D3B9028B98CF100DB8EA3 /* StatsRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsRouterView.swift; sourceTree = "<group>"; };
 		A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
+		A16D3B9528B9E4B600DB8EA3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
 		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
 		A187991628AF1DBE00223F6F /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 			children = (
 				A187994428B02BF700223F6F /* ListItem.swift */,
 				A1F6E95F28B17B1100FACCDA /* Tab.swift */,
+				A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				A1F6E96128B1940700FACCDA /* Localizable.strings */,
 				A16D3B7F28B97C3100DB8EA3 /* swiftui.stencil */,
 				A187991A28AF1DBF00223F6F /* PreviewContent */,
+				A16D3B9428B9E4B600DB8EA3 /* Model.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -417,6 +423,8 @@
 				A187994328B02B7000223F6F /* ListItemView.swift in Sources */,
 				A16D3B7E28B9741000DB8EA3 /* Strings.swift in Sources */,
 				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
+				A16D3B9628B9E4B600DB8EA3 /* Model.xcdatamodeld in Sources */,
+				A16D3B9828B9E6E000DB8EA3 /* LocalDataStore.swift in Sources */,
 				A16D3B9128B98CF100DB8EA3 /* StatsRouterView.swift in Sources */,
 				A16D3B8A28B9867D00DB8EA3 /* Assets.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
@@ -760,6 +768,19 @@
 			productName = DelinterComponents;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		A16D3B9428B9E4B600DB8EA3 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A16D3B9528B9E4B600DB8EA3 /* Model.xcdatamodel */,
+			);
+			currentVersion = A16D3B9528B9E4B600DB8EA3 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A187990928AF1DBE00223F6F /* Project object */;
 }

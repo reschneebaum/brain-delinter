@@ -11,6 +11,8 @@ struct ListItem {
     var id = UUID().uuidString
     let description: String
     var done = false
+    var dateAdded: Date = .now
+    var dateCompleted: Date?
 }
 
 // MARK: - Extensions
