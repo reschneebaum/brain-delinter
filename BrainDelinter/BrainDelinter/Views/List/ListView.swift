@@ -11,14 +11,14 @@ import DelinterComponents
 struct ListView: View {
     @EnvironmentObject var dataStore: LocalDataStore
     @State private var newItemText = ""
-    @State private var items: [ListItem] = []
+//    @State private var items: [ListItem] = []
     
     var body: some View {
         ScrollView {
             LazyVStack(spacing: Padding.medium.rawValue, pinnedViews: .sectionHeaders) {
                 Section {
-                    if !items.isEmpty {
-                        ForEach($items) { $item in
+                    if !dataStore.tempItems.isEmpty {
+                        ForEach($dataStore.tempItems) { $item in
                             ListItemView(item: $item)
                         }
                     }
@@ -32,10 +32,9 @@ struct ListView: View {
         .navigationTitle(Localized.List.title)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
-            items = dataStore.getStoredItems().map { .init($0) }
-        }
-        .onDisappear {
-            dataStore.saveItemsLocally(items)
+            if dataStore.tempItems.isEmpty {
+                dataStore.tempItems = dataStore.getStoredItems().map { .init($0) }
+            }
         }
     }
     
@@ -49,7 +48,7 @@ struct ListView: View {
                 .submitLabel(.done)
                 .onSubmit {
                     guard !newItemText.isEmpty else { return }
-                    items.append(.init(text: newItemText))
+                    dataStore.tempItems.append(.init(text: newItemText))
                     newItemText = ""
                 }
                 .padding(.all, Padding.medium.rawValue)

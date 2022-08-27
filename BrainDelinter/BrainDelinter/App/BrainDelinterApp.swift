@@ -25,7 +25,7 @@ struct BrainDelinterApp: App {
             switch newValue {
             case .background, .inactive:
                 // Update the core data model
-                break
+                dataStore.persistLocalItems()
             case .active:
                 break
             @unknown default:

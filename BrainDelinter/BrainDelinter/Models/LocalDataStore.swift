@@ -10,6 +10,7 @@ import Foundation
 import SwiftUI
 
 class LocalDataStore: ObservableObject {
+    @Published var tempItems: [ListItem] = []
     let container = NSPersistentContainer(name: "DataModel")
     
     init() {
@@ -34,9 +35,10 @@ class LocalDataStore: ObservableObject {
         }
     }
     
-    func saveItemsLocally(_ items: [ListItem]) {
+    func persistLocalItems(_ items: [ListItem]? = nil) {
         let currentItems = getStoredItems()
-        items.forEach { newItem in
+        let newItems = items ?? tempItems
+        newItems.forEach { newItem in
             if let currentItem = currentItems.first(where: { $0.id == newItem.id }) {
                 if currentItem.text == newItem.text && currentItem.isComplete == newItem.isComplete {
                     // If there are no changes, nothing needs to be updated in core data.

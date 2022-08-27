@@ -14,7 +14,7 @@ struct SettingsRouterView: View {
     var body: some View {
         NavigationStack($navigationState.settingsStackManager.stack) {
             switch $0 {
-            case .settings:
+            case .home:
                 SettingsView()
             }
         }
@@ -22,7 +22,7 @@ struct SettingsRouterView: View {
 }
 
 enum SettingsRoute {
-    case settings
+    case home
 }
 
 struct SettingsRouterView_Previews: PreviewProvider {

@@ -12,6 +12,6 @@ class AppNavigationState: ObservableObject {
     let tabs = Tab.allCases
     @Published var selectedTab: Tab?
     @Published var listStackManager: NavigationStackManager<ListRoute> = .init(withRoot: .home)
-    @Published var settingsStackManager: NavigationStackManager<SettingsRoute> = .init(withRoot: .settings)
-    // Add other tabs' stack managers
+    @Published var statsStackManager: NavigationStackManager<StatsRoute> = .init(withRoot: .home)
+    @Published var settingsStackManager: NavigationStackManager<SettingsRoute> = .init(withRoot: .home)
 }
