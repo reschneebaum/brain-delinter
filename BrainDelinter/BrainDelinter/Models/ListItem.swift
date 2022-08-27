@@ -9,8 +9,8 @@ import Foundation
 
 struct ListItem {
     var id = UUID().uuidString
-    let description: String
-    var done = false
+    let text: String
+    var isComplete = false
     var dateAdded: Date = .now
     var dateCompleted: Date?
 }
@@ -34,7 +34,7 @@ extension ListItem: Hashable {}
 #if DEBUG
 extension ListItem {
     static var mocked: Self {
-        .init(description: "Test item")
+        .init(text: "Test item")
     }
 }
 #endif

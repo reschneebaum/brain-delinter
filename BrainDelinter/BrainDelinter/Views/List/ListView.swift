@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ListView: View {
+    @EnvironmentObject var dataStore: LocalDataStore
     @State private var newItemText = ""
     @State private var items: [ListItem] = []
     
@@ -29,6 +30,12 @@ struct ListView: View {
         .background(Color.blue.opacity(0.2))
         .navigationTitle(Localized.List.title)
         .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            items = dataStore.getStoredItems().map { .init($0) }
+        }
+        .onDisappear {
+            dataStore.saveItemsLocally(items)
+        }
     }
     
     private var header: some View {
@@ -41,7 +48,7 @@ struct ListView: View {
                 .submitLabel(.done)
                 .onSubmit {
                     guard !newItemText.isEmpty else { return }
-                    items.append(.init(description: newItemText))
+                    items.append(.init(text: newItemText))
                     newItemText = ""
                 }
                 .padding(.all, Padding.medium.rawValue)

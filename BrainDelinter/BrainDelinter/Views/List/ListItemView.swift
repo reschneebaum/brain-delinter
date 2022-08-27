@@ -13,9 +13,9 @@ struct ListItemView: View {
     
     var body: some View {
         VStack {
-            CheckboxToggle(isOn: $item.done) {
-                Text(item.description)
-                    .strikethrough(item.done, color: .accentColor)
+            CheckboxToggle(isOn: $item.isComplete) {
+                Text(item.text)
+                    .strikethrough(item.isComplete, color: .accentColor)
             }
             
             Color.accentColor
