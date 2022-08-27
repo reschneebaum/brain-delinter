@@ -16,8 +16,7 @@ struct SettingsRow<Content: View>: View {
             content()
             
             Text(description)
-                .italic()
-                .font(.caption)
+                .font(.Italic.footnote)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.bottom, Padding.small.rawValue)

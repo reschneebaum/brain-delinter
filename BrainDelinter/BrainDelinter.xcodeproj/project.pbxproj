@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A16D3B7E28B9741000DB8EA3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B7D28B9741000DB8EA3 /* Strings.swift */; };
 		A16D3B8A28B9867D00DB8EA3 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B8928B9867D00DB8EA3 /* Assets.swift */; };
+		A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B8E28B98CDB00DB8EA3 /* StatsView.swift */; };
+		A16D3B9128B98CF100DB8EA3 /* StatsRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9028B98CF100DB8EA3 /* StatsRouterView.swift */; };
+		A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */; };
 		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
 		A187991728AF1DBE00223F6F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ListView.swift */; };
 		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
@@ -18,7 +21,7 @@
 		A187993228AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */; };
 		A187994128AF34EC00223F6F /* DelinterNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = A187994028AF34EC00223F6F /* DelinterNavigation */; };
 		A187994328B02B7000223F6F /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994228B02B7000223F6F /* ListItemView.swift */; };
-		A187994528B02BF700223F6F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994428B02BF700223F6F /* Item.swift */; };
+		A187994528B02BF700223F6F /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994428B02BF700223F6F /* ListItem.swift */; };
 		A187994728B0353300223F6F /* DelinterComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A187994628B0353300223F6F /* DelinterComponents */; };
 		A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */; };
 		A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95728B05CD600FACCDA /* SettingsView.swift */; };
@@ -51,6 +54,9 @@
 		A16D3B7D28B9741000DB8EA3 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		A16D3B7F28B97C3100DB8EA3 /* swiftui.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftui.stencil; sourceTree = "<group>"; };
 		A16D3B8928B9867D00DB8EA3 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		A16D3B8E28B98CDB00DB8EA3 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		A16D3B9028B98CF100DB8EA3 /* StatsRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsRouterView.swift; sourceTree = "<group>"; };
+		A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
 		A187991628AF1DBE00223F6F /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -63,7 +69,7 @@
 		A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A187993E28AF201300223F6F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A187994228B02B7000223F6F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
-		A187994428B02BF700223F6F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		A187994428B02BF700223F6F /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterConstants.swift; sourceTree = "<group>"; };
 		A1F6E95728B05CD600FACCDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1F6E95928B167D200FACCDA /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
@@ -108,6 +114,15 @@
 				A16D3B7D28B9741000DB8EA3 /* Strings.swift */,
 			);
 			path = Autogen;
+			sourceTree = "<group>";
+		};
+		A16D3B8D28B98CC400DB8EA3 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				A16D3B8E28B98CDB00DB8EA3 /* StatsView.swift */,
+				A16D3B9028B98CF100DB8EA3 /* StatsRouterView.swift */,
+			);
+			path = Stats;
 			sourceTree = "<group>";
 		};
 		A187990828AF1DBE00223F6F = {
@@ -179,8 +194,9 @@
 		A1F6E94F28B0571D00FACCDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A1F6E95628B05C7F00FACCDA /* Settings */,
 				A1F6E95528B05C7600FACCDA /* List */,
+				A16D3B8D28B98CC400DB8EA3 /* Stats */,
+				A1F6E95628B05C7F00FACCDA /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,7 +204,7 @@
 		A1F6E95028B0572700FACCDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A187994428B02BF700223F6F /* Item.swift */,
+				A187994428B02BF700223F6F /* ListItem.swift */,
 				A1F6E95F28B17B1100FACCDA /* Tab.swift */,
 			);
 			path = Models;
@@ -231,6 +247,7 @@
 				A1F6E95728B05CD600FACCDA /* SettingsView.swift */,
 				A1F6E95928B167D200FACCDA /* SettingsRow.swift */,
 				A1F6E96828B1D43600FACCDA /* SettingsRouterView.swift */,
+				A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -392,7 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A187994528B02BF700223F6F /* Item.swift in Sources */,
+				A187994528B02BF700223F6F /* ListItem.swift in Sources */,
 				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
 				A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */,
 				A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */,
@@ -400,10 +417,13 @@
 				A187994328B02B7000223F6F /* ListItemView.swift in Sources */,
 				A16D3B7E28B9741000DB8EA3 /* Strings.swift in Sources */,
 				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
+				A16D3B9128B98CF100DB8EA3 /* StatsRouterView.swift in Sources */,
 				A16D3B8A28B9867D00DB8EA3 /* Assets.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
 				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,
 				A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */,
+				A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */,
+				A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */,
 				A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

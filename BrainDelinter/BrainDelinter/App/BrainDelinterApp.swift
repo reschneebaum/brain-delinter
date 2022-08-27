@@ -42,16 +42,18 @@ private struct TabRouterView: View {
                         ListRouterView()
                         
                     case .stats:
-                        // TODO: Replace with router
-                        Color.cyan.opacity(0.7)
+                        StatsRouterView()
                         
                     case .settings:
                         SettingsRouterView()
                     }
                 }
                 .tabItem {
-                    tab.icon
-                    Text(tab.title)
+                    VStack(spacing: 2) {
+                        Image(systemName: tab.iconName)
+                        Text(tab.title)
+                    }
+                    .foregroundColor(.accentColor)
                 }
             }
         }

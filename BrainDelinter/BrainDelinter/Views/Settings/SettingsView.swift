@@ -23,30 +23,27 @@ struct SettingsView: View {
     private let durationRange = 0...60
     private let alarmSettings = SettingsItem.allCases
     
-    // TODO: is this outermost VStack still needed?
     var body: some View {
-        VStack {
-            List {
-                Section {
-                    ForEach(alarmSettings, id: \.self) { setting in
-                        switch setting {
-                        case .alarmTime:
-                            SettingsRow(description: setting.description) {
-                                TimePicker(selectedTime: $selected, label: setting.title)
-                            }
-                        case .snooze:
-                            SettingsRow(description: setting.description) {
-                                CheckboxToggle(isOn: $allowSnooze, label: setting.title)
-                            }
-                        case .duration:
-                            SettingsRow(description: setting.description) {
-                                durationRowContent
-                            }
+        List {
+            Section {
+                ForEach(alarmSettings, id: \.self) { setting in
+                    switch setting {
+                    case .alarmTime:
+                        SettingsRow(description: setting.description) {
+                            TimePicker(selectedTime: $selected, label: setting.title)
+                        }
+                    case .snooze:
+                        SettingsRow(description: setting.description) {
+                            CheckboxToggle(isOn: $allowSnooze, label: setting.title)
+                        }
+                    case .duration:
+                        SettingsRow(description: setting.description) {
+                            durationRowContent
                         }
                     }
-                } header: {
-                    Text(Localized.Settings.Alarm.sectionHeader)
                 }
+            } header: {
+                Text(Localized.Settings.Alarm.sectionHeader)
             }
         }
         .navigationTitle(Localized.Settings.title)
@@ -69,35 +66,12 @@ struct SettingsView: View {
     }
 }
 
-enum SettingsItem: String, CaseIterable {
-    case alarmTime
-    case snooze
-    case duration
-    
-    var title: String {
-        switch self {
-        case .alarmTime:
-            return Localized.Settings.Alarm.title
-        case .snooze:
-            return Localized.Settings.Snooze.title
-        case .duration:
-            return Localized.Settings.Duration.title
-        }
-    }
-    var description: String {
-        switch self {
-        case .alarmTime:
-            return Localized.Settings.Alarm.description
-        case .snooze:
-            return Localized.Settings.Snooze.description
-        case .duration:
-            return Localized.Settings.Duration.description
-        }
-    }
-}
+
 
 struct SetAlarmTimeView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        NavigationView {
+            SettingsView()
+        }
     }
 }

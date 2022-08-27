@@ -7,15 +7,13 @@
 
 import SwiftUI
 
-// TODO: localize strings + pull out constants
-
 struct ListView: View {
     @State private var newItemText = ""
-    @State private var items: [Item] = []
+    @State private var items: [ListItem] = []
     
     var body: some View {
-        VStack {
-            LazyVStack(alignment: .center, spacing: Padding.medium.rawValue, pinnedViews: .sectionHeaders) {
+        ScrollView {
+            LazyVStack(spacing: Padding.medium.rawValue, pinnedViews: .sectionHeaders) {
                 Section {
                     if !items.isEmpty {
                         ForEach($items) { $item in
@@ -27,19 +25,19 @@ struct ListView: View {
                 }
             }
             
-            Spacer()
         }
         .padding(.horizontal, Padding.medium.rawValue)
+        .background(Color.blue.opacity(0.2))
         .navigationTitle("🧼 🧠")
         .navigationBarTitleDisplayMode(.inline)
     }
     
     var header: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: Padding.medium.rawValue) {
             Text(Localized.List.title)
             
             Text(Localized.List.description)
-                .font(.system(size: 14, weight: .light, design: .rounded))
+                .font(.Rounded.Light.body)
                 .padding(.horizontal, Padding.xSmall.rawValue)
             
             TextField(Localized.List.textFieldLabel, text: $newItemText)
@@ -53,8 +51,8 @@ struct ListView: View {
                 .padding(.all, Padding.medium.rawValue)
                 .background(
                     RoundedRectangle(cornerRadius: Padding.medium.rawValue)
-                        .strokeBorder(lineWidth: 1.2)
-                        .foregroundColor(.blue.opacity(0.6))
+                        .strokeBorder(lineWidth: 2)
+                        .foregroundColor(.accentColor.opacity(0.7))
                         .foregroundColor(.white)
             )
         }
@@ -64,6 +62,8 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        NavigationView {
+            ListView()
+        }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  Item.swift
+//  ListItem.swift
 //  BrainDelinter
 //
 //  Created by Rachel Schneebaum on 8/19/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item {
+struct ListItem {
     var id = UUID().uuidString
     let description: String
     var done = false
@@ -17,20 +17,20 @@ struct Item {
 
 // MARK: Codable
 
-extension Item: Codable {}
+extension ListItem: Codable {}
 
 // MARK: Identifiable
 
-extension Item: Identifiable {}
+extension ListItem: Identifiable {}
 
 // MARK: Hashable
 
-extension Item: Hashable {}
+extension ListItem: Hashable {}
 
 // MARK: Previews
 
 #if DEBUG
-extension Item {
+extension ListItem {
     static var mocked: Self {
         .init(description: "Test item")
     }

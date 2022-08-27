@@ -9,7 +9,7 @@ import SwiftUI
 import DelinterComponents
 
 struct ListItemView: View {
-    @Binding var item: Item
+    @Binding var item: ListItem
     
     var body: some View {
         VStack {
@@ -32,7 +32,7 @@ struct ItemView_Previews: PreviewProvider {
     }
     
     struct PreviewBody: View {
-        @State private var item: Item = .mocked
+        @State private var item: ListItem = .mocked
         
         var body: some View {
             ListItemView(item: $item)
