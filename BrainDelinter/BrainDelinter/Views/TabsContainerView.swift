@@ -35,7 +35,7 @@ struct TabsContainerView: View {
                     }
                 }
                 .tabItem {
-                    VStack(spacing: 2) {
+                    VStack {
                         Image(systemName: tab.iconName)
                         Text(tab.title)
                     }

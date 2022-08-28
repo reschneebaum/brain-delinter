@@ -34,7 +34,12 @@ extension Font {
             static let subheader: Font = .system(size: 20, weight: .light, design: .rounded)
             /// System | size 15
             static let body: Font = .system(size: 15, weight: .light, design: .rounded)
+            /// System | size 13
+            static let bodyS: Font = .system(size: 13, weight: .light, design: .rounded)
         }
+        
+        /// System | size 13
+        static let bodyS: Font = .system(size: 13, design: .rounded).italic()
     }
     
     /// Font with `italic()` modifier applied

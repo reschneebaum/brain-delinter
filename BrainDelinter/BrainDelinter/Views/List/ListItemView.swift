@@ -9,17 +9,13 @@ import SwiftUI
 import DelinterComponents
 
 struct ListItemView: View {
-    @Binding var item: ListItem
+    @ObservedObject var item: ManagedListItem
     
     var body: some View {
         VStack {
             CheckboxToggle(isOn: $item.isComplete) {
                 checkboxContent
             }
-            
-            Color.accentColor
-                .opacity(0.7)
-                .frame(height: 1)
         }
         .padding(.horizontal, Padding.small.rawValue)
     }
@@ -29,7 +25,7 @@ private extension ListItemView {
     var checkboxContent: some View {
         ZStack {
             HStack {
-                Text(item.text)
+                Text(item.text ?? "")
                     .font(item.isComplete ? .Italic.body : .Rounded.Light.body)
                     .fontWeight(item.isComplete ? .light : .medium)
                 
@@ -51,10 +47,10 @@ struct ItemView_Previews: PreviewProvider {
     }
     
     struct PreviewBody: View {
-        @State private var item: ListItem = .mocked
+        let item: ManagedListItem = .init()
         
         var body: some View {
-            ListItemView(item: $item)
+            ListItemView(item: item)
         }
     }
 }

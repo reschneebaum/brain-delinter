@@ -24,10 +24,11 @@ struct BrainDelinterApp: App {
         .onChange(of: scenePhase) { newValue in
             switch newValue {
             case .background, .inactive:
-                // Update the core data model
-                dataStore.persistLocalItems()
+                dataStore.save()
+                
             case .active:
                 break
+                
             @unknown default:
                 break
             }

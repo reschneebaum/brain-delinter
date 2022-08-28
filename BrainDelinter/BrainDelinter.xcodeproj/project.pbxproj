@@ -13,7 +13,7 @@
 		A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */; };
 		A16D3B9828B9E6E000DB8EA3 /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */; };
 		A16D3B9A28BA957200DB8EA3 /* TabsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9928BA957200DB8EA3 /* TabsContainerView.swift */; };
-		A16D3B9C28BA9B3200DB8EA3 /* ListItem+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9B28BA9B3200DB8EA3 /* ListItem+CoreData.swift */; };
+		A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift */; };
 		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
 		A187991728AF1DBE00223F6F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ListView.swift */; };
 		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
@@ -63,7 +63,7 @@
 		A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
 		A16D3B9928BA957200DB8EA3 /* TabsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsContainerView.swift; sourceTree = "<group>"; };
-		A16D3B9B28BA9B3200DB8EA3 /* ListItem+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListItem+CoreData.swift"; sourceTree = "<group>"; };
+		A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedListItem+InitWithText.swift"; sourceTree = "<group>"; };
 		A16D3BA428BAA83200DB8EA3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
@@ -163,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A1F6E95228B0577D00FACCDA /* App */,
+				A1E304A628BAEF9C004A015E /* CoreData */,
 				A1F6E94F28B0571D00FACCDA /* Views */,
 				A1F6E95028B0572700FACCDA /* Models */,
 				A16D3B7C28B96FAC00DB8EA3 /* Autogen */,
@@ -212,6 +213,15 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		A1E304A628BAEF9C004A015E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */,
+				A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		A1F6E94F28B0571D00FACCDA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,8 +238,6 @@
 			children = (
 				A187994428B02BF700223F6F /* ListItem.swift */,
 				A1F6E95F28B17B1100FACCDA /* Tab.swift */,
-				A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */,
-				A16D3B9B28BA9B3200DB8EA3 /* ListItem+CoreData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,7 +446,7 @@
 				A1E3049E28BAA9C6004A015E /* DataModel.xcdatamodeld in Sources */,
 				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
 				A16D3B9A28BA957200DB8EA3 /* TabsContainerView.swift in Sources */,
-				A16D3B9C28BA9B3200DB8EA3 /* ListItem+CoreData.swift in Sources */,
+				A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift in Sources */,
 				A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */,
 				A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */,
 				A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */,

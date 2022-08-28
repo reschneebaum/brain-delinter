@@ -6,24 +6,32 @@
 //
 
 import CoreData
-import Foundation
 import SwiftUI
 
 class LocalDataStore: ObservableObject {
-    @Published var tempItems: [ListItem] = []
-    let container = NSPersistentContainer(name: "DataModel")
+    let container: NSPersistentContainer
     
-    init() {
-        container.loadPersistentStores { [weak self] description, error in
+    init(containerName: String? = nil) {
+        container = .init(name: containerName ?? "DataModel")
+        
+        container.loadPersistentStores { [weak self] _, error in
             if let error = error {
                 print("core data load error: \(error.localizedDescription)")
             }
-            
             // Overwrite the existing object's property values with those of the new object
-            self?.container.viewContext.mergePolicy = NSMergePolicy.overwrite
+            self?.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         }
     }
     
+    func save() {
+        try? container.viewContext.save()
+    }
+}
+
+// NOTE: The following methods are not needed/used since we're accessing managed objects and
+// our moc directly. If we want to wrap core data and use the old `ListItem` throughout, uncomment:
+/*
+extension LocalDataStore {
     func getStoredItems() -> [ManagedListItem] {
         let fetchRequest = ManagedListItem.fetchRequest()
         
@@ -37,7 +45,8 @@ class LocalDataStore: ObservableObject {
     
     func persistLocalItems(_ items: [ListItem]? = nil) {
         let currentItems = getStoredItems()
-        let newItems = items ?? tempItems
+        let newItems = items ?? []
+        
         newItems.forEach { newItem in
             if let currentItem = currentItems.first(where: { $0.id == newItem.id }) {
                 if currentItem.text == newItem.text && currentItem.isComplete == newItem.isComplete {
@@ -69,3 +78,4 @@ class LocalDataStore: ObservableObject {
         try? container.viewContext.save()
     }
 }
+*/
