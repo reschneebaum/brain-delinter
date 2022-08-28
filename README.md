@@ -1,4 +1,4 @@
-#  🧠 delinter
+#  🧠 delinter [WIP]
 
 brain delinter is a simple and intuitive tool based on extended mind theory. it was inspired by a practice recommended by my own adhd provider, intended to help you:
  * move all the 'lint' —— tasks you've avoided, thought-spirals that keep you up at night, etc. —— out of your head and into your device (thst is, your extended mind)

@@ -13,17 +13,19 @@ struct BrainDelinterApp: App {
     @Environment(\.scenePhase) var scenePhase
     @StateObject private var dataStore: LocalDataStore = .init()
     @StateObject private var navigationState: AppNavigationState = .init()
+    private let notificationScheduler: NotificationScheduler = .init()
     
     var body: some Scene {
         WindowGroup {
             TabsContainerView()
                 .environmentObject(navigationState)
                 .environmentObject(dataStore)
-                .environment(\.managedObjectContext, dataStore.managedObjectContext)
+                .environment(\.managedObjectContext, dataStore.managedObjectContext) // do i need this??
         }
         .onChange(of: scenePhase) { newValue in
             switch newValue {
             case .background, .inactive:
+                // Make sure the core data db is updated with the environment moc whenever leaving the app
                 dataStore.save()
                 
             case .active:
@@ -40,5 +42,9 @@ struct BrainDelinterApp: App {
                 break
             }
         }
+    }
+    
+    init() {
+        notificationScheduler.configureNotificationsSession()
     }
 }
