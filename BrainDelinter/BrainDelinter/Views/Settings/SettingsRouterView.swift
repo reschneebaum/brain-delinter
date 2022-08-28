@@ -28,5 +28,6 @@ enum SettingsRoute {
 struct SettingsRouterView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsRouterView()
+            .environmentObject(AppNavigationState())
     }
 }

@@ -22,4 +22,14 @@ extension ManagedListItem {
         }
         return managedItem
     }
+    
+    static var mocked: ManagedListItem {
+        let mock = ManagedListItem(context: MockDataStore().managedObjectContext)
+        mock.dateAdded = .now
+        mock.isComplete = false
+        mock.id = UUID().uuidString
+        mock.text = "Mock list item"
+        mock.dateCompleted = nil
+        return mock
+    }
 }

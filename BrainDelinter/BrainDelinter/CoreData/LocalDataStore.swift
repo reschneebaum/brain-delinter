@@ -8,8 +8,17 @@
 import CoreData
 import SwiftUI
 
-class LocalDataStore: ObservableObject {
-    let container: NSPersistentContainer
+protocol DataStoreInterface: ObservableObject {
+    var managedObjectContext: NSManagedObjectContext { get }
+    func save()
+    func addItem(_ text: String)
+}
+
+final class LocalDataStore: ObservableObject, DataStoreInterface {
+    private let container: NSPersistentContainer
+    var managedObjectContext: NSManagedObjectContext {
+        container.viewContext
+    }
     
     init(containerName: String? = nil) {
         container = .init(name: containerName ?? "DataModel")
@@ -19,12 +28,35 @@ class LocalDataStore: ObservableObject {
                 print("core data load error: \(error.localizedDescription)")
             }
             // Overwrite the existing object's property values with those of the new object
-            self?.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+            self?.managedObjectContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         }
     }
     
     func save() {
-        try? container.viewContext.save()
+        try? managedObjectContext.save()
+        objectWillChange.send()
+    }
+    
+    func addItem(_ text: String) {
+        ManagedListItem.createNewItem(with: text, in: managedObjectContext)
+    }
+    
+    func deleteItems(_ items: [ManagedListItem]) {
+        items.forEach {
+            managedObjectContext.delete($0)
+        }
+        try? managedObjectContext.save()
+    }
+    
+    func getStoredItems() -> [ManagedListItem] {
+        let fetchRequest = ManagedListItem.fetchRequest()
+        
+        do {
+            return try managedObjectContext.fetch(fetchRequest)
+        } catch {
+            print("error fetching list items: \(error.localizedDescription)")
+            return []
+        }
     }
 }
 
@@ -68,13 +100,6 @@ extension LocalDataStore {
     
     func deleteItem(_ item: ManagedListItem) {
         container.viewContext.delete(item)
-        try? container.viewContext.save()
-    }
-    
-    func deleteItems(_ items: [ManagedListItem]) {
-        items.forEach {
-            container.viewContext.delete($0)
-        }
         try? container.viewContext.save()
     }
 }

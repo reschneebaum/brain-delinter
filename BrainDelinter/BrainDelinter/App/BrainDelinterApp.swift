@@ -19,7 +19,7 @@ struct BrainDelinterApp: App {
             TabsContainerView()
                 .environmentObject(navigationState)
                 .environmentObject(dataStore)
-                .environment(\.managedObjectContext, dataStore.container.viewContext)
+                .environment(\.managedObjectContext, dataStore.managedObjectContext)
         }
         .onChange(of: scenePhase) { newValue in
             switch newValue {
@@ -27,6 +27,13 @@ struct BrainDelinterApp: App {
                 dataStore.save()
                 
             case .active:
+                // Uncomment to delete all current items
+                /*
+                #if DEBUG
+                let items = dataStore.getStoredItems()
+                dataStore.deleteItems(items)
+                #endif
+                 */
                 break
                 
             @unknown default:

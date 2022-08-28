@@ -43,11 +43,11 @@ private extension ListItemView {
 
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewBody()
+        PreviewBody(item: .mocked)
     }
     
     struct PreviewBody: View {
-        let item: ManagedListItem = .init()
+        @ObservedObject var item: ManagedListItem
         
         var body: some View {
             ListItemView(item: item)

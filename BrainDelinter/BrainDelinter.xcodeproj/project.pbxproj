@@ -13,7 +13,7 @@
 		A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */; };
 		A16D3B9828B9E6E000DB8EA3 /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */; };
 		A16D3B9A28BA957200DB8EA3 /* TabsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9928BA957200DB8EA3 /* TabsContainerView.swift */; };
-		A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift */; };
+		A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift */; };
 		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
 		A187991728AF1DBE00223F6F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ListView.swift */; };
 		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
@@ -29,6 +29,7 @@
 		A1E304A028BABE7D004A015E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E3049F28BABE7D004A015E /* Colors.xcassets */; };
 		A1E304A228BAC000004A015E /* Color+ColorAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A128BAC000004A015E /* Color+ColorAssets.swift */; };
 		A1E304A428BAC074004A015E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A328BAC074004A015E /* String+Localized.swift */; };
+		A1E304A828BAF891004A015E /* MockDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A728BAF891004A015E /* MockDataStore.swift */; };
 		A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */; };
 		A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95728B05CD600FACCDA /* SettingsView.swift */; };
 		A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95928B167D200FACCDA /* SettingsRow.swift */; };
@@ -63,7 +64,7 @@
 		A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
 		A16D3B9928BA957200DB8EA3 /* TabsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsContainerView.swift; sourceTree = "<group>"; };
-		A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedListItem+InitWithText.swift"; sourceTree = "<group>"; };
+		A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedListItem+Helpers.swift"; sourceTree = "<group>"; };
 		A16D3BA428BAA83200DB8EA3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		A1E3049F28BABE7D004A015E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A1E304A128BAC000004A015E /* Color+ColorAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+ColorAssets.swift"; sourceTree = "<group>"; };
 		A1E304A328BAC074004A015E /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		A1E304A728BAF891004A015E /* MockDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataStore.swift; sourceTree = "<group>"; };
 		A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterConstants.swift; sourceTree = "<group>"; };
 		A1F6E95728B05CD600FACCDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1F6E95928B167D200FACCDA /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
@@ -217,7 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */,
-				A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift */,
+				A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift */,
+				A1E304A728BAF891004A015E /* MockDataStore.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -446,7 +449,7 @@
 				A1E3049E28BAA9C6004A015E /* DataModel.xcdatamodeld in Sources */,
 				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
 				A16D3B9A28BA957200DB8EA3 /* TabsContainerView.swift in Sources */,
-				A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+InitWithText.swift in Sources */,
+				A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift in Sources */,
 				A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */,
 				A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */,
 				A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */,
@@ -463,6 +466,7 @@
 				A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */,
 				A1E304A428BAC074004A015E /* String+Localized.swift in Sources */,
 				A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */,
+				A1E304A828BAF891004A015E /* MockDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

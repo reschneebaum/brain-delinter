@@ -8,8 +8,8 @@
 import SwiftUI
 import DelinterComponents
 
-struct ListView: View {
-    @Environment(\.managedObjectContext) var moc
+struct ListView<DataStore: DataStoreInterface>: View {
+    @EnvironmentObject var dataStore: DataStore
     @FetchRequest(sortDescriptors: [.init(\.dateAdded)]) var items: FetchedResults<ManagedListItem>
     @State private var newItemText = ""
     
@@ -30,7 +30,9 @@ struct ListView: View {
                 } header: {
                     stickyHeader
                 } footer: {
-                    footer
+                    if !items.isEmpty {
+                        footer
+                    }
                 }
             }
             .headerProminence(.increased)
@@ -40,7 +42,7 @@ struct ListView: View {
         .navigationTitle(Localized.List.title)
         .navigationBarTitleDisplayMode(.inline)
         .onDisappear {
-            try? moc.save()
+            dataStore.save()
         }
     }
     
@@ -50,7 +52,7 @@ struct ListView: View {
             .submitLabel(.done)
             .onSubmit {
                 guard !newItemText.isEmpty else { return }
-                ManagedListItem.createNewItem(with: newItemText, in: moc)
+                dataStore.addItem(newItemText)
                 newItemText = ""
             }
             .padding(.all, Padding.medium.rawValue)
@@ -84,7 +86,8 @@ struct ListView: View {
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            ListView()
+            ListView<MockDataStore>()
         }
+        .environmentObject(MockDataStore())
     }
 }

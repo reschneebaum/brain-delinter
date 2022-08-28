@@ -35,11 +35,8 @@ struct TabsContainerView: View {
                     }
                 }
                 .tabItem {
-                    VStack {
-                        Image(systemName: tab.iconName)
-                        Text(tab.title)
-                    }
-                    .foregroundColor(.accentColor)
+                    Image(systemName: tab.iconName)
+                    Text(tab.title)
                 }
             }
         }

@@ -20,7 +20,7 @@ struct SettingsView: View {
     /// Default time interval is 20 minutes.
     @State private var duration = 20
     
-    private let durationRange = 0...60
+    private let durationRange = 10...60
     private let alarmSettings = SettingsItem.allCases
     
     var body: some View {
@@ -68,10 +68,11 @@ struct SettingsView: View {
 
 
 
-struct SetAlarmTimeView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             SettingsView()
         }
+        .environmentObject(AppNavigationState())
     }
 }

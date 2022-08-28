@@ -28,5 +28,6 @@ enum StatsRoute {
 struct StatsRouterView_Previews: PreviewProvider {
     static var previews: some View {
         StatsRouterView()
+            .environmentObject(AppNavigationState())
     }
 }

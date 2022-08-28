@@ -15,7 +15,7 @@ struct ListRouterView: View {
         NavigationStack($navigationState.listStackManager.stack) {
             switch $0 {
             case .home:
-                ListView()
+                ListView<LocalDataStore>()
             }
         }
     }
@@ -28,5 +28,6 @@ enum ListRoute {
 struct ListRouterView_Previews: PreviewProvider {
     static var previews: some View {
         ListRouterView()
+            .environmentObject(AppNavigationState())
     }
 }
