@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+enum Constants {
+    static let oneDayInSeconds: TimeInterval = 24 * 60 * 60 * 60
+}
+
 enum Padding: CGFloat {
     /// 24 pt
     case xLarge = 24

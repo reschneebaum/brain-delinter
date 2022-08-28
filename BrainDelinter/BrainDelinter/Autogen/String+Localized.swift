@@ -20,6 +20,20 @@ internal enum Localized {
     /// lint list
     internal static let title = Localized.tr("Localizable", "List.title", fallback: "lint list")
   }
+  internal enum Notification {
+    internal enum End {
+      /// finish up whatever you're going and give yourself a pat on the back because you did it!
+      internal static let body = Localized.tr("Localizable", "Notification.End.body", fallback: "finish up whatever you're going and give yourself a pat on the back because you did it!")
+      /// it's over!
+      internal static let title = Localized.tr("Localizable", "Notification.End.title", fallback: "it's over!")
+    }
+    internal enum Start {
+      /// ready to get things done?? you got this!
+      internal static let body = Localized.tr("Localizable", "Notification.Start.body", fallback: "ready to get things done?? you got this!")
+      /// it's go time
+      internal static let title = Localized.tr("Localizable", "Notification.Start.title", fallback: "it's go time")
+    }
+  }
   internal enum Settings {
     /// Settings
     internal static let title = Localized.tr("Localizable", "Settings.title", fallback: "Settings")

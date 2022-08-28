@@ -12,6 +12,7 @@ import SwiftUI
  Future settings could include things like:
    1. automatically clear completed tasks
    2. do/don't rollover uncompleted tasks
+   3. customize notification sound!?
  */
 
 struct SettingsView: View {
