@@ -33,7 +33,9 @@
 		A1E304AB28BBE669004A015E /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304AA28BBE669004A015E /* NotificationScheduler.swift */; };
 		A1E304AD28BBED96004A015E /* DelinterNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304AC28BBED96004A015E /* DelinterNotifications.swift */; };
 		A1E304AF28BBEF23004A015E /* NotificationsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304AE28BBEF23004A015E /* NotificationsError.swift */; };
-		A1E304B128BBF050004A015E /* UserDefaults+ScheduledTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B028BBF050004A015E /* UserDefaults+ScheduledTimes.swift */; };
+		A1E304B128BBF050004A015E /* UserDefaults+AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */; };
+		A1E304B428BC18FC004A015E /* EnvironmentValues+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B328BC18FC004A015E /* EnvironmentValues+UserDefaults.swift */; };
+		A1E304B828BC1C66004A015E /* UserDefaults+Mocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */; };
 		A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */; };
 		A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95728B05CD600FACCDA /* SettingsView.swift */; };
 		A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95928B167D200FACCDA /* SettingsRow.swift */; };
@@ -90,7 +92,9 @@
 		A1E304AA28BBE669004A015E /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		A1E304AC28BBED96004A015E /* DelinterNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelinterNotifications.swift; sourceTree = "<group>"; };
 		A1E304AE28BBEF23004A015E /* NotificationsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsError.swift; sourceTree = "<group>"; };
-		A1E304B028BBF050004A015E /* UserDefaults+ScheduledTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+ScheduledTimes.swift"; sourceTree = "<group>"; };
+		A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppSettings.swift"; sourceTree = "<group>"; };
+		A1E304B328BC18FC004A015E /* EnvironmentValues+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+UserDefaults.swift"; sourceTree = "<group>"; };
+		A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Mocked.swift"; sourceTree = "<group>"; };
 		A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterConstants.swift; sourceTree = "<group>"; };
 		A1F6E95728B05CD600FACCDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1F6E95928B167D200FACCDA /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
@@ -175,7 +179,7 @@
 				A1F6E95228B0577D00FACCDA /* App */,
 				A1F6E94F28B0571D00FACCDA /* Views */,
 				A1F6E95028B0572700FACCDA /* Models */,
-				A1E304A628BAEF9C004A015E /* CoreData */,
+				A1E304B528BC1A65004A015E /* LocalDataHandling */,
 				A1E304A928BBE639004A015E /* Notifications */,
 				A16D3B7C28B96FAC00DB8EA3 /* Autogen */,
 				A1F6E95128B0576A00FACCDA /* Resources */,
@@ -240,9 +244,27 @@
 				A1E304AA28BBE669004A015E /* NotificationScheduler.swift */,
 				A1E304AC28BBED96004A015E /* DelinterNotifications.swift */,
 				A1E304AE28BBEF23004A015E /* NotificationsError.swift */,
-				A1E304B028BBF050004A015E /* UserDefaults+ScheduledTimes.swift */,
 			);
 			path = Notifications;
+			sourceTree = "<group>";
+		};
+		A1E304B528BC1A65004A015E /* LocalDataHandling */ = {
+			isa = PBXGroup;
+			children = (
+				A1E304A628BAEF9C004A015E /* CoreData */,
+				A1E304B628BC1A89004A015E /* UserDefaults */,
+			);
+			path = LocalDataHandling;
+			sourceTree = "<group>";
+		};
+		A1E304B628BC1A89004A015E /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				A1E304B328BC18FC004A015E /* EnvironmentValues+UserDefaults.swift */,
+				A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */,
+				A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		A1F6E94F28B0571D00FACCDA /* Views */ = {
@@ -466,10 +488,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A187994528B02BF700223F6F /* ListItem.swift in Sources */,
-				A1E304B128BBF050004A015E /* UserDefaults+ScheduledTimes.swift in Sources */,
+				A1E304B128BBF050004A015E /* UserDefaults+AppSettings.swift in Sources */,
 				A1E3049E28BAA9C6004A015E /* DataModel.xcdatamodeld in Sources */,
 				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
 				A16D3B9A28BA957200DB8EA3 /* TabsContainerView.swift in Sources */,
+				A1E304B828BC1C66004A015E /* UserDefaults+Mocked.swift in Sources */,
 				A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift in Sources */,
 				A1E304AB28BBE669004A015E /* NotificationScheduler.swift in Sources */,
 				A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */,
@@ -486,6 +509,7 @@
 				A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */,
 				A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */,
 				A1E304AD28BBED96004A015E /* DelinterNotifications.swift in Sources */,
+				A1E304B428BC18FC004A015E /* EnvironmentValues+UserDefaults.swift in Sources */,
 				A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */,
 				A1E304A428BAC074004A015E /* String+Localized.swift in Sources */,
 				A1E304AF28BBEF23004A015E /* NotificationsError.swift in Sources */,

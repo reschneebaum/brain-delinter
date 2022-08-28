@@ -55,7 +55,7 @@ private extension NotificationScheduler {
     
     func scheduleNotifications() async {
         let currentRequests = await notificationCenter.pendingNotificationRequests()
-        // Notifications are already scheduled; don't need to schedule them again.
+        // Notifications are already scheduled; we don't need to schedule them again.
         guard currentRequests.isEmpty else { return }
         
         // Can't schedule a notification with no start/end times

@@ -14,6 +14,7 @@ struct SettingsRow<Content: View>: View {
     var body: some View {
         VStack(alignment: .leading, spacing: Padding.xSmall.rawValue) {
             content()
+                .font(.Rounded.Medium.body)
             
             Text(description)
                 .font(.Italic.footnote)

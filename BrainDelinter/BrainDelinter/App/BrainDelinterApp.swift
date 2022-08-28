@@ -14,12 +14,14 @@ struct BrainDelinterApp: App {
     @StateObject private var dataStore: LocalDataStore = .init()
     @StateObject private var navigationState: AppNavigationState = .init()
     private let notificationScheduler: NotificationScheduler = .init()
+    private let userDefaults: UserDefaults = .standard
     
     var body: some Scene {
         WindowGroup {
             TabsContainerView()
                 .environmentObject(navigationState)
                 .environmentObject(dataStore)
+                .environment(\.userDefaults, userDefaults)
                 .environment(\.managedObjectContext, dataStore.managedObjectContext) // do i need this??
         }
         .onChange(of: scenePhase) { newValue in

@@ -1,5 +1,5 @@
 //
-//  UserDefaults+ScheduledTimes.swift
+//  UserDefaults+AppSettings.swift
 //  BrainDelinter
 //
 //  Created by Rachel Schneebaum on 8/28/22.
@@ -26,17 +26,30 @@ extension UserDefaults {
     }
     
     var scheduledStartTime: Date? {
-        get { object(forKey: Keys.startTime) as? Date }
+        get {
+            object(forKey: Keys.startTime) as? Date
+        }
         set {
             set(newValue, forKey: Keys.startTime)
         }
     }
     
     var interval: Int {
-        get { integer(forKey: Keys.interval) }
+        get {
+            integer(forKey: Keys.interval)
+        }
         set {
             guard newValue > 0 else { return }
             set(newValue, forKey: Keys.interval)
+        }
+    }
+    
+    var allowSnooze: Bool {
+        get {
+            bool(forKey: Keys.snooze)
+        }
+        set {
+            set(newValue, forKey: Keys.snooze)
         }
     }
 }
@@ -44,4 +57,5 @@ extension UserDefaults {
 private enum Keys {
     static let startTime = "ScheduledStartTime"
     static let interval = "BetweenAlarmInterval"
+    static let snooze = "AllowSnooze"
 }

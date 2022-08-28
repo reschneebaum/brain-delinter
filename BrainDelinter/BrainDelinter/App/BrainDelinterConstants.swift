@@ -9,6 +9,10 @@ import SwiftUI
 
 enum Constants {
     static let oneDayInSeconds: TimeInterval = 24 * 60 * 60 * 60
+    /// 20 minutes
+    static let defaultTimeInterval = 20
+    /// 10...60 (minutes)
+    static let durationRange = 10...60
 }
 
 enum Padding: CGFloat {
@@ -40,6 +44,11 @@ extension Font {
             static let body: Font = .system(size: 15, weight: .light, design: .rounded)
             /// System | size 13
             static let bodyS: Font = .system(size: 13, weight: .light, design: .rounded)
+        }
+        
+        enum Medium {
+            /// System | size 15
+            static let body: Font = .system(size: 15, weight: .medium, design: .rounded)
         }
         
         /// System | size 13
