@@ -7,6 +7,7 @@
 
 import CoreData
 import SwiftUI
+import DelinterNotifications
 
 @main
 struct BrainDelinterApp: App {

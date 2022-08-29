@@ -20,7 +20,7 @@ extension UNNotificationRequest {
     }
 }
 
-private enum DelinterNotification {
+enum DelinterNotification {
     case dailyStartTime(DateComponents)
     case dailyEndTime(DateComponents)
     
@@ -44,15 +44,15 @@ private enum DelinterNotification {
         
         switch self {
         case .dailyStartTime:
-            content.title = Localized.Notification.Start.title
-            content.body = Localized.Notification.Start.body
+            content.title = Localized.Alarm.Start.title
+            content.body = Localized.Alarm.Start.body
             content.categoryIdentifier = Category.alarm.rawValue
             content.sound = .default
             content.interruptionLevel = .timeSensitive
             
         case .dailyEndTime:
-            content.title = Localized.Notification.End.title
-            content.body = Localized.Notification.End.body
+            content.title = Localized.Alarm.End.title
+            content.body = Localized.Alarm.End.body
             content.categoryIdentifier = Category.alarm.rawValue
             content.sound = .default
             content.interruptionLevel = .timeSensitive

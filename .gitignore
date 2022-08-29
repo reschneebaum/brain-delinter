@@ -34,6 +34,11 @@ playground.xcworkspace
 # the file causes problems, we can remove this and find another solution.
 Package.resolved
 
+
+## SwiftGen stencil
+swiftui5.stencil
+swiftui-colors.stencil
+
 ## fastlane
 fastlane/report.xml
 fastlane/screenshots/**/*.png

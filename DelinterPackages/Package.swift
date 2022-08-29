@@ -13,6 +13,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(name: "DelinterComponents", targets: ["DelinterComponents"]),
         .library(name: "DelinterNavigation", targets: ["DelinterNavigation"]),
+        .library(name: "DelinterNotifications", targets: ["DelinterNotifications"]),
     ],
 //    dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,6 +24,13 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(name: "DelinterComponents", dependencies: []),
         .target(name: "DelinterNavigation", dependencies: []),
+        .target(
+            name: "DelinterNotifications",
+            dependencies: [],
+            resources: [
+                .process("Resources"),
+            ]
+        ),
         .testTarget(
             name: "DelinterNavigationTests",
             dependencies: ["DelinterNavigation"]

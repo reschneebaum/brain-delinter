@@ -19,8 +19,3 @@
 "Tab.list" = "list";
 "Tab.stats" = "stats";
 "Tab.settings" = "settings";
-
-"Notification.Start.title" = "it's go time";
-"Notification.End.title" = "it's over!";
-"Notification.Start.body" = "ready to get things done?? you got this!";
-"Notification.End.body" = "finish up whatever you're going and give yourself a pat on the back because you did it!";

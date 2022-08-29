@@ -8,21 +8,21 @@
 import Foundation
 import UserNotifications
 
-class NotificationScheduler: NSObject, ObservableObject {
+public class NotificationScheduler: NSObject, ObservableObject {
     private let notificationCenter: UNUserNotificationCenter
     private let userDefaults: UserDefaults
     
     // MARK: Init
     
-    init(notificationCenter: UNUserNotificationCenter = .current(), userDefaults: UserDefaults = .standard) {
+    public init(notificationCenter: UNUserNotificationCenter = .current(), userDefaults: UserDefaults = .standard) {
         self.notificationCenter = notificationCenter
         self.userDefaults = userDefaults
     }
     
-    // MARK: Internal Methods
+    // MARK: Public Methods
     
     /// Synchronous version; also see asynchronous version of the same name
-    func configureNotificationsSession() {
+    public func configureNotificationsSession() {
         Task.detached(priority: .background) {
             guard await self.requestPermission() else { return }
             await self.scheduleNotifications()
@@ -30,7 +30,7 @@ class NotificationScheduler: NSObject, ObservableObject {
     }
     
     /// Asynchronous version; also see synchronous version of the same name
-    func configureNotificationsSession() async {
+    public func configureNotificationsSession() async {
         guard await requestPermission() else { return }
         await scheduleNotifications()
     }
@@ -78,7 +78,7 @@ private extension NotificationScheduler {
 // MARK: UNUserNotificationCenterDelegate
 
 extension NotificationScheduler: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
         switch response.actionIdentifier {
         case UNNotificationDefaultActionIdentifier:
             // TODO: handle deeplinking when(/if?) necessary

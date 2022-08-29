@@ -1,17 +1,23 @@
 # Global input path (applied to every input in the file)
 # (comment out this line if no longer applicable)
-input_dir: BrainDelinter/BrainDelinter/
+# input_dir: BrainDelinter/BrainDelinter/
 
 # Global output path (applied to every output in the file)
-output_dir: BrainDelinter/BrainDelinter/Autogen/
+# output_dir: BrainDelinter/BrainDelinter/Autogen/
 
 # String handling
 
 strings:
-  inputs: Resources
-  outputs:
+  - inputs: BrainDelinter/BrainDelinter/Resources
+    outputs:
     - templateName: structured-swift5
-      output: String+Localized.swift
+      output: BrainDelinter/BrainDelinter/Autogen/String+Localized.swift
+      params:
+        enumName: Localized
+  - inputs: DelinterPackages/Sources/DelinterNotifications/Resources
+    outputs:
+    - templateName: structured-swift5
+      output: DelinterPackages/Sources/DelinterNotifications/Autogen/String+Localized.swift
       params:
         enumName: Localized
 
@@ -19,16 +25,16 @@ strings:
 
 xcassets:
   - inputs:
-    - Resources/Assets/Assets.xcassets
-    - Resources/PreviewContent/PreviewAssets.xcassets
+    - BrainDelinter/BrainDelinter/Resources/Assets/Assets.xcassets
+    - BrainDelinter/BrainDelinter/Resources/PreviewContent/PreviewAssets.xcassets
     outputs:
       templatePath: BrainDelinter/BrainDelinter/Resources/swiftui.stencil
-      output: Assets.swift
+      output: BrainDelinter/BrainDelinter/Autogen/Assets.swift
       
-  - inputs: Resources/Assets/Colors.xcassets
+  - inputs: BrainDelinter/BrainDelinter/Resources/Assets/Colors.xcassets
     outputs:
       templatePath: BrainDelinter/BrainDelinter/Resources/swiftui-colors.stencil
-      output: Color+ColorAssets.swift
+      output: BrainDelinter/BrainDelinter/Autogen/Color+ColorAssets.swift
       params:
         enumName: Color
     
