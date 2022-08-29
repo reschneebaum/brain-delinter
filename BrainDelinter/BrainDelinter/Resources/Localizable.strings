@@ -12,6 +12,10 @@
 "Settings.Duration.title" = "how long?";
 "Settings.Duration.description" = "we strongly recommend a 'do things' time of 20 minutes; much longer (or shorter) won't have the desired effect.";
 
+"Settings.List.sectionHeader" = "list settings";
+"Settings.Delete.title" = "clear all list items";
+"Settings.Delete.body" = "careful, this can't be undone! 😬";
+
 "Stats.title" = "Stats";
 "Stats.wipExplainerHeader" = "coming soon...";
 "Stats.wipExplainerBody" = "track your progress over time!";

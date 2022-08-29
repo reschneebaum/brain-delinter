@@ -14,10 +14,18 @@ strings:
       output: BrainDelinter/BrainDelinter/Autogen/String+Localized.swift
       params:
         enumName: Localized
+        
   - inputs: DelinterPackages/Sources/DelinterNotifications/Resources
     outputs:
     - templateName: structured-swift5
       output: DelinterPackages/Sources/DelinterNotifications/Autogen/String+Localized.swift
+      params:
+        enumName: Localized
+
+  - inputs: DelinterPackages/Sources/DelinterComponents/Resources
+    outputs:
+    - templateName: structured-swift5
+      output: DelinterPackages/Sources/DelinterComponents/Autogen/String+Localized.swift
       params:
         enumName: Localized
 

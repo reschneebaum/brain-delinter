@@ -176,7 +176,6 @@
 				A1F6E94F28B0571D00FACCDA /* Views */,
 				A1F6E95028B0572700FACCDA /* Models */,
 				A1E304B528BC1A65004A015E /* LocalDataHandling */,
-				A1E304A928BBE639004A015E /* Notifications */,
 				A16D3B7C28B96FAC00DB8EA3 /* Autogen */,
 				A1F6E95128B0576A00FACCDA /* Resources */,
 			);
@@ -232,13 +231,6 @@
 				A1E304A728BAF891004A015E /* MockDataStore.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		A1E304A928BBE639004A015E /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Notifications;
 			sourceTree = "<group>";
 		};
 		A1E304B528BC1A65004A015E /* LocalDataHandling */ = {

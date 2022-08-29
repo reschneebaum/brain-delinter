@@ -5,18 +5,28 @@
 //  Created by Rachel Schneebaum on 8/28/22.
 //
 
-import Foundation
+import Combine
 import UserNotifications
 
 public class NotificationScheduler: NSObject, ObservableObject {
     private let notificationCenter: UNUserNotificationCenter
     private let userDefaults: UserDefaults
+    private var disposables: Set<AnyCancellable> = []
     
     // MARK: Init
     
     public init(notificationCenter: UNUserNotificationCenter = .current(), userDefaults: UserDefaults = .standard) {
         self.notificationCenter = notificationCenter
         self.userDefaults = userDefaults
+        super.init()
+        
+        let startPublisher = userDefaults.publisher(for: \.scheduledStartTime).didChange().eraseToAnyPublisher()
+        let durationPublisher = userDefaults.publisher(for: \.duration).didChange().eraseToAnyPublisher()
+        
+        Publishers.CombineLatest(startPublisher, durationPublisher).sink { [weak self] _ in
+            self?.updateNotificationTimes()
+        }
+        .store(in: &disposables)
     }
     
     // MARK: Public Methods
@@ -34,16 +44,24 @@ public class NotificationScheduler: NSObject, ObservableObject {
         guard await requestPermission() else { return }
         await scheduleNotifications()
     }
+    
+    public func updateNotificationTimes() {
+        clearCurrentScheduledNotifications()
+        
+        Task.detached(priority: .userInitiated) {
+            await self.scheduleNotifications()
+        }
+    }
 }
 
 // MARK: Private Extension
 
 private extension NotificationScheduler {
-    func requestPermission() async -> Bool {
+    func authorizationPermissionGranted() async -> Bool? {
         let status = await notificationCenter.notificationSettings().authorizationStatus
         switch status {
         case .notDetermined:
-            return (try? await notificationCenter.requestAuthorization()) ?? false
+            return nil
         case .denied:
             return false
         case .authorized, .provisional, .ephemeral:
@@ -53,36 +71,65 @@ private extension NotificationScheduler {
         }
     }
     
+    func requestPermission() async -> Bool {
+        if let permissionStatus = await authorizationPermissionGranted() {
+            // Permission has already been granted (or denied), no need to request again.
+            return permissionStatus
+        }
+        if let requestAuthorized = try? await notificationCenter.requestAuthorization(
+            options: [.sound, .alert, .badge, .carPlay]
+        ) {
+            print("authorized? \(requestAuthorized)")
+            return requestAuthorized
+        }
+        return false
+    }
+    
     func scheduleNotifications() async {
         let currentRequests = await notificationCenter.pendingNotificationRequests()
+        print("current requests: \(currentRequests.map(\.identifier))")
+        
         // Notifications are already scheduled; we don't need to schedule them again.
-        guard currentRequests.isEmpty else { return }
+        if !currentRequests.isEmpty,
+            Set(NotificationConfig.allCases.map(\.rawValue)).isSubset(of: Set(currentRequests.map(\.identifier))) {
+            return
+        }
         
         // Can't schedule a notification with no start/end times
         guard let startTime = userDefaults.startTimeComponents,
-              let endTime = userDefaults.endTimeComponents else { return }
+              let endTime = userDefaults.endTimeComponents else {
+            return
+        }
         
         do {
             try await notificationCenter.add(.dailyStartTime(at: startTime))
             try await notificationCenter.add(.dailyEndTime(at: endTime))
+            print("notifications scheduled!")
         } catch {
             print("error scheduling notifications: \(error.localizedDescription)")
         }
     }
     
     func clearCurrentScheduledNotifications() {
-        notificationCenter.removeAllPendingNotificationRequests()
+//        notificationCenter.removeAllPendingNotificationRequests()
+        notificationCenter.removePendingNotificationRequests(
+            withIdentifiers: NotificationConfig.allCases.map(\.rawValue)
+        )
     }
 }
 
 // MARK: UNUserNotificationCenterDelegate
 
 extension NotificationScheduler: UNUserNotificationCenterDelegate {
-    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+    public func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse
+    ) async {
         switch response.actionIdentifier {
         case UNNotificationDefaultActionIdentifier:
             // TODO: handle deeplinking when(/if?) necessary
-                break
+            print("notification tapped")
+            break
         default: break
         }
     }

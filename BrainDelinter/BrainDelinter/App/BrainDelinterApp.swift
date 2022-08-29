@@ -7,6 +7,7 @@
 
 import CoreData
 import SwiftUI
+import DelinterComponents
 import DelinterNotifications
 
 @main
@@ -14,6 +15,7 @@ struct BrainDelinterApp: App {
     @Environment(\.scenePhase) var scenePhase
     @StateObject private var dataStore: LocalDataStore = .init()
     @StateObject private var navigationState: AppNavigationState = .init()
+    @StateObject private var alertManager: AlertManager = .init()
     private let notificationScheduler: NotificationScheduler = .init()
     private let userDefaults: UserDefaults = .standard
     
@@ -22,6 +24,7 @@ struct BrainDelinterApp: App {
             TabsContainerView()
                 .environmentObject(navigationState)
                 .environmentObject(dataStore)
+                .environmentObject(alertManager)
                 .environment(\.userDefaults, userDefaults)
                 .environment(\.managedObjectContext, dataStore.managedObjectContext) // do i need this??
         }
@@ -31,18 +34,8 @@ struct BrainDelinterApp: App {
                 // Make sure the core data db is updated with the environment moc whenever leaving the app
                 dataStore.save()
                 
-            case .active:
-                // Uncomment to delete all current items
-                /*
-                #if DEBUG
-                let items = dataStore.getStoredItems()
-                dataStore.deleteItems(items)
-                #endif
-                 */
-                break
-                
-            @unknown default:
-                break
+            case .active: break
+            @unknown default: break
             }
         }
     }

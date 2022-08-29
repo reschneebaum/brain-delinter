@@ -12,6 +12,7 @@ protocol DataStoreInterface: ObservableObject {
     var managedObjectContext: NSManagedObjectContext { get }
     func save()
     func addItem(_ text: String)
+    func clearAllItems()
 }
 
 final class LocalDataStore: ObservableObject, DataStoreInterface {
@@ -41,13 +42,15 @@ final class LocalDataStore: ObservableObject, DataStoreInterface {
         ManagedListItem.createNewItem(with: text, in: managedObjectContext)
     }
     
-    func deleteItems(_ items: [ManagedListItem]) {
-        items.forEach {
-            managedObjectContext.delete($0)
-        }
-        try? managedObjectContext.save()
+    func clearAllItems() {
+        let allItems = getStoredItems()
+        deleteItems(allItems)
     }
-    
+}
+
+// MARK: Private Extension
+
+private extension LocalDataStore {
     func getStoredItems() -> [ManagedListItem] {
         let fetchRequest = ManagedListItem.fetchRequest()
         
@@ -57,6 +60,13 @@ final class LocalDataStore: ObservableObject, DataStoreInterface {
             print("error fetching list items: \(error.localizedDescription)")
             return []
         }
+    }
+    
+    func deleteItems(_ items: [ManagedListItem]) {
+        items.forEach {
+            managedObjectContext.delete($0)
+        }
+        try? managedObjectContext.save()
     }
 }
 

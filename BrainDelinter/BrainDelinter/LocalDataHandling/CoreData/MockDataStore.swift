@@ -43,4 +43,8 @@ final class MockDataStore: ObservableObject, DataStoreInterface {
     func addItem(_ text: String) {
         // todo
     }
+    
+    func clearAllItems() {
+        // todo
+    }
 }

@@ -1,13 +1,10 @@
-//
-//  File.swift
-//  
-//
-//  Created by Rachel Schneebaum on 8/29/22.
-//
-
 import Foundation
 
 public extension UserDefaults {
+    var hasScheduledNotifications: Bool {
+        scheduledStartTime != nil && duration > 0
+    }
+    
     var startTimeComponents: DateComponents? {
         guard let startTime = scheduledStartTime else {
             return nil
@@ -16,36 +13,38 @@ public extension UserDefaults {
     }
     
     var endTimeComponents: DateComponents? {
-        guard let startTimeComponents = startTimeComponents, interval > 0 else {
+        guard let startTimeComponents = startTimeComponents, duration > 0 else {
             return nil
         }
         var endTimeComponents = DateComponents()
         endTimeComponents.hour = startTimeComponents.hour ?? 0
-        endTimeComponents.minute = startTimeComponents.minute ?? 0 + interval
+        endTimeComponents.minute = startTimeComponents.minute ?? 0 + duration
         return endTimeComponents
     }
     
-    var scheduledStartTime: Date? {
+    @objc var scheduledStartTime: Date? {
         get {
             object(forKey: Keys.startTime) as? Date
         }
         set {
+            guard let newValue = newValue else { return }
             set(newValue, forKey: Keys.startTime)
         }
     }
     
-    var interval: Int {
+    @objc var duration: Int {
         get {
-            integer(forKey: Keys.interval)
+            integer(forKey: Keys.duration)
         }
         set {
             guard newValue > 0 else { return }
-            set(newValue, forKey: Keys.interval)
+            set(newValue, forKey: Keys.duration)
         }
     }
 }
 
 private enum Keys {
     static let startTime = "ScheduledStartTime"
-    static let interval = "BetweenAlarmInterval"
+    static let endTime = "ScheduledEndTime"
+    static let duration = "BetweenAlarmInterval"
 }

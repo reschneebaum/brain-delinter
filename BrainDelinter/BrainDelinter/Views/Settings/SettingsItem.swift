@@ -31,3 +31,20 @@ enum SettingsItem: String, CaseIterable {
         }
     }
 }
+
+enum SettingsActionItem: String, CaseIterable {
+    case clearList
+    
+    var title: String {
+        switch self {
+        case .clearList:
+            return Localized.Settings.Delete.title
+        }
+    }
+    var description: String {
+        switch self {
+        case .clearList:
+            return Localized.Settings.Delete.body
+        }
+    }
+}

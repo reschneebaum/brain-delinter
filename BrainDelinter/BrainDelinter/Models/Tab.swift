@@ -32,3 +32,9 @@ enum Tab: String, CaseIterable {
         }
     }
 }
+
+extension Tab: Identifiable {
+    var id: String {
+        rawValue
+    }
+}

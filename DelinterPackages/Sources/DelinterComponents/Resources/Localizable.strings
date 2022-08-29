@@ -1,0 +1,8 @@
+
+"Alert.ClearList.title" = "you sure?";
+"Alert.ClearList.message" = "(this will delete *all* list items, complete and incomplete)";
+"Alert.ClearList.actionTitle" = "I'm sure";
+
+"cancel" = "cancel";
+"error" = "error";
+"ok" = "ok";
