@@ -15,7 +15,7 @@ protocol DataStoreInterface: ObservableObject {
     func clearAllItems()
 }
 
-final class LocalDataStore: ObservableObject, DataStoreInterface {
+final class LocalDataStore: DataStoreInterface {
     private let container: NSPersistentContainer
     var managedObjectContext: NSManagedObjectContext {
         container.viewContext
@@ -66,26 +66,16 @@ private extension LocalDataStore {
         items.forEach {
             managedObjectContext.delete($0)
         }
-        try? managedObjectContext.save()
     }
 }
 
-// NOTE: The following methods are not needed/used since we're accessing managed objects and
-// our moc directly. If we want to wrap core data and use the old `ListItem` throughout, uncomment:
-/*
+// TODO: The method in this extension is not needed/used since we're accessing managed objects + context directly
+
 extension LocalDataStore {
-    func getStoredItems() -> [ManagedListItem] {
-        let fetchRequest = ManagedListItem.fetchRequest()
-        
-        do {
-            return try container.viewContext.fetch(fetchRequest)
-        } catch {
-            print("error fetching list items: \(error.localizedDescription)")
-            return []
-        }
-    }
-    
+    /// I need to decide whether to a) try wrapping core data again (ideally in a separate package) _or_ b) remove
+    /// the `ListItem` model — and this extension — from the workspace entirely.
     func persistLocalItems(_ items: [ListItem]? = nil) {
+        /*
         let currentItems = getStoredItems()
         let newItems = items ?? []
         
@@ -106,11 +96,6 @@ extension LocalDataStore {
         }
         
         try? container.viewContext.save()
-    }
-    
-    func deleteItem(_ item: ManagedListItem) {
-        container.viewContext.delete(item)
-        try? container.viewContext.save()
+         */
     }
 }
-*/
