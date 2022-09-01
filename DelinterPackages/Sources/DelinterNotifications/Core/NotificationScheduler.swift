@@ -20,8 +20,14 @@ public class NotificationScheduler: NSObject, ObservableObject {
         self.userDefaults = userDefaults
         super.init()
         
-        let startPublisher = userDefaults.publisher(for: \.scheduledStartTime).didChange().eraseToAnyPublisher()
-        let durationPublisher = userDefaults.publisher(for: \.duration).didChange().eraseToAnyPublisher()
+        let startPublisher = userDefaults.publisher(for: \.scheduledStartTime)
+            .removeDuplicates()
+            .dropFirst()
+            .eraseToAnyPublisher()
+        let durationPublisher = userDefaults.publisher(for: \.duration)
+            .removeDuplicates()
+            .dropFirst()
+            .eraseToAnyPublisher()
         
         Publishers.CombineLatest(startPublisher, durationPublisher).sink { [weak self] _ in
             self?.updateNotificationTimes()
@@ -48,7 +54,7 @@ public class NotificationScheduler: NSObject, ObservableObject {
     public func updateNotificationTimes() {
         clearCurrentScheduledNotifications()
         
-        Task.detached(priority: .userInitiated) {
+        Task.detached(priority: .background) {
             await self.scheduleNotifications()
         }
     }

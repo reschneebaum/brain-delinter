@@ -8,14 +8,14 @@
 import SwiftUI
 
 public class AlertManager: ObservableObject {
-    @Published var isPresented = false
+    @Published public var isPresented = false
     @Published var error: LocalizedError? {
         didSet {
             isPresented = error != nil
         }
     }
 
-    @Published var alert: Alert? {
+    @Published public var alert: Alert? {
         didSet {
             isPresented = alert != nil
         }

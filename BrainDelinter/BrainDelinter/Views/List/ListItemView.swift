@@ -12,10 +12,8 @@ struct ListItemView: View {
     @ObservedObject var item: ManagedListItem
     
     var body: some View {
-        VStack {
-            CheckboxToggle(isOn: $item.isComplete) {
-                checkboxContent
-            }
+        CheckboxToggle(isOn: $item.isComplete) {
+            checkboxContent
         }
         .padding(.horizontal, Padding.small.rawValue)
     }

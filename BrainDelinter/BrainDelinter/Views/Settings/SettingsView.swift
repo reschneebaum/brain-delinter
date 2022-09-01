@@ -24,7 +24,7 @@ struct SettingsView: View {
     @State private var allowSnooze = false
     /// Default time interval is 20 minutes.
     @State private var duration = Constants.defaultTimeInterval
-    @State private var showDeleteAlert = false
+    @State private var isSaveNeeded = false
     
     private let durationRange = Constants.durationRange
     private let alarmSettings = SettingsItem.allCases
@@ -46,7 +46,6 @@ struct SettingsView: View {
         }
         .navigationTitle(Localized.Settings.title)
         .navigationBarTitleDisplayMode(.inline)
-        .alertPresenting(alertManager)
     }
     
     private var alarmSettingsSectionContent: some View {
