@@ -15,7 +15,6 @@ struct BrainDelinterApp: App {
     @Environment(\.scenePhase) var scenePhase
     @StateObject private var dataStore: LocalDataStore = .init()
     @StateObject private var navigationState: AppNavigationState = .init()
-    @StateObject private var alertManager: AlertManager = .init()
     private let notificationScheduler: NotificationScheduler = .init()
     private let userDefaults: UserDefaults = .standard
     
@@ -24,7 +23,6 @@ struct BrainDelinterApp: App {
             TabsContainerView()
                 .environmentObject(navigationState)
                 .environmentObject(dataStore)
-                .environmentObject(alertManager)
                 .environment(\.userDefaults, userDefaults)
                 .environment(\.managedObjectContext, dataStore.managedObjectContext) // do i need this??
         }
@@ -33,6 +31,7 @@ struct BrainDelinterApp: App {
             case .background, .inactive:
                 // Make sure the core data db is updated with the environment moc whenever leaving the app
                 dataStore.save()
+                print("active tab: \(navigationState.selectedTab?.title)")
                 
             case .active: break
             @unknown default: break
@@ -41,6 +40,9 @@ struct BrainDelinterApp: App {
     }
     
     init() {
-        notificationScheduler.configureNotificationsSession()
+        if userDefaults.scheduledStartTime != nil {
+            // we already have a scheduled time; check permission (+ schedule if needed)
+            notificationScheduler.configureNotificationsSession()
+        }
     }
 }

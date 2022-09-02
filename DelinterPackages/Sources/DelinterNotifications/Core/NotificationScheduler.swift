@@ -85,7 +85,6 @@ private extension NotificationScheduler {
         if let requestAuthorized = try? await notificationCenter.requestAuthorization(
             options: [.sound, .alert, .badge, .carPlay]
         ) {
-            print("authorized? \(requestAuthorized)")
             return requestAuthorized
         }
         return false
@@ -93,7 +92,6 @@ private extension NotificationScheduler {
     
     func scheduleNotifications() async {
         let currentRequests = await notificationCenter.pendingNotificationRequests()
-        print("current requests: \(currentRequests.map(\.identifier))")
         
         // Notifications are already scheduled; we don't need to schedule them again.
         if !currentRequests.isEmpty,
@@ -110,14 +108,13 @@ private extension NotificationScheduler {
         do {
             try await notificationCenter.add(.dailyStartTime(at: startTime))
             try await notificationCenter.add(.dailyEndTime(at: endTime))
-            print("notifications scheduled!")
         } catch {
+            // TODO: Better error handling
             print("error scheduling notifications: \(error.localizedDescription)")
         }
     }
     
     func clearCurrentScheduledNotifications() {
-//        notificationCenter.removeAllPendingNotificationRequests()
         notificationCenter.removePendingNotificationRequests(
             withIdentifiers: NotificationConfig.allCases.map(\.rawValue)
         )
@@ -135,7 +132,7 @@ extension NotificationScheduler: UNUserNotificationCenterDelegate {
         case UNNotificationDefaultActionIdentifier:
             // TODO: handle deeplinking when(/if?) necessary
             print("notification tapped")
-            break
+
         default: break
         }
     }

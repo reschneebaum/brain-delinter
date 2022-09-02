@@ -15,7 +15,7 @@ protocol DataStoreInterface: ObservableObject {
     func clearAllItems()
 }
 
-final class LocalDataStore: ObservableObject, DataStoreInterface {
+final class LocalDataStore: DataStoreInterface {
     private let container: NSPersistentContainer
     var managedObjectContext: NSManagedObjectContext {
         container.viewContext
@@ -66,7 +66,6 @@ private extension LocalDataStore {
         items.forEach {
             managedObjectContext.delete($0)
         }
-        try? managedObjectContext.save()
     }
 }
 

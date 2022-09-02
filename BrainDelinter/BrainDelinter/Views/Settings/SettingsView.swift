@@ -18,13 +18,12 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.userDefaults) var userDefaults
     @EnvironmentObject var dataStore: LocalDataStore
-    @EnvironmentObject var alertManager: AlertManager
     
     @State private var selectedDate: Date = .now
     @State private var allowSnooze = false
     /// Default time interval is 20 minutes.
     @State private var duration = Constants.defaultTimeInterval
-    @State private var isSaveNeeded = false
+    @State private var isAlertPresented = false
     
     private let durationRange = Constants.durationRange
     private let alarmSettings = SettingsItem.allCases
@@ -90,11 +89,15 @@ struct SettingsView: View {
                 TapGesture().onEnded {
                     switch setting {
                     case .clearList:
-                        alertManager.showAlert(for: .clearList(dataStore.clearAllItems))
+                        isAlertPresented = true
                     }
                 }
             )
         }
+        .alert(
+            .clearList(dataStore.clearAllItems),
+            isPresented: $isAlertPresented
+        )
     }
     
     private var durationRowContent: some View {

@@ -38,6 +38,7 @@ struct TabsContainerView: View {
                     Image(systemName: tab.iconName)
                     Text(tab.title)
                 }
+                .tag(tab)
             }
         }
     }
