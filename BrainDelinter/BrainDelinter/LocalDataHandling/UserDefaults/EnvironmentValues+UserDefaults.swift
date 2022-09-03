@@ -24,3 +24,18 @@ extension EnvironmentValues {
 private struct UserDefaultsKey: EnvironmentKey {
     static var defaultValue: UserDefaults = .standard
 }
+
+extension EnvironmentValues {
+    var selectedTab: Tab {
+        get {
+            self[SelectedTabKey.self]
+        }
+        set {
+            self[SelectedTabKey.self] = newValue
+        }
+    }
+}
+
+private struct SelectedTabKey: EnvironmentKey {
+    static var defaultValue: Tab = .list
+}

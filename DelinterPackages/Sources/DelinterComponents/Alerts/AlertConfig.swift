@@ -11,25 +11,32 @@ public enum AlertConfig {
     case error(LocalizedError)
     case clearList(() -> Void)
     
-    var alert: Alert {
+    public var title: String {
+        switch self {
+        case .error:
+            return Localized.error
+        case .clearList:
+            return Localized.Alert.ClearList.title
+        }
+    }
+    
+    public var message: String {
         switch self {
         case let .error(error):
-            return .init(
-                title: .init(Localized.error),
-                message: .init(error.localizedDescription),
-                dismissButton: .cancel(.init(Localized.ok))
-            )
-            
+            return error.localizedDescription
+        case .clearList:
+            return Localized.Alert.ClearList.message
+        }
+    }
+    
+    @ViewBuilder
+    public var actionButtons: some View {
+        switch self {
+        case .error:
+            EmptyView()
         case let .clearList(clearAction):
-            return .init(
-                title: .init(Localized.Alert.ClearList.title),
-                message: .init(Localized.Alert.ClearList.message),
-                primaryButton: .destructive(
-                    .init(Localized.Alert.ClearList.actionTitle),
-                    action: clearAction
-                ),
-                secondaryButton: .cancel()
-            )
+            Button(Localized.cancel, role: .cancel) {}
+            Button(Localized.Alert.ClearList.actionTitle, role: .destructive, action: clearAction)
         }
     }
 }
