@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct TabsContainerView: View {
     @StateObject var navigationState: AppNavigationState = .init()
     @SceneStorage("selectedTab") var selectedTab: Tab = .list
@@ -19,13 +18,13 @@ struct TabsContainerView: View {
                 Group {
                     switch tab {
                     case .list:
-                        ListRouterView()
+                        ListRouterView(stackManager: navigationState.listStackManager)
                         
                     case .stats:
-                        StatsRouterView()
+                        StatsRouterView(stackManager: navigationState.statsStackManager)
                         
                     case .settings:
-                        SettingsRouterView()
+                        SettingsRouterView(stackManager: navigationState.settingsStackManager)
                     }
                 }
                 .tabItem {
