@@ -15,7 +15,7 @@ struct SettingsRouterView: View {
         NavigationStack($navigationState.settingsStackManager.stack) {
             switch $0 {
             case .home:
-                SettingsView()
+                SettingsView<LocalDataStore>()
             }
         }
     }

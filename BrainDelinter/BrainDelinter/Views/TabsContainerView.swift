@@ -7,21 +7,15 @@
 
 import SwiftUI
 
+
 struct TabsContainerView: View {
-    @EnvironmentObject var navigationState: AppNavigationState
-    
-    private var selectedBinding: Binding<Tab?> {
-        .init {
-            navigationState.selectedTab
-        } set: {
-            guard let newValue = $0 else { return }
-            navigationState.selectedTab = newValue
-        }
-    }
+    @StateObject var navigationState: AppNavigationState = .init()
+    @SceneStorage("selectedTab") var selectedTab: Tab = .list
+    let tabs = Tab.allCases
     
     var body: some View {
-        TabView(selection: selectedBinding) {
-            ForEach(navigationState.tabs, id: \.self) { tab in
+        TabView(selection: $selectedTab) {
+            ForEach(tabs, id: \.self) { tab in
                 Group {
                     switch tab {
                     case .list:
@@ -41,12 +35,13 @@ struct TabsContainerView: View {
                 .tag(tab)
             }
         }
+        .environment(\.selectedTab, selectedTab)
+        .environmentObject(navigationState)
     }
 }
 
 struct TabRouterView_Previews: PreviewProvider {
     static var previews: some View {
         TabsContainerView()
-            .environmentObject(AppNavigationState())
     }
 }

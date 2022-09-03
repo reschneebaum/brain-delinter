@@ -35,7 +35,6 @@ final class LocalDataStore: DataStoreInterface {
     
     func save() {
         try? managedObjectContext.save()
-        objectWillChange.send()
     }
     
     func addItem(_ text: String) {

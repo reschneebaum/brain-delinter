@@ -15,13 +15,13 @@ import SwiftUI
    3. customize notification sound!?
  */
 
-struct SettingsView: View {
+struct SettingsView<DataStore: DataStoreInterface>: View {
+    // TODO: Use @AppStorage instead??
     @Environment(\.userDefaults) var userDefaults
-    @EnvironmentObject var dataStore: LocalDataStore
+    @EnvironmentObject var dataStore: DataStore
     
     @State private var selectedDate: Date = .now
     @State private var allowSnooze = false
-    /// Default time interval is 20 minutes.
     @State private var duration = Constants.defaultTimeInterval
     @State private var isAlertPresented = false
     
@@ -53,17 +53,28 @@ struct SettingsView: View {
                 Group {
                     switch setting {
                     case .alarmTime:
-                        TimePicker(selectedTime: $selectedDate, label: setting.title)
+                        TimePicker(selectedTime: $selectedDate, label: setting.title, font: .Rounded.Medium.body)
                             .onChange(of: selectedDate) { newValue in
                                 userDefaults.scheduledStartTime = newValue
                             }
+                        
                     case .snooze:
-                        CheckboxToggle(isOn: $allowSnooze, label: setting.title)
+                        CheckboxToggle(isOn: $allowSnooze, label: setting.title, font: .Rounded.Medium.body)
                             .onChange(of: allowSnooze) { newValue in
                                 userDefaults.allowSnooze = newValue
                             }
+                        
                     case .duration:
-                        durationRowContent
+                        Picker(SettingsItem.duration.title, selection: $duration) {
+                            ForEach(durationRange, id: \.self) {
+                                Text("\($0) min").font(.Rounded.Light.body)
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        .labelStyle(.titleOnly)
+                        .onChange(of: duration) { newValue in
+                            userDefaults.duration = newValue
+                        }
                     }
                 }
             }
@@ -99,35 +110,14 @@ struct SettingsView: View {
             isPresented: $isAlertPresented
         )
     }
-    
-    private var durationRowContent: some View {
-        HStack(spacing: 0) {
-            Text(SettingsItem.duration.title)
-                .font(.Rounded.Medium.body)
-            
-            Spacer()
-            
-            Picker(SettingsItem.duration.title, selection: $duration) {
-                ForEach(durationRange, id: \.self) {
-                    Text("\($0) min")
-                        .font(.Rounded.Light.body)
-                }
-            }
-            .pickerStyle(.menu)
-            .labelStyle(.titleOnly)
-        }
-        .onChange(of: duration) { newValue in
-            userDefaults.duration = newValue
-        }
-    }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            SettingsView()
+            SettingsView<MockDataStore>()
         }
-        .environmentObject(AppNavigationState())
+        .environmentObject(MockDataStore())
         .environment(\.userDefaults, .mocked)
     }
 }
