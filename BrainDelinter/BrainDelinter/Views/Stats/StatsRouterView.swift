@@ -9,10 +9,10 @@ import SwiftUI
 import DelinterNavigation
 
 struct StatsRouterView: View {
-    @EnvironmentObject var navigationState: AppNavigationState
+    @ObservedObject var stackManager: NavigationStackManager<StatsRoute>
     
     var body: some View {
-        NavigationStack($navigationState.listStackManager.stack) {
+        NavigationStack($stackManager.stack) {
             switch $0 {
             case .home:
                 StatsView()
@@ -27,7 +27,6 @@ enum StatsRoute {
 
 struct StatsRouterView_Previews: PreviewProvider {
     static var previews: some View {
-        StatsRouterView()
-            .environmentObject(AppNavigationState())
+        StatsRouterView(stackManager: .init(withRoot: .home))
     }
 }

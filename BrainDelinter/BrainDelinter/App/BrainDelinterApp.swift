@@ -14,17 +14,13 @@ import DelinterNotifications
 struct BrainDelinterApp: App {
     @Environment(\.scenePhase) var scenePhase
     @StateObject private var dataStore: LocalDataStore = .init()
-    @StateObject private var navigationState: AppNavigationState = .init()
-    @StateObject private var alertManager: AlertManager = .init()
     private let notificationScheduler: NotificationScheduler = .init()
     private let userDefaults: UserDefaults = .standard
     
     var body: some Scene {
         WindowGroup {
             TabsContainerView()
-                .environmentObject(navigationState)
                 .environmentObject(dataStore)
-                .environmentObject(alertManager)
                 .environment(\.userDefaults, userDefaults)
                 .environment(\.managedObjectContext, dataStore.managedObjectContext) // do i need this??
         }
@@ -41,6 +37,9 @@ struct BrainDelinterApp: App {
     }
     
     init() {
-        notificationScheduler.configureNotificationsSession()
+        if userDefaults.scheduledStartTime != nil {
+            // we already have a scheduled time; check permission (+ schedule if needed)
+            notificationScheduler.configureNotificationsSession()
+        }
     }
 }
