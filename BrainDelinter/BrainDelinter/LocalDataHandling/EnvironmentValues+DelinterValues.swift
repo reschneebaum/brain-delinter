@@ -1,5 +1,5 @@
 //
-//  EnvironmentValues+UserDefaults.swift
+//  EnvironmentValues+DelinterValues.swift
 //  BrainDelinter
 //
 //  Created by Rachel Schneebaum on 8/28/22.
@@ -19,14 +19,8 @@ extension EnvironmentValues {
             self[UserDefaultsKey.self] = newValue
         }
     }
-}
-
-private struct UserDefaultsKey: EnvironmentKey {
-    static var defaultValue: UserDefaults = .standard
-}
-
-extension EnvironmentValues {
-    var selectedTab: Tab {
+    
+    var selectedTab: Binding<Tab> {
         get {
             self[SelectedTabKey.self]
         }
@@ -34,8 +28,25 @@ extension EnvironmentValues {
             self[SelectedTabKey.self] = newValue
         }
     }
+    
+    var isAppLoading: Binding<Bool> {
+        get {
+            self[LoadingStateKey.self]
+        }
+        set {
+            self[LoadingStateKey.self] = newValue
+        }
+    }
+}
+
+private struct UserDefaultsKey: EnvironmentKey {
+    static var defaultValue: UserDefaults = .standard
 }
 
 private struct SelectedTabKey: EnvironmentKey {
-    static var defaultValue: Tab = .list
+    static var defaultValue: Binding<Tab> = .constant(.list)
+}
+
+private struct LoadingStateKey: EnvironmentKey {
+    static var defaultValue: Binding<Bool> = .constant(false)
 }

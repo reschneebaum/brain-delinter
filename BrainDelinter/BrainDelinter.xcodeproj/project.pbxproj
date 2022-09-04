@@ -31,7 +31,7 @@
 		A1E304A428BAC074004A015E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A328BAC074004A015E /* String+Localized.swift */; };
 		A1E304A828BAF891004A015E /* MockDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A728BAF891004A015E /* MockDataStore.swift */; };
 		A1E304B128BBF050004A015E /* UserDefaults+AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */; };
-		A1E304B428BC18FC004A015E /* EnvironmentValues+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B328BC18FC004A015E /* EnvironmentValues+UserDefaults.swift */; };
+		A1E304B428BC18FC004A015E /* EnvironmentValues+DelinterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B328BC18FC004A015E /* EnvironmentValues+DelinterValues.swift */; };
 		A1E304B828BC1C66004A015E /* UserDefaults+Mocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */; };
 		A1E304BA28BD0E69004A015E /* DelinterNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = A1E304B928BD0E69004A015E /* DelinterNotifications */; };
 		A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */; };
@@ -88,7 +88,7 @@
 		A1E304A328BAC074004A015E /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		A1E304A728BAF891004A015E /* MockDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataStore.swift; sourceTree = "<group>"; };
 		A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppSettings.swift"; sourceTree = "<group>"; };
-		A1E304B328BC18FC004A015E /* EnvironmentValues+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+UserDefaults.swift"; sourceTree = "<group>"; };
+		A1E304B328BC18FC004A015E /* EnvironmentValues+DelinterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+DelinterValues.swift"; sourceTree = "<group>"; };
 		A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Mocked.swift"; sourceTree = "<group>"; };
 		A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterConstants.swift; sourceTree = "<group>"; };
 		A1F6E95728B05CD600FACCDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -236,6 +236,7 @@
 		A1E304B528BC1A65004A015E /* LocalDataHandling */ = {
 			isa = PBXGroup;
 			children = (
+				A1E304B328BC18FC004A015E /* EnvironmentValues+DelinterValues.swift */,
 				A1E304A628BAEF9C004A015E /* CoreData */,
 				A1E304B628BC1A89004A015E /* UserDefaults */,
 			);
@@ -245,7 +246,6 @@
 		A1E304B628BC1A89004A015E /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
-				A1E304B328BC18FC004A015E /* EnvironmentValues+UserDefaults.swift */,
 				A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */,
 				A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */,
 			);
@@ -494,7 +494,7 @@
 				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,
 				A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */,
 				A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */,
-				A1E304B428BC18FC004A015E /* EnvironmentValues+UserDefaults.swift in Sources */,
+				A1E304B428BC18FC004A015E /* EnvironmentValues+DelinterValues.swift in Sources */,
 				A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */,
 				A1E304A428BAC074004A015E /* String+Localized.swift in Sources */,
 				A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */,

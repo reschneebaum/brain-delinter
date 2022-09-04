@@ -20,6 +20,7 @@ enum SettingsItem: String, CaseIterable {
             return Localized.Settings.Duration.title
         }
     }
+    
     var description: String {
         switch self {
         case .alarmTime:
@@ -28,6 +29,13 @@ enum SettingsItem: String, CaseIterable {
             return Localized.Settings.Snooze.description
         case .duration:
             return Localized.Settings.Duration.description
+        }
+    }
+    
+    var enabled: Bool {
+        switch self {
+        case .snooze: return false
+        default: return true
         }
     }
 }
@@ -41,10 +49,19 @@ enum SettingsActionItem: String, CaseIterable {
             return Localized.Settings.Delete.title
         }
     }
+    
     var description: String {
         switch self {
         case .clearList:
             return Localized.Settings.Delete.body
+        }
+    }
+    
+    // TODO: Use feature flagging or something for this instead!
+    var enabled: Bool {
+        switch self {
+        case .clearList:
+            return true
         }
     }
 }

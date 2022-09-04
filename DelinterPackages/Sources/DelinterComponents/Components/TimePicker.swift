@@ -14,12 +14,9 @@ public struct TimePicker<Label: View>: View {
     
     public var body: some View {
         DatePicker(selection: $selectedTime, displayedComponents: .hourAndMinute) {
-            HStack {
-                label()
-                Spacer()
-            }
-            .contentShape(Rectangle())
+                label().contentShape(Rectangle())
         }
+        .datePickerStyle(.graphical)
         .accessibilityLabel(accessibilityLabel)
     }
     

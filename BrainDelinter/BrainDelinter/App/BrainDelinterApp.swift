@@ -13,16 +13,26 @@ import DelinterNotifications
 @main
 struct BrainDelinterApp: App {
     @Environment(\.scenePhase) var scenePhase
-    @StateObject private var dataStore: LocalDataStore = .init()
+    @StateObject private var navigationState: AppNavigationState = .init()
+    private var dataStore: LocalDataStore = .init()
     private let notificationScheduler: NotificationScheduler = .init()
     private let userDefaults: UserDefaults = .standard
     
+    @State private var isLoading = false
+    
     var body: some Scene {
         WindowGroup {
-            TabsContainerView()
+            TabsContainerView(navigationState: navigationState)
+                .isLoading($isLoading)
                 .environmentObject(dataStore)
                 .environment(\.userDefaults, userDefaults)
+                .environment(\.isAppLoading, $isLoading)
                 .environment(\.managedObjectContext, dataStore.managedObjectContext) // do i need this??
+                .onAppear {
+                    if navigationState.selectedTab == nil {
+                        navigationState.selectedTab = .list
+                    }
+                }
         }
         .onChange(of: scenePhase) { newValue in
             switch newValue {
@@ -32,6 +42,16 @@ struct BrainDelinterApp: App {
                 
             case .active: break
             @unknown default: break
+            }
+        }
+        .onChange(of: isLoading) { newValue in
+            if navigationState.isLoading != newValue {
+                navigationState.isLoading = newValue
+            }
+        }
+        .onChange(of: navigationState.isLoading) { newValue in
+            if isLoading != newValue {
+                isLoading = newValue
             }
         }
     }

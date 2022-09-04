@@ -34,6 +34,7 @@ final class LocalDataStore: DataStoreInterface {
     }
     
     func save() {
+        guard managedObjectContext.hasChanges else { return }
         try? managedObjectContext.save()
     }
     
@@ -44,6 +45,7 @@ final class LocalDataStore: DataStoreInterface {
     func clearAllItems() {
         let allItems = getStoredItems()
         deleteItems(allItems)
+        save()
     }
 }
 
@@ -62,6 +64,8 @@ private extension LocalDataStore {
     }
     
     func deleteItems(_ items: [ManagedListItem]) {
+        guard !items.isEmpty else { return }
+        
         items.forEach {
             managedObjectContext.delete($0)
         }

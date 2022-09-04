@@ -10,6 +10,8 @@ import CoreData
 
 /// Inspired by [this gist](https://gist.github.com/rpapallas/b7dc2f32769a369425c35a85b86d13ad)
 final class MockDataStore: ObservableObject, DataStoreInterface {
+    var temporaryCache: [String] = []
+    
     lazy var managedObjectContext: NSManagedObjectContext = {
         let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         context.persistentStoreCoordinator = persistentStoreCoordinator
@@ -37,14 +39,14 @@ final class MockDataStore: ObservableObject, DataStoreInterface {
     }()
     
     func save() {
-        // todo
+        // no-op
     }
     
     func addItem(_ text: String) {
-        // todo
+        temporaryCache.append(text)
     }
     
     func clearAllItems() {
-        // todo
+        temporaryCache.removeAll()
     }
 }

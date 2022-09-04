@@ -18,6 +18,8 @@ import SwiftUI
 struct SettingsView<DataStore: DataStoreInterface>: View {
     // TODO: Use @AppStorage instead??
     @Environment(\.userDefaults) var userDefaults
+    @Environment(\.selectedTab) var selectedTab
+    @Environment(\.isAppLoading) var isAppLoading
     @EnvironmentObject var dataStore: DataStore
     
     @State private var selectedDate: Date = .now
@@ -49,40 +51,49 @@ struct SettingsView<DataStore: DataStoreInterface>: View {
     
     private var alarmSettingsSectionContent: some View {
         ForEach(alarmSettings, id: \.self) { setting in
-            SettingsRow(description: setting.description) {
-                Group {
-                    switch setting {
-                    case .alarmTime:
-                        TimePicker(selectedTime: $selectedDate, label: setting.title, font: .Rounded.Medium.body)
-                            .onChange(of: selectedDate) { newValue in
-                                userDefaults.scheduledStartTime = newValue
+            ZStack {
+                if !setting.enabled {
+                    Color.gray.opacity(0.2)
+                        .blur(radius: 4)
+                }
+                
+                SettingsRow(description: setting.description) {
+                    Group {
+                        switch setting {
+                        case .alarmTime:
+                            TimePicker(selectedTime: $selectedDate, label: setting.title, font: .Rounded.Medium.body)
+                                .onChange(of: selectedDate) { newValue in
+                                    userDefaults.scheduledStartTime = newValue
+                                }
+                            
+                        case .snooze:
+                            CheckboxToggle(isOn: $allowSnooze, label: setting.title, font: .Rounded.Medium.body)
+                                .onChange(of: allowSnooze) { newValue in
+                                    userDefaults.allowSnooze = newValue
+                                }
+                                .disabled(true)
+                            
+                        case .duration:
+                            Picker(SettingsItem.duration.title, selection: $duration) {
+                                ForEach(durationRange, id: \.self) {
+                                    Text("\($0) min").font(.Rounded.Light.body)
+                                }
                             }
-                        
-                    case .snooze:
-                        CheckboxToggle(isOn: $allowSnooze, label: setting.title, font: .Rounded.Medium.body)
-                            .onChange(of: allowSnooze) { newValue in
-                                userDefaults.allowSnooze = newValue
+                            .pickerStyle(.menu)
+                            .labelStyle(.titleOnly)
+                            .onChange(of: duration) { newValue in
+                                userDefaults.duration = newValue
                             }
-                        
-                    case .duration:
-                        Picker(SettingsItem.duration.title, selection: $duration) {
-                            ForEach(durationRange, id: \.self) {
-                                Text("\($0) min").font(.Rounded.Light.body)
-                            }
-                        }
-                        .pickerStyle(.menu)
-                        .labelStyle(.titleOnly)
-                        .onChange(of: duration) { newValue in
-                            userDefaults.duration = newValue
                         }
                     }
+                    .disabled(!setting.enabled)
                 }
             }
-        }
-        .onAppear {
-            selectedDate = userDefaults.scheduledStartTime ?? .now
-            duration = userDefaults.duration > 0 ? userDefaults.duration : Constants.defaultTimeInterval
-            allowSnooze = userDefaults.allowSnooze
+            .onAppear {
+                selectedDate = userDefaults.scheduledStartTime ?? .now
+                duration = userDefaults.duration > 0 ? userDefaults.duration : Constants.defaultTimeInterval
+                allowSnooze = userDefaults.allowSnooze
+            }
         }
     }
     
@@ -93,6 +104,7 @@ struct SettingsView<DataStore: DataStoreInterface>: View {
                     switch setting {
                     case .clearList:
                         Text(setting.title)
+                            .padding(.bottom, Padding.xSmall.rawValue)
                     }
                 }
             }
@@ -104,11 +116,28 @@ struct SettingsView<DataStore: DataStoreInterface>: View {
                     }
                 }
             )
+            .overlay {
+                if !setting.enabled {
+                    Color.gray.opacity(0.1)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            }
         }
-        .alert(
-            .clearList(dataStore.clearAllItems),
-            isPresented: $isAlertPresented
-        )
+        .alert(.clearList(onClearListSelected), isPresented: $isAlertPresented)
+    }
+}
+
+// MARK: Private Methods
+
+private extension SettingsView {
+    func onClearListSelected() {
+        isAppLoading.wrappedValue = true
+        dataStore.clearAllItems()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.24) {
+            selectedTab.wrappedValue = .list
+            isAppLoading.wrappedValue = false
+        }
     }
 }
 
