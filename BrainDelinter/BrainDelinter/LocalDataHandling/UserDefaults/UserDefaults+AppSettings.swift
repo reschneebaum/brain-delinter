@@ -8,7 +8,7 @@
 import Foundation
 
 extension UserDefaults {
-    var allowSnooze: Bool {
+    @objc var allowSnooze: Bool {
         get {
             bool(forKey: Keys.snooze)
         }
@@ -16,8 +16,18 @@ extension UserDefaults {
             set(newValue, forKey: Keys.snooze)
         }
     }
+    
+    @objc var showCompleted: Bool {
+        get {
+            bool(forKey: Keys.showCompleted)
+        }
+        set {
+            set(newValue, forKey: Keys.showCompleted)
+        }
+    }
 }
 
 private enum Keys {
     static let snooze = "AllowSnooze"
+    static let showCompleted = "ShowCompleted"
 }

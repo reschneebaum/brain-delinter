@@ -32,6 +32,7 @@ enum SettingsItem: String, CaseIterable {
         }
     }
     
+    // TODO: Use feature flagging or something for this instead!
     var enabled: Bool {
         switch self {
         case .snooze: return false
@@ -41,10 +42,13 @@ enum SettingsItem: String, CaseIterable {
 }
 
 enum SettingsActionItem: String, CaseIterable {
+    case showCompleted
     case clearList
     
     var title: String {
         switch self {
+        case .showCompleted:
+            return "show completed items"
         case .clearList:
             return Localized.Settings.Delete.title
         }
@@ -52,16 +56,14 @@ enum SettingsActionItem: String, CaseIterable {
     
     var description: String {
         switch self {
+        case .showCompleted:
+            return "Display the day's completed items in your lint list"
         case .clearList:
             return Localized.Settings.Delete.body
         }
     }
     
-    // TODO: Use feature flagging or something for this instead!
     var enabled: Bool {
-        switch self {
-        case .clearList:
-            return true
-        }
+        true
     }
 }

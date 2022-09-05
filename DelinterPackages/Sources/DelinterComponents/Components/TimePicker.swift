@@ -16,7 +16,6 @@ public struct TimePicker<Label: View>: View {
         DatePicker(selection: $selectedTime, displayedComponents: .hourAndMinute) {
                 label().contentShape(Rectangle())
         }
-        .datePickerStyle(.graphical)
         .accessibilityLabel(accessibilityLabel)
     }
     

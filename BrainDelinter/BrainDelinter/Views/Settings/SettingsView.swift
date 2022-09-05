@@ -25,6 +25,7 @@ struct SettingsView<DataStore: DataStoreInterface>: View {
     @State private var selectedDate: Date = .now
     @State private var allowSnooze = false
     @State private var duration = Constants.defaultTimeInterval
+    @State private var showCompleted = true
     @State private var isAlertPresented = false
     
     private let durationRange = Constants.durationRange
@@ -51,49 +52,43 @@ struct SettingsView<DataStore: DataStoreInterface>: View {
     
     private var alarmSettingsSectionContent: some View {
         ForEach(alarmSettings, id: \.self) { setting in
-            ZStack {
-                if !setting.enabled {
-                    Color.gray.opacity(0.2)
-                        .blur(radius: 4)
-                }
-                
-                SettingsRow(description: setting.description) {
-                    Group {
-                        switch setting {
-                        case .alarmTime:
-                            TimePicker(selectedTime: $selectedDate, label: setting.title, font: .Rounded.Medium.body)
-                                .onChange(of: selectedDate) { newValue in
-                                    userDefaults.scheduledStartTime = newValue
-                                }
-                            
-                        case .snooze:
-                            CheckboxToggle(isOn: $allowSnooze, label: setting.title, font: .Rounded.Medium.body)
-                                .onChange(of: allowSnooze) { newValue in
-                                    userDefaults.allowSnooze = newValue
-                                }
-                                .disabled(true)
-                            
-                        case .duration:
-                            Picker(SettingsItem.duration.title, selection: $duration) {
-                                ForEach(durationRange, id: \.self) {
-                                    Text("\($0) min").font(.Rounded.Light.body)
-                                }
+            SettingsRow(description: setting.description) {
+                Group {
+                    switch setting {
+                    case .alarmTime:
+                        TimePicker(selectedTime: $selectedDate, label: setting.title, font: .Rounded.Medium.body)
+                            .onChange(of: selectedDate) { newValue in
+                                userDefaults.scheduledStartTime = newValue
                             }
-                            .pickerStyle(.menu)
-                            .labelStyle(.titleOnly)
-                            .onChange(of: duration) { newValue in
-                                userDefaults.duration = newValue
+                        
+                    case .snooze:
+                        CheckboxToggle(isOn: $allowSnooze, label: setting.title, font: .Rounded.Medium.body)
+                            .onChange(of: allowSnooze) { newValue in
+                                userDefaults.allowSnooze = newValue
+                            }
+                            .disabled(true)
+                        
+                    case .duration:
+                        Picker(SettingsItem.duration.title, selection: $duration) {
+                            ForEach(durationRange, id: \.self) {
+                                Text("\($0) min").font(.Rounded.Light.body)
                             }
                         }
+                        .pickerStyle(.menu)
+                        .labelStyle(.titleOnly)
+                        .onChange(of: duration) { newValue in
+                            userDefaults.duration = newValue
+                        }
                     }
-                    .disabled(!setting.enabled)
                 }
+                .disabled(!setting.enabled)
             }
-            .onAppear {
-                selectedDate = userDefaults.scheduledStartTime ?? .now
-                duration = userDefaults.duration > 0 ? userDefaults.duration : Constants.defaultTimeInterval
-                allowSnooze = userDefaults.allowSnooze
-            }
+        }
+        .onAppear {
+            selectedDate = userDefaults.scheduledStartTime ?? .now
+            duration = userDefaults.duration > 0 ? userDefaults.duration : Constants.defaultTimeInterval
+            allowSnooze = userDefaults.allowSnooze
+            showCompleted = userDefaults.showCompleted
         }
     }
     
@@ -102,24 +97,31 @@ struct SettingsView<DataStore: DataStoreInterface>: View {
             SettingsRow(description: setting.description) {
                 Group {
                     switch setting {
+                    case .showCompleted:
+                        CheckboxToggle(isOn: $showCompleted, label: setting.title, font: .Rounded.Medium.body)
+                            .onChange(of: showCompleted) { newValue in
+                                userDefaults.showCompleted = newValue
+                            }
+                        
                     case .clearList:
-                        Text(setting.title)
-                            .padding(.bottom, Padding.xSmall.rawValue)
+                        HStack {
+                            Text(setting.title)
+                                .padding(.bottom, Padding.xSmall.rawValue)
+                            
+                            Spacer()
+                            
+                            Image(systemName: "trash")
+                                .font(.system(size: 20))
+                                .foregroundColor(.red)
+                                .padding(.bottom, -12)
+                        }
+                        .contentShape(Rectangle())
+                        .simultaneousGesture(
+                            TapGesture().onEnded {
+                                isAlertPresented = true
+                            }
+                        )
                     }
-                }
-            }
-            .simultaneousGesture(
-                TapGesture().onEnded {
-                    switch setting {
-                    case .clearList:
-                        isAlertPresented = true
-                    }
-                }
-            )
-            .overlay {
-                if !setting.enabled {
-                    Color.gray.opacity(0.1)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
         }

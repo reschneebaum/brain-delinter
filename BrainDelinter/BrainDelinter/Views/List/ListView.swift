@@ -9,9 +9,10 @@ import SwiftUI
 import DelinterComponents
 
 struct ListView<DataStore: DataStoreInterface>: View {
+    @Environment(\.userDefaults) var defaults
     @EnvironmentObject var dataStore: DataStore
-    @FetchRequest(sortDescriptors: [.init(\.dateAdded)]) var items: FetchedResults<ManagedListItem>
     @State private var newItemText = ""
+    @State private var showCompleted = true
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -19,20 +20,12 @@ struct ListView<DataStore: DataStoreInterface>: View {
                 Section { topContent }
                 
                 Section {
-                    if !items.isEmpty {
-                        ForEach(items) { item in
-                            ListItemView(item: item)
-                            
-                            Color.gray.opacity(0.7)
-                                .frame(height: 1)
+                    FilteredList(showComplete: showCompleted)
+                        .onReceive(defaults.publisher(for: \.showCompleted)) {
+                            showCompleted = $0
                         }
-                    }
                 } header: {
                     stickyHeader
-                } footer: {
-                    if !items.isEmpty {
-                        footer
-                    }
                 }
             }
             .headerProminence(.increased)
@@ -75,12 +68,6 @@ struct ListView<DataStore: DataStoreInterface>: View {
             .font(.Rounded.bodyS)
             .padding(.horizontal, Padding.xSmall.rawValue)
     }
-    
-    private var footer: some View {
-        Text("❤️")
-            .font(.Italic.footnote)
-            .padding()
-    }
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -88,6 +75,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView<MockDataStore>()
         }
+        .environment(\.userDefaults, .mocked)
         .environmentObject(MockDataStore())
     }
 }
