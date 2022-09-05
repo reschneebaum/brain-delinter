@@ -1,25 +1,16 @@
 import Foundation
 
 public extension UserDefaults {
-    var hasScheduledNotifications: Bool {
-        scheduledStartTime != nil && duration > 0
+    var isStartTimeSet: Bool {
+        scheduledStartTime != nil
     }
     
     var startTimeComponents: DateComponents? {
-        guard let startTime = scheduledStartTime else {
-            return nil
-        }
-        return Calendar.current.dateComponents([.hour, .minute], from: startTime)
+        scheduledStartTime?.dateComponents
     }
     
     var endTimeComponents: DateComponents? {
-        guard let startTimeComponents = startTimeComponents, duration > 0 else {
-            return nil
-        }
-        var endTimeComponents = DateComponents()
-        endTimeComponents.hour = startTimeComponents.hour ?? 0
-        endTimeComponents.minute = startTimeComponents.minute ?? 0 + duration
-        return endTimeComponents
+        endTime?.dateComponents
     }
     
     @objc var scheduledStartTime: Date? {
@@ -40,6 +31,17 @@ public extension UserDefaults {
             guard newValue > 0 else { return }
             set(newValue, forKey: Keys.duration)
         }
+    }
+    
+    private var endTime: Date? {
+        guard let scheduledStartTime else { return nil }
+        return Calendar.current.date(byAdding: .minute, value: duration, to: scheduledStartTime)
+    }
+}
+
+extension Date {
+    var dateComponents: DateComponents {
+        Calendar.current.dateComponents([.hour, .minute], from: self)
     }
 }
 

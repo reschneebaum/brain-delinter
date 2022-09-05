@@ -57,7 +57,7 @@ struct BrainDelinterApp: App {
     }
     
     init() {
-        if userDefaults.scheduledStartTime != nil {
+        if userDefaults.isStartTimeSet {
             // we already have a scheduled time; check permission (+ schedule if needed)
             notificationScheduler.configureNotificationsSession()
         }
