@@ -1,18 +1,18 @@
 #  🧠 delinter [WIP]
 
-brain delinter is a simple and intuitive tool based on extended mind theory. it was inspired by a practice recommended by my own adhd provider, intended to help you:
- * move all the 'lint' —— tasks you've avoided, thought-spirals that keep you up at night, etc. —— out of your head and into your device (thst is, your extended mind)
+BrainDelinter is a simple and intuitive tool based on extended mind theory. it was inspired by a practice recommended by my own adhd provider, intended to help you:
+ * move all the 'lint' —— tasks you've avoided, thought-spirals that keep you up at night, etc. —— out of your head and into your device (that is, your extended mind)
  * work through list items daily via an approachable and maintainable system 
  * prevent procrastination, avoidance, and burnout
 
-## app use/features
+## app features
 
-#### The app has two main features: 
+#### the app has two main features: 
 
 1. a global + infinite list that includes any items added throughout the day, as well as any items rolled over from yesterday
 2. notifications that prompt you when it's time to start doing things on the list and when you've done enough for the day
 
-**Notes**:
+**notes**:
 - the list is called a 'lint list' so as not to bring up any stressful/negative feelings about to-do lists
 - list items can be added at any point, as soon as they pop into your mind
   * dev note: I'm currently working on ways to make adding list items as easy and painless as possible through methods/mechanisms including app intents, widgets, shortcuts, siri prompts, etc.
@@ -21,7 +21,7 @@ brain delinter is a simple and intuitive tool based on extended mind theory. it 
 - any items not finished when the second alarm goes off remain on the list, rolling over to tomorrow
 
 
-## Ideas for future development
+## future development ideas (??)
  - calendar that keeps track of streaks, productive days, 'you showed up anyway' days, etc
  - notification settings so you can choose your preferred method, optional sound, etc etc
  - easy + expansive support for sharing your accomplishments —— by email, text, on social media, with your provider, etc
