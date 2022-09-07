@@ -26,6 +26,10 @@ public final class MockDataStore: ObservableObject, LocalDataStoring {
         temporaryCache.append(text)
     }
     
+    public func updateItem(_ item: ListItem) {
+        // no-op (yet)
+    }
+    
     public func clearAllItems() {
         temporaryCache.removeAll()
     }

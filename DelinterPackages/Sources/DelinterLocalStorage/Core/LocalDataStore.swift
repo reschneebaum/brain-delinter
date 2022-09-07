@@ -11,6 +11,7 @@ import SwiftUI
 public protocol LocalDataStoring: ObservableObject {
     func save()
     func addItem(_ text: String)
+    func updateItem( _ item: ListItem)
     func clearAllItems()
 }
 
@@ -33,6 +34,14 @@ public final class LocalDataStore: LocalDataStoring {
         ManagedListItem.createNewItem(with: text, in: context)
     }
     
+    public func updateItem(_ item: ListItem) {
+        guard let managedItem = storedItem(with: item.id),
+              managedItem.isComplete != item.isComplete else { return }
+        
+        managedItem.isComplete = item.isComplete
+        managedItem.dateCompleted = item.isComplete ? Date.now : nil
+    }
+    
     public func clearAllItems() {
         let allItems = getStoredItems()
         deleteItems(allItems)
@@ -51,6 +60,18 @@ private extension LocalDataStore {
         } catch {
             print("error fetching list items: \(error.localizedDescription)")
             return []
+        }
+    }
+    
+    // TODO: Is there a way to refactor this/combine it with the almost identical `getStoredItems` method above?
+    func storedItem(with id: String) -> ManagedListItem? {
+        let fetchRequest = ManagedListItem.itemFetchRequest(id: id)
+        
+        do {
+            return try context.fetch(fetchRequest).first
+        } catch {
+            print("error fetching list items: \(error.localizedDescription)")
+            return nil
         }
     }
     

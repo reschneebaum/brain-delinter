@@ -20,8 +20,12 @@ struct ListView<DataStore: LocalDataStoring>: View {
                 Section { topContent }
                 
                 Section {
-                    FilteredList(showComplete: showCompleted) {
-                        ListItemView(item: .constant($0))
+                    FilteredList(showComplete: showCompleted) { item in
+                        ListItemView(item: .init {
+                            item
+                        } set: {
+                            dataStore.updateItem($0)
+                        })
                     }
                     .onReceive(defaults.publisher(for: \.showCompleted)) {
                         showCompleted = $0

@@ -11,12 +11,29 @@ import DelinterLocalStorage
 
 struct ListItemView: View {
     @Binding var item: ListItem
+    @State private var isComplete: Bool
     
     var body: some View {
-        CheckboxToggle(isOn: $item.isComplete) {
+        CheckboxToggle(isOn: $isComplete) {
             checkboxContent
         }
         .padding(.horizontal, Padding.small.rawValue)
+        .onChange(of: isComplete) { newValue in
+            if newValue != item.isComplete {
+                item.isComplete.toggle()
+            }
+        }
+        .onChange(of: item.isComplete) { newValue in
+            guard newValue != isComplete else { return }
+            withAnimation {
+                isComplete.toggle()
+            }
+        }
+    }
+    
+    init(item: Binding<ListItem>) {
+        _item = item
+        _isComplete = State(wrappedValue: item.wrappedValue.isComplete)
     }
 }
 
@@ -25,16 +42,15 @@ private extension ListItemView {
         ZStack {
             HStack {
                 Text(item.text)
-                    .font(item.isComplete ? .Italic.body : .Rounded.Light.body)
-                    .fontWeight(item.isComplete ? .light : .medium)
+                    .font(isComplete ? .Italic.body : .Rounded.Light.body)
+                    .fontWeight(isComplete ? .light : .medium)
                 
                 Spacer()
             }
-            
+            // FIXME: Animation doesn't work as intended because the cells move at the same time
             Rectangle()
                 .frame(height: 1.2)
-                .foregroundColor(item.isComplete ? .accentColor : .clear)
-                .animation(.default, value: item.isComplete)
+                .foregroundColor(isComplete ? .accentColor : .clear)
                 .transition(.slide)
         }
     }

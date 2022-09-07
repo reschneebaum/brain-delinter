@@ -14,6 +14,11 @@ extension ManagedListItem {
     @nonobjc class func fetchRequest() -> NSFetchRequest<ManagedListItem> {
         .init(entityName: "ManagedListItem")
     }
+    @nonobjc class func itemFetchRequest(id: String) -> NSFetchRequest<ManagedListItem> {
+        let request = NSFetchRequest<ManagedListItem>.init(entityName: "ManagedListItem")
+        request.predicate = NSPredicate(format: "id == %@", id)
+        return request
+    }
 
     @NSManaged var dateAdded: Date?
     @NSManaged var dateCompleted: Date?

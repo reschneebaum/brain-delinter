@@ -15,7 +15,6 @@ public struct FilteredList<Content: View>: View {
 
     public var body: some View {
         FilterableList(predicate: predicate, sortDescriptors: sortDescriptors) { (listItem: ManagedListItem) in
-//            ListItemView(item: listItem)
             itemContent(.init(listItem))
             
             Color.gray.opacity(0.7)
