@@ -10,7 +10,7 @@
 //#if DEBUG
 import Foundation
 
-extension UserDefaults {
+public extension UserDefaults {
     static var mocked: UserDefaults = {
         let suiteName = "MockUserDefaults"
         // Clear out the persistent domain in case an old defaults instance was created with the same suite name.

@@ -11,16 +11,19 @@ import CoreData
 
 
 extension ManagedListItem {
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ManagedListItem> {
+    @nonobjc class func fetchRequest() -> NSFetchRequest<ManagedListItem> {
         .init(entityName: "ManagedListItem")
     }
 
-    @NSManaged public var dateAdded: Date?
-    @NSManaged public var dateCompleted: Date?
-    @NSManaged public var id: String?
-    @NSManaged public var isComplete: Bool
-    @NSManaged public var text: String?
+    @NSManaged var dateAdded: Date?
+    @NSManaged var dateCompleted: Date?
+    @NSManaged var id: String?
+    @NSManaged var isComplete: Bool
+    @NSManaged var text: String?
 
+    override var description: String {
+        "ManagedListItem"
+    }
 }
 
 // MARK: Identifiable
@@ -34,10 +37,12 @@ extension ManagedListItem {
         get { dateAdded ?? .now }
         set { dateAdded = newValue }
     }
+    
     var wrappedID: String {
         get { id ?? UUID().uuidString }
         set { id = newValue }
     }
+    
     var wrappedText: String {
         get { text ?? "" }
         set { text = newValue }

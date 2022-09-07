@@ -8,41 +8,32 @@
 import CoreData
 import SwiftUI
 
-protocol DataStoreInterface: ObservableObject {
-    var managedObjectContext: NSManagedObjectContext { get }
+public protocol LocalDataStoring: ObservableObject {
     func save()
     func addItem(_ text: String)
     func clearAllItems()
 }
 
-final class LocalDataStore: DataStoreInterface {
-    private let container: NSPersistentContainer
-    var managedObjectContext: NSManagedObjectContext {
+public final class LocalDataStore: LocalDataStoring {
+    private let container: PersistentContainer
+    public var context: NSManagedObjectContext {
         container.viewContext
     }
     
-    init(containerName: String? = nil) {
-        container = .init(name: containerName ?? "DataModel")
-        
-        container.loadPersistentStores { [weak self] _, error in
-            if let error = error {
-                print("core data load error: \(error.localizedDescription)")
-            }
-            // Overwrite the existing object's property values with those of the new object
-            self?.managedObjectContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
-        }
+    public init() {
+        container = .init()
     }
     
-    func save() {
-        guard managedObjectContext.hasChanges else { return }
-        try? managedObjectContext.save()
+    public func save() {
+        guard context.hasChanges else { return }
+        try? context.save()
     }
     
-    func addItem(_ text: String) {
-        ManagedListItem.createNewItem(with: text, in: managedObjectContext)
+    public func addItem(_ text: String) {
+        ManagedListItem.createNewItem(with: text, in: context)
     }
     
-    func clearAllItems() {
+    public func clearAllItems() {
         let allItems = getStoredItems()
         deleteItems(allItems)
         save()
@@ -56,7 +47,7 @@ private extension LocalDataStore {
         let fetchRequest = ManagedListItem.fetchRequest()
         
         do {
-            return try managedObjectContext.fetch(fetchRequest)
+            return try context.fetch(fetchRequest)
         } catch {
             print("error fetching list items: \(error.localizedDescription)")
             return []
@@ -67,18 +58,18 @@ private extension LocalDataStore {
         guard !items.isEmpty else { return }
         
         items.forEach {
-            managedObjectContext.delete($0)
+            context.delete($0)
         }
     }
 }
 
 // TODO: The method in this extension is not needed/used since we're accessing managed objects + context directly
 
+/*
 extension LocalDataStore {
     /// I need to decide whether to a) try wrapping core data again (ideally in a separate package) _or_ b) remove
     /// the `ListItem` model — and this extension — from the workspace entirely.
     func persistLocalItems(_ items: [ListItem]? = nil) {
-        /*
         let currentItems = getStoredItems()
         let newItems = items ?? []
         
@@ -99,6 +90,6 @@ extension LocalDataStore {
         }
         
         try? container.viewContext.save()
-         */
     }
 }
+ */

@@ -11,9 +11,7 @@
 		A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B8E28B98CDB00DB8EA3 /* StatsView.swift */; };
 		A16D3B9128B98CF100DB8EA3 /* StatsRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9028B98CF100DB8EA3 /* StatsRouterView.swift */; };
 		A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */; };
-		A16D3B9828B9E6E000DB8EA3 /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */; };
 		A16D3B9A28BA957200DB8EA3 /* TabsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9928BA957200DB8EA3 /* TabsContainerView.swift */; };
-		A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift */; };
 		A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */; };
 		A187991728AF1DBE00223F6F /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187991628AF1DBE00223F6F /* ListView.swift */; };
 		A187991928AF1DBF00223F6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A187991828AF1DBF00223F6F /* Assets.xcassets */; };
@@ -23,19 +21,13 @@
 		A187993228AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */; };
 		A187994128AF34EC00223F6F /* DelinterNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = A187994028AF34EC00223F6F /* DelinterNavigation */; };
 		A187994328B02B7000223F6F /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994228B02B7000223F6F /* ListItemView.swift */; };
-		A187994528B02BF700223F6F /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A187994428B02BF700223F6F /* ListItem.swift */; };
 		A187994728B0353300223F6F /* DelinterComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A187994628B0353300223F6F /* DelinterComponents */; };
-		A1A5F10F28C66F5700999DCB /* FilteredList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F10E28C66F5700999DCB /* FilteredList.swift */; };
-		A1A5F11728C7B8B100999DCB /* ManagedListItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11528C7B8B100999DCB /* ManagedListItem+CoreDataClass.swift */; };
-		A1A5F11828C7B8B100999DCB /* ManagedListItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11628C7B8B100999DCB /* ManagedListItem+CoreDataProperties.swift */; };
-		A1E3049E28BAA9C6004A015E /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A16D3BA328BAA83200DB8EA3 /* DataModel.xcdatamodeld */; };
+		A1A5F11C28C7C5F800999DCB /* DelinterLocalStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A1A5F11B28C7C5F800999DCB /* DelinterLocalStorage */; };
+		A1A5F11E28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */; };
+		A1A5F12028C7CA6800999DCB /* UserDefaults+AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */; };
 		A1E304A028BABE7D004A015E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E3049F28BABE7D004A015E /* Colors.xcassets */; };
 		A1E304A228BAC000004A015E /* Color+ColorAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A128BAC000004A015E /* Color+ColorAssets.swift */; };
 		A1E304A428BAC074004A015E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A328BAC074004A015E /* String+Localized.swift */; };
-		A1E304A828BAF891004A015E /* MockDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A728BAF891004A015E /* MockDataStore.swift */; };
-		A1E304B128BBF050004A015E /* UserDefaults+AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */; };
-		A1E304B428BC18FC004A015E /* EnvironmentValues+DelinterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B328BC18FC004A015E /* EnvironmentValues+DelinterValues.swift */; };
-		A1E304B828BC1C66004A015E /* UserDefaults+Mocked.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */; };
 		A1E304BA28BD0E69004A015E /* DelinterNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = A1E304B928BD0E69004A015E /* DelinterNotifications */; };
 		A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */; };
 		A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95728B05CD600FACCDA /* SettingsView.swift */; };
@@ -69,10 +61,7 @@
 		A16D3B8E28B98CDB00DB8EA3 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		A16D3B9028B98CF100DB8EA3 /* StatsRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsRouterView.swift; sourceTree = "<group>"; };
 		A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
-		A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
 		A16D3B9928BA957200DB8EA3 /* TabsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsContainerView.swift; sourceTree = "<group>"; };
-		A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedListItem+Helpers.swift"; sourceTree = "<group>"; };
-		A16D3BA428BAA83200DB8EA3 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		A187991128AF1DBE00223F6F /* BrainDelinter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainDelinter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A187991428AF1DBE00223F6F /* BrainDelinterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterApp.swift; sourceTree = "<group>"; };
 		A187991628AF1DBE00223F6F /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -85,17 +74,11 @@
 		A187993128AF1DBF00223F6F /* BrainDelinterUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A187993E28AF201300223F6F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A187994228B02B7000223F6F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
-		A187994428B02BF700223F6F /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
-		A1A5F10E28C66F5700999DCB /* FilteredList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredList.swift; sourceTree = "<group>"; };
-		A1A5F11528C7B8B100999DCB /* ManagedListItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedListItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A1A5F11628C7B8B100999DCB /* ManagedListItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedListItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+DelinterValues.swift"; sourceTree = "<group>"; };
+		A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppSettings.swift"; sourceTree = "<group>"; };
 		A1E3049F28BABE7D004A015E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A1E304A128BAC000004A015E /* Color+ColorAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+ColorAssets.swift"; sourceTree = "<group>"; };
 		A1E304A328BAC074004A015E /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
-		A1E304A728BAF891004A015E /* MockDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataStore.swift; sourceTree = "<group>"; };
-		A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppSettings.swift"; sourceTree = "<group>"; };
-		A1E304B328BC18FC004A015E /* EnvironmentValues+DelinterValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+DelinterValues.swift"; sourceTree = "<group>"; };
-		A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Mocked.swift"; sourceTree = "<group>"; };
 		A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterConstants.swift; sourceTree = "<group>"; };
 		A1F6E95728B05CD600FACCDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A1F6E95928B167D200FACCDA /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
@@ -114,6 +97,7 @@
 				A187994128AF34EC00223F6F /* DelinterNavigation in Frameworks */,
 				A1E304BA28BD0E69004A015E /* DelinterNotifications in Frameworks */,
 				A187994728B0353300223F6F /* DelinterComponents in Frameworks */,
+				A1A5F11C28C7C5F800999DCB /* DelinterLocalStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,34 +204,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A1A5F11028C6783000999DCB /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				A187994228B02B7000223F6F /* ListItemView.swift */,
-				A1A5F10E28C66F5700999DCB /* FilteredList.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		A1A5F11928C7B90A00999DCB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				A1A5F11528C7B8B100999DCB /* ManagedListItem+CoreDataClass.swift */,
-				A1A5F11628C7B8B100999DCB /* ManagedListItem+CoreDataProperties.swift */,
-				A16D3B9B28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A1A5F11A28C7B91B00999DCB /* DataStore */ = {
-			isa = PBXGroup;
-			children = (
-				A16D3B9728B9E6E000DB8EA3 /* LocalDataStore.swift */,
-				A1E304A728BAF891004A015E /* MockDataStore.swift */,
-			);
-			path = DataStore;
-			sourceTree = "<group>";
-		};
 		A1E304A528BAC09D004A015E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,32 +213,13 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		A1E304A628BAEF9C004A015E /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				A1A5F11928C7B90A00999DCB /* Model */,
-				A1A5F11A28C7B91B00999DCB /* DataStore */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
 		A1E304B528BC1A65004A015E /* LocalDataHandling */ = {
 			isa = PBXGroup;
 			children = (
-				A1E304B328BC18FC004A015E /* EnvironmentValues+DelinterValues.swift */,
-				A1E304A628BAEF9C004A015E /* CoreData */,
-				A1E304B628BC1A89004A015E /* UserDefaults */,
+				A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */,
+				A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */,
 			);
 			path = LocalDataHandling;
-			sourceTree = "<group>";
-		};
-		A1E304B628BC1A89004A015E /* UserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				A1E304B028BBF050004A015E /* UserDefaults+AppSettings.swift */,
-				A1E304B728BC1C66004A015E /* UserDefaults+Mocked.swift */,
-			);
-			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		A1F6E94F28B0571D00FACCDA /* Views */ = {
@@ -299,7 +236,6 @@
 		A1F6E95028B0572700FACCDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A187994428B02BF700223F6F /* ListItem.swift */,
 				A1F6E95F28B17B1100FACCDA /* Tab.swift */,
 			);
 			path = Models;
@@ -311,7 +247,6 @@
 				A1E304A528BAC09D004A015E /* Assets */,
 				A1F6E96128B1940700FACCDA /* Localizable.strings */,
 				A187991A28AF1DBF00223F6F /* PreviewContent */,
-				A16D3BA328BAA83200DB8EA3 /* DataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -331,7 +266,7 @@
 			children = (
 				A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */,
 				A187991628AF1DBE00223F6F /* ListView.swift */,
-				A1A5F11028C6783000999DCB /* Components */,
+				A187994228B02B7000223F6F /* ListItemView.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -368,6 +303,7 @@
 				A187994028AF34EC00223F6F /* DelinterNavigation */,
 				A187994628B0353300223F6F /* DelinterComponents */,
 				A1E304B928BD0E69004A015E /* DelinterNotifications */,
+				A1A5F11B28C7C5F800999DCB /* DelinterLocalStorage */,
 			);
 			productName = BrainDelinter;
 			productReference = A187991128AF1DBE00223F6F /* BrainDelinter.app */;
@@ -507,34 +443,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A187994528B02BF700223F6F /* ListItem.swift in Sources */,
-				A1E304B128BBF050004A015E /* UserDefaults+AppSettings.swift in Sources */,
-				A1E3049E28BAA9C6004A015E /* DataModel.xcdatamodeld in Sources */,
 				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
-				A1A5F11728C7B8B100999DCB /* ManagedListItem+CoreDataClass.swift in Sources */,
-				A1A5F10F28C66F5700999DCB /* FilteredList.swift in Sources */,
 				A16D3B9A28BA957200DB8EA3 /* TabsContainerView.swift in Sources */,
-				A1E304B828BC1C66004A015E /* UserDefaults+Mocked.swift in Sources */,
-				A16D3B9C28BA9B3200DB8EA3 /* ManagedListItem+Helpers.swift in Sources */,
 				A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */,
 				A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */,
 				A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */,
 				A187994328B02B7000223F6F /* ListItemView.swift in Sources */,
+				A1A5F11E28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift in Sources */,
 				A1E304A228BAC000004A015E /* Color+ColorAssets.swift in Sources */,
 				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
-				A16D3B9828B9E6E000DB8EA3 /* LocalDataStore.swift in Sources */,
 				A16D3B9128B98CF100DB8EA3 /* StatsRouterView.swift in Sources */,
+				A1A5F12028C7CA6800999DCB /* UserDefaults+AppSettings.swift in Sources */,
 				A16D3B8A28B9867D00DB8EA3 /* Assets.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
 				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,
 				A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */,
 				A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */,
-				A1A5F11828C7B8B100999DCB /* ManagedListItem+CoreDataProperties.swift in Sources */,
-				A1E304B428BC18FC004A015E /* EnvironmentValues+DelinterValues.swift in Sources */,
 				A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */,
 				A1E304A428BAC074004A015E /* String+Localized.swift in Sources */,
 				A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */,
-				A1E304A828BAF891004A015E /* MockDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,24 +798,15 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = DelinterComponents;
 		};
+		A1A5F11B28C7C5F800999DCB /* DelinterLocalStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DelinterLocalStorage;
+		};
 		A1E304B928BD0E69004A015E /* DelinterNotifications */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DelinterNotifications;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		A16D3BA328BAA83200DB8EA3 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				A16D3BA428BAA83200DB8EA3 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = A16D3BA428BAA83200DB8EA3 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = A187990928AF1DBE00223F6F /* Project object */;
 }

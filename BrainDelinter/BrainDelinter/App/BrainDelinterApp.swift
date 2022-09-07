@@ -5,16 +5,16 @@
 //  Created by Rachel Schneebaum on 8/18/22.
 //
 
-import CoreData
 import SwiftUI
 import DelinterComponents
+import DelinterLocalStorage
 import DelinterNotifications
 
 @main
 struct BrainDelinterApp: App {
     @Environment(\.scenePhase) var scenePhase
     @StateObject private var navigationState: AppNavigationState = .init()
-    private var dataStore: LocalDataStore = .init()
+    @StateObject private var dataStore: LocalDataStore = .init()
     private let notificationScheduler: NotificationScheduler = .init()
     private let userDefaults: UserDefaults = .standard
     
@@ -27,7 +27,8 @@ struct BrainDelinterApp: App {
                 .environmentObject(dataStore)
                 .environment(\.userDefaults, userDefaults)
                 .environment(\.isAppLoading, $isLoading)
-                .environment(\.managedObjectContext, dataStore.managedObjectContext) // do i need this??
+                // Required to prevent `Context in environment is not connected to a persistent store coordinator`
+                .environment(\.managedObjectContext, dataStore.context)
                 .onAppear {
                     if navigationState.selectedTab == nil {
                         navigationState.selectedTab = .list

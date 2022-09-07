@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
-import DelinterComponents
+import DelinterLocalStorage
 
-struct ListView<DataStore: DataStoreInterface>: View {
+struct ListView<DataStore: LocalDataStoring>: View {
     @Environment(\.userDefaults) var defaults
     @EnvironmentObject var dataStore: DataStore
     @State private var newItemText = ""
@@ -20,10 +20,12 @@ struct ListView<DataStore: DataStoreInterface>: View {
                 Section { topContent }
                 
                 Section {
-                    FilteredList(showComplete: showCompleted)
-                        .onReceive(defaults.publisher(for: \.showCompleted)) {
-                            showCompleted = $0
-                        }
+                    FilteredList(showComplete: showCompleted) {
+                        ListItemView(item: .constant($0))
+                    }
+                    .onReceive(defaults.publisher(for: \.showCompleted)) {
+                        showCompleted = $0
+                    }
                 } header: {
                     stickyHeader
                 }

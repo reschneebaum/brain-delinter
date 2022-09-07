@@ -6,6 +6,7 @@
 //
 
 import DelinterComponents
+import DelinterLocalStorage
 import SwiftUI
 
 /*
@@ -15,7 +16,7 @@ import SwiftUI
    3. customize notification sound!?
  */
 
-struct SettingsView<DataStore: DataStoreInterface>: View {
+struct SettingsView<DataStore: LocalDataStoring>: View {
     // TODO: Use @AppStorage instead??
     @Environment(\.userDefaults) var userDefaults
     @Environment(\.selectedTab) var selectedTab
