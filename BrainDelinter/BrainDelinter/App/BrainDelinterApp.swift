@@ -62,5 +62,13 @@ struct BrainDelinterApp: App {
             // we already have a scheduled time; check permission (+ schedule if needed)
             notificationScheduler.configureNotificationsSession()
         }
+        
+        configureNavigationBar()
+    }
+    
+    private func configureNavigationBar() {
+        UINavigationBar.appearance().titleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 24, weight: .light)
+        ]
     }
 }

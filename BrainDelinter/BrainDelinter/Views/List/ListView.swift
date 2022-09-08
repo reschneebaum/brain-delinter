@@ -17,7 +17,12 @@ struct ListView<DataStore: LocalDataStoring>: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             LazyVStack(spacing: Padding.medium.rawValue, pinnedViews: .sectionHeaders) {
-                Section { topContent }
+                Section {
+                    Text(Localized.List.description)
+                        .multilineTextAlignment(.center)
+                        .font(.Rounded.Medium.body)
+                        .padding(.horizontal, Padding.medium.rawValue)
+                }
                 
                 Section {
                     FilteredList(showComplete: showCompleted) { item in
@@ -61,18 +66,8 @@ struct ListView<DataStore: LocalDataStoring>: View {
                     .foregroundColor(.accentColor.opacity(0.7))
                     .shadow(color: .white.opacity(0.7), radius: 4, x: 0, y: 4)
         )
-        .padding(.vertical, Padding.small.rawValue)
+        .padding(.bottom, Padding.small.rawValue)
         .backgroundColorOnWhite(.blue.opacity(0.2))
-    }
-    
-    @ViewBuilder
-    private var topContent: some View {
-        Text(Localized.List.subheader)
-            .font(.Rounded.Light.subheader)
-        
-        Text(Localized.List.description)
-            .font(.Rounded.bodyS)
-            .padding(.horizontal, Padding.xSmall.rawValue)
     }
 }
 

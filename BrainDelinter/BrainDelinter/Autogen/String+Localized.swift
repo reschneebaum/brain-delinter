@@ -11,14 +11,12 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Localized {
   internal enum List {
-    /// got lint? just add it to the list and ignore it until it's time to clean the lint trap
-    internal static let description = Localized.tr("Localizable", "List.description", fallback: "got lint? just add it to the list and ignore it until it's time to clean the lint trap")
-    /// 🧠 get the lint out! 🧼
-    internal static let subheader = Localized.tr("Localizable", "List.subheader", fallback: "🧠 get the lint out! 🧼")
+    /// 🧹 write down any task taking up space in your head... then ignore it!
+    internal static let description = Localized.tr("Localizable", "List.description", fallback: "🧹 write down any task taking up space in your head... then ignore it!")
     /// add some lint
     internal static let textFieldLabel = Localized.tr("Localizable", "List.textFieldLabel", fallback: "add some lint")
-    /// lint list
-    internal static let title = Localized.tr("Localizable", "List.title", fallback: "lint list")
+    /// lint list 🧺
+    internal static let title = Localized.tr("Localizable", "List.title", fallback: "lint list 🧺")
   }
   internal enum Settings {
     /// Settings

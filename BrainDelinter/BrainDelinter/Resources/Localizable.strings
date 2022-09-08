@@ -1,6 +1,5 @@
-"List.title" = "lint list";
-"List.subheader" = "🧠 get the lint out! 🧼";
-"List.description" = "got lint? just add it to the list and ignore it until it's time to clean the lint trap";
+"List.title" = "lint list 🧺";
+"List.description" = "🧹 write down any task taking up space in your head... then ignore it!";
 "List.textFieldLabel" = "add some lint";
 
 "Settings.title" = "Settings";
