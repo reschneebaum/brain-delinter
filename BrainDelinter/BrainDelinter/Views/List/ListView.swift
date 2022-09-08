@@ -59,16 +59,20 @@ struct ListView<DataStore: LocalDataStoring>: View {
                 dataStore.addItem(newItemText)
                 newItemText = ""
             }
+            .accentColor(.alwaysBlack)
             .padding(.all, Padding.medium.rawValue)
             .background(
                 RoundedRectangle(cornerRadius: Padding.medium.rawValue)
                     .strokeBorder(lineWidth: 2)
                     .foregroundColor(.accentColor.opacity(0.7))
-                    .shadow(color: .white.opacity(0.7), radius: 4, x: 0, y: 4)
-        )
-        .padding(.bottom, Padding.small.rawValue)
-        .backgroundColorOnWhite(.blue.opacity(0.2))
-    }
+                    .shadow(color: .white.opacity(0.8), radius: 4, x: 0, y: 4)
+            )
+            .background(
+                RoundedRectangle(cornerRadius: Padding.medium.rawValue)
+                    .foregroundColor(.lightBlueOpaque)
+            )
+            .padding(.bottom, Padding.small.rawValue)
+        }
 }
 
 struct ListView_Previews: PreviewProvider {

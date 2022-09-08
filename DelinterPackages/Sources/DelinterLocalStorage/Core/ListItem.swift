@@ -8,7 +8,7 @@
 import Foundation
 
 public struct ListItem {
-    public var id = UUID().uuidString
+    public private(set) var id = UUID().uuidString
     public let text: String
     public var isComplete = false
     public var dateAdded: Date = .now
@@ -43,10 +43,8 @@ extension ListItem: Hashable {}
 
 // MARK: Previews
 
-#if DEBUG
 public extension ListItem {
     static var mocked: Self {
         .init(text: "Test item")
     }
 }
-#endif
