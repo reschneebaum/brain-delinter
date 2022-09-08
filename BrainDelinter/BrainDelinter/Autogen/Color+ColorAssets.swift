@@ -4,8 +4,8 @@ import SwiftUI
 
 public extension Color {
   static let accentColorOpaque = Color("AccentColorOpaque", bundle: BundleToken.bundle)
+  static let lightBlueOpaque = Color("LightBlueOpaque", bundle: BundleToken.bundle)
   static let secondaryColor = Color("SecondaryColor", bundle: BundleToken.bundle)
-  static let lightBlueOpaque = Color("lightBlueOpaque", bundle: BundleToken.bundle)
 }
 
 

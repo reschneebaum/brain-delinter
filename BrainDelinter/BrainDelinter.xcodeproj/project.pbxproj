@@ -76,6 +76,7 @@
 		A187994228B02B7000223F6F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+DelinterValues.swift"; sourceTree = "<group>"; };
 		A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppSettings.swift"; sourceTree = "<group>"; };
+		A1B3B25C28C969EA00C9C818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1E3049F28BABE7D004A015E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A1E304A128BAC000004A015E /* Color+ColorAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+ColorAssets.swift"; sourceTree = "<group>"; };
 		A1E304A328BAC074004A015E /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
@@ -165,9 +166,10 @@
 				A1F6E95228B0577D00FACCDA /* App */,
 				A1F6E94F28B0571D00FACCDA /* Views */,
 				A1F6E95028B0572700FACCDA /* Models */,
-				A1E304B528BC1A65004A015E /* LocalDataHandling */,
+				A1E304B528BC1A65004A015E /* Extensions */,
 				A16D3B7C28B96FAC00DB8EA3 /* Autogen */,
 				A1F6E95128B0576A00FACCDA /* Resources */,
+				A1B3B25C28C969EA00C9C818 /* Info.plist */,
 			);
 			path = BrainDelinter;
 			sourceTree = "<group>";
@@ -213,13 +215,13 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		A1E304B528BC1A65004A015E /* LocalDataHandling */ = {
+		A1E304B528BC1A65004A015E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */,
 				A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */,
 			);
-			path = LocalDataHandling;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A1F6E94F28B0571D00FACCDA /* Views */ = {
@@ -623,10 +625,10 @@
 				DEVELOPMENT_TEAM = 8K928H3KGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrainDelinter/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "🧠Delinter";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -653,10 +655,10 @@
 				DEVELOPMENT_TEAM = 8K928H3KGT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrainDelinter/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "🧠Delinter";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

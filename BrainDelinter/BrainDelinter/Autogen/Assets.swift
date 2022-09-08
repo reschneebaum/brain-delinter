@@ -13,6 +13,8 @@
 // Deprecated typealiases
 @available(*, deprecated, renamed: "ColorAsset.Color", message: "This typealias will be removed in SwiftGen 7.0")
 internal typealias AssetColorTypeAlias = ColorAsset.Color
+@available(*, deprecated, renamed: "ImageAsset.Image", message: "This typealias will be removed in SwiftGen 7.0")
+internal typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable superfluous_disable_command file_length implicit_return
 
@@ -22,6 +24,7 @@ internal typealias AssetColorTypeAlias = ColorAsset.Color
 internal enum Asset {
   internal enum Assets {
     internal static let accentColor = ColorAsset(name: "AccentColor")
+    internal static let launchScreen = ImageAsset(name: "LaunchScreen")
   }
   internal enum PreviewAssets {
   }
@@ -74,6 +77,107 @@ internal extension ColorAsset.Color {
     #elseif os(watchOS)
     self.init(named: asset.name)
     #endif
+  }
+}
+
+internal struct ImageAsset {
+  internal fileprivate(set) var name: String
+
+  #if os(macOS)
+  internal typealias Image = NSImage
+  #elseif os(iOS) || os(tvOS) || os(watchOS)
+  internal typealias Image = UIImage
+  #endif
+
+  @available(iOS 8.0, tvOS 9.0, watchOS 2.0, macOS 10.7, *)
+  internal var uiImage: Image {
+    let bundle = BundleToken.bundle
+    #if os(iOS) || os(tvOS)
+    let image = Image(named: name, in: bundle, compatibleWith: nil)
+    #elseif os(macOS)
+    let name = NSImage.Name(self.name)
+    let image = (bundle == .main) ? NSImage(named: name) : bundle.image(forResource: name)
+    #elseif os(watchOS)
+    let image = Image(named: name)
+    #endif
+    guard let result = image else {
+      fatalError("Unable to load image asset named \(name).")
+    }
+    return result
+  }
+
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+  internal var image: SwiftUI.Image {
+    let bundle = BundleToken.bundle
+    return SwiftUI.Image(self.name, bundle: bundle)
+  }
+
+  /// A SwiftUI `Image` initialized with `init(decorative:bundle:)`.
+  ///
+  /// Say we have two images, a and b: 
+  /// ```
+  /// let a = Image(decorative: "asset") 
+  /// let b = Image("asset")
+  /// ```
+  /// a and b are *visually* identical, but not identical to VoiceOver
+  /// or other screen readers: instead of reading out useless/confusing info 
+  /// like the image's filename, VoiceOver will only read necessary system
+  /// information such as traits.
+  @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+  internal var decorativeImage: SwiftUI.Image {
+    let bundle = BundleToken.bundle
+    return SwiftUI.Image(decorative: self.name, bundle: bundle)
+  }
+
+  #if os(iOS) || os(tvOS)
+  @available(iOS 8.0, tvOS 9.0, *)
+  internal func uiImage(compatibleWith traitCollection: UITraitCollection) -> Image {
+    let bundle = BundleToken.bundle
+    guard let result = Image(named: name, in: bundle, compatibleWith: traitCollection) else {
+      fatalError("Unable to load image asset named \(name).")
+    }
+    return result
+  }
+  #endif
+}
+
+internal extension ImageAsset.Image {
+  @available(iOS 8.0, tvOS 9.0, watchOS 2.0, *)
+  @available(macOS, deprecated,
+    message: "This initializer is unsafe on macOS, please use the ImageAsset.image property")
+  convenience init?(asset: ImageAsset) {
+    #if os(iOS) || os(tvOS)
+    let bundle = BundleToken.bundle
+    self.init(named: asset.name, in: bundle, compatibleWith: nil)
+    #elseif os(macOS)
+    self.init(named: NSImage.Name(asset.name))
+    #elseif os(watchOS)
+    self.init(named: asset.name)
+    #endif
+  }
+}
+
+@available(iOS 13.0, *)
+internal extension SwiftUI.Image {
+  init(_ asset: ImageAsset) {
+    let bundle = BundleToken.bundle
+    self.init(asset.name, bundle: bundle)
+  }
+
+  /// An image that will be treated as 'decorative' by VoiceOver and other screen readers.
+  ///
+  /// Say we have two images, a and b: 
+  /// ```
+  /// let a = Image(decorative: "asset") 
+  /// let b = Image("asset")
+  /// ```
+  /// a and b are *visually* identical, but not identical to VoiceOver
+  /// or other screen readers: instead of reading out useless/confusing info 
+  /// like the image's filename, VoiceOver will only read necessary system
+  /// information such as traits.
+  init(decorative asset: ImageAsset) {
+    let bundle = BundleToken.bundle
+    self.init(decorative: asset.name, bundle: bundle)
   }
 }
 
