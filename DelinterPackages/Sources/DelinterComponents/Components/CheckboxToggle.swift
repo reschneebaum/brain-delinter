@@ -1,14 +1,8 @@
-//
-//  CheckboxToggle.swift
-//  
-//
-//  Created by Rachel Schneebaum on 8/19/22.
-//
-
 import SwiftUI
 
 public struct CheckboxToggle<Label: View>: View {
     @Binding var isOn: Bool
+    let isEnabled: Bool
     let label: () -> Label
     
     public var body: some View {
@@ -28,9 +22,16 @@ public struct CheckboxToggle<Label: View>: View {
                 Image(systemName: isOn ? "checkmark.square.fill" : "square")
                     .resizable()
                     .frame(width: 24, height: 24)
-                    .foregroundColor(isOn ? .accentColor : .secondary)
+                    .foregroundColor(foregroundColor)
             }
         }
+    }
+    
+    private var foregroundColor: Color {
+        guard isEnabled else {
+            return .lightGray
+        }
+        return isOn ? .accentColor : .darkGray.opacity(0.8)
     }
     
     /// - parameter isOn: binding indicating whether or not the checkbox is checked.
@@ -39,8 +40,9 @@ public struct CheckboxToggle<Label: View>: View {
     ///
     /// - Note: If only a simple text label is needed, or no label at all, prefer the convenience initializers
     /// `init(isOn:)` or `init(isOn:label:font)`.
-    public init(isOn: Binding<Bool>, @ViewBuilder label: @escaping () -> Label) {
+    public init(isOn: Binding<Bool>, enabled: Bool = true, @ViewBuilder label: @escaping () -> Label) {
         _isOn = isOn
+        isEnabled = enabled
         self.label = label
     }
 }
@@ -49,8 +51,8 @@ public struct CheckboxToggle<Label: View>: View {
 
 public extension CheckboxToggle where Label == EmptyView {
     /// Convenience initializer; prefer this initializer in cases where a lone, tappable checkbox (without any label, text, etc.) is needed.
-    init(isOn: Binding<Bool>) {
-        self.init(isOn: isOn) {
+    init(isOn: Binding<Bool>, enabled: Bool = true) {
+        self.init(isOn: isOn, enabled: enabled) {
             EmptyView()
         }
     }
@@ -59,8 +61,8 @@ public extension CheckboxToggle where Label == EmptyView {
 public extension CheckboxToggle where Label == Text {
     /// Convenience initializer for a checkbox a with text label on the leading side.
     /// Pass in a custom font if desired; otherwise uses system default
-    init(isOn: Binding<Bool>, label: String, font: Font? = nil) {
-        self.init(isOn: isOn) {
+    init(isOn: Binding<Bool>, label: String, font: Font? = nil, enabled: Bool = true) {
+        self.init(isOn: isOn, enabled: enabled) {
             Text(label)
                 .font(font)
         }
@@ -77,7 +79,7 @@ struct CheckboxToggle_Previews: PreviewProvider {
         
         var body: some View {
             List {
-                CheckboxToggle(isOn: $isOn)
+                CheckboxToggle(isOn: $isOn, enabled: false)
                 
                 CheckboxToggle(isOn: $isOn, label: "Test Checkbox Label")
                 
@@ -93,6 +95,7 @@ struct CheckboxToggle_Previews: PreviewProvider {
                         Text("🧼 🧠")
                         Image(systemName: "bicycle")
                     }
+                    .padding()
                 }
             }
         }

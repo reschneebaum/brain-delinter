@@ -63,11 +63,15 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                             }
                         
                     case .snooze:
-                        CheckboxToggle(isOn: $allowSnooze, label: setting.title, font: .Rounded.Medium.body)
-                            .onChange(of: allowSnooze) { newValue in
-                                userDefaults.allowSnooze = newValue
-                            }
-                            .disabled(true)
+                        CheckboxToggle(
+                            isOn: $allowSnooze,
+                            label: setting.title,
+                            font: .Rounded.Medium.body,
+                            enabled: setting.enabled
+                        )
+                        .onChange(of: allowSnooze) { newValue in
+                            userDefaults.allowSnooze = newValue
+                        }
                         
                     case .duration:
                         Picker(SettingsItem.duration.title, selection: $duration) {
@@ -82,8 +86,8 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                         }
                     }
                 }
-                .disabled(!setting.enabled)
             }
+            .disabledAppearance(!setting.enabled)
         }
         .onAppear {
             selectedDate = userDefaults.scheduledStartTime ?? .now
@@ -125,6 +129,7 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                     }
                 }
             }
+            .disabledAppearance(!setting.enabled)
         }
         .alert(.clearList(onClearListSelected), isPresented: $isAlertPresented)
     }

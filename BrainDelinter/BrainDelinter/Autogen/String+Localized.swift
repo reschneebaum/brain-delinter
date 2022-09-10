@@ -19,8 +19,8 @@ internal enum Localized {
     internal static let title = Localized.tr("Localizable", "List.title", fallback: "lint list 🧺")
   }
   internal enum Settings {
-    /// Settings
-    internal static let title = Localized.tr("Localizable", "Settings.title", fallback: "Settings")
+    /// settings ⚙️
+    internal static let title = Localized.tr("Localizable", "Settings.title", fallback: "settings ⚙️")
     internal enum Alarm {
       /// pick a time to start Getting Things Done!
       internal static let description = Localized.tr("Localizable", "Settings.Alarm.description", fallback: "pick a time to start Getting Things Done!")
@@ -53,8 +53,8 @@ internal enum Localized {
     }
   }
   internal enum Stats {
-    /// Stats
-    internal static let title = Localized.tr("Localizable", "Stats.title", fallback: "Stats")
+    /// stats 📈
+    internal static let title = Localized.tr("Localizable", "Stats.title", fallback: "stats 📈")
     /// track your progress over time!
     internal static let wipExplainerBody = Localized.tr("Localizable", "Stats.wipExplainerBody", fallback: "track your progress over time!")
     /// coming soon...

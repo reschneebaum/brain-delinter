@@ -2,7 +2,7 @@
 "List.description" = "🧹 write down any task taking up space in your head... then ignore it!";
 "List.textFieldLabel" = "add some lint";
 
-"Settings.title" = "Settings";
+"Settings.title" = "settings ⚙️";
 "Settings.Alarm.sectionHeader" = "alarm settings";
 "Settings.Alarm.title" = "daily alarm";
 "Settings.Alarm.description" = "pick a time to start Getting Things Done!";
@@ -15,7 +15,7 @@
 "Settings.Delete.title" = "clear all list items";
 "Settings.Delete.body" = "careful, this can't be undone! 😬";
 
-"Stats.title" = "Stats";
+"Stats.title" = "stats 📈";
 "Stats.wipExplainerHeader" = "coming soon...";
 "Stats.wipExplainerBody" = "track your progress over time!";
 

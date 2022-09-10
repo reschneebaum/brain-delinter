@@ -26,11 +26,9 @@ struct ListView<DataStore: LocalDataStoring>: View {
                 
                 Section {
                     FilteredList(showComplete: showCompleted) { item in
-                        ListItemView(item: .init {
-                            item
-                        } set: {
-                            dataStore.updateItem($0)
-                        })
+                        ListItemView(
+                            item: .init { item } set: { dataStore.updateItem($0) }
+                        )
                     }
                     .onReceive(defaults.publisher(for: \.showCompleted)) {
                         showCompleted = $0
@@ -60,6 +58,7 @@ struct ListView<DataStore: LocalDataStoring>: View {
                 newItemText = ""
             }
             .accentColor(.alwaysBlack)
+            .foregroundColor(.alwaysBlack)
             .padding(.all, Padding.medium.rawValue)
             .background(
                 RoundedRectangle(cornerRadius: Padding.medium.rawValue)
