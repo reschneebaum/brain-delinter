@@ -6,9 +6,11 @@
 //
 
 import Combine
+import DelinterLocalStorage
 import UserNotifications
 
 public class NotificationScheduler: NSObject, ObservableObject {
+    public private(set) var permissionGranted: Bool?
     private let notificationCenter: UNUserNotificationCenter
     private let userDefaults: UserDefaults
     private var disposables: Set<AnyCancellable> = []
@@ -22,11 +24,11 @@ public class NotificationScheduler: NSObject, ObservableObject {
         
         let startPublisher = userDefaults.publisher(for: \.scheduledStartTime)
             .removeDuplicates()
-            .dropFirst()
+//            .dropFirst()
             .eraseToAnyPublisher()
         let durationPublisher = userDefaults.publisher(for: \.duration)
             .removeDuplicates()
-            .dropFirst()
+//            .dropFirst()
             .eraseToAnyPublisher()
         
         Publishers.CombineLatest(startPublisher, durationPublisher).sink { [weak self] _ in
@@ -58,6 +60,13 @@ public class NotificationScheduler: NSObject, ObservableObject {
             await self.scheduleNotifications()
         }
     }
+    
+    public func clearCurrentScheduledNotifications() {
+        notificationCenter.removePendingNotificationRequests(
+            withIdentifiers: NotificationConfig.allCases.map(\.rawValue)
+        )
+//        notificationCenter.removeAllPendingNotificationRequests()
+    }
 }
 
 // MARK: Private Extension
@@ -69,8 +78,10 @@ private extension NotificationScheduler {
         case .notDetermined:
             return nil
         case .denied:
+            permissionGranted = false
             return false
         case .authorized, .provisional, .ephemeral:
+            permissionGranted = true
             return true
         @unknown default:
             return false
@@ -85,6 +96,7 @@ private extension NotificationScheduler {
         if let requestAuthorized = try? await notificationCenter.requestAuthorization(
             options: [.sound, .alert, .badge, .carPlay]
         ) {
+            permissionGranted = requestAuthorized
             return requestAuthorized
         }
         return false
@@ -112,12 +124,6 @@ private extension NotificationScheduler {
             // TODO: Better error handling
             print("error scheduling notifications: \(error.localizedDescription)")
         }
-    }
-    
-    func clearCurrentScheduledNotifications() {
-        notificationCenter.removePendingNotificationRequests(
-            withIdentifiers: NotificationConfig.allCases.map(\.rawValue)
-        )
     }
 }
 

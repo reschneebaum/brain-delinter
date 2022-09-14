@@ -53,7 +53,7 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
     
     private var alarmSettingsSectionContent: some View {
         ForEach(alarmSettings, id: \.self) { setting in
-            SettingsRow(description: setting.description) {
+            StyledListRow(description: setting.description) {
                 Group {
                     switch setting {
                     case .alarmTime:
@@ -99,7 +99,7 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
     
     private var listSettingsSectionContent: some View {
         ForEach(listSettings, id: \.self) { setting in
-            SettingsRow(description: setting.description) {
+            StyledListRow(description: setting.description) {
                 Group {
                     switch setting {
                     case .showCompleted:

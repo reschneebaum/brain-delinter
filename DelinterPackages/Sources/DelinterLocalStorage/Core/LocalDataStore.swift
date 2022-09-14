@@ -8,13 +8,6 @@
 import CoreData
 import SwiftUI
 
-public protocol LocalDataStoring: ObservableObject {
-    func save()
-    func addItem(_ text: String)
-    func updateItem( _ item: ListItem)
-    func clearAllItems()
-}
-
 public final class LocalDataStore: LocalDataStoring {
     private let container: PersistentContainer
     public var context: NSManagedObjectContext {
@@ -27,11 +20,18 @@ public final class LocalDataStore: LocalDataStoring {
     
     public func save() {
         guard context.hasChanges else { return }
-        try? context.save()
+        
+        do {
+            try context.save()
+        } catch {
+            context.rollback()
+            print("saving moc failed: \(error.localizedDescription)")
+        }
     }
     
     public func addItem(_ text: String) {
         ManagedListItem.createNewItem(with: text, in: context)
+        save()
     }
     
     public func updateItem(_ item: ListItem) {

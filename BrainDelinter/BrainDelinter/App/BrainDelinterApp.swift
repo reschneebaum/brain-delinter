@@ -25,6 +25,7 @@ struct BrainDelinterApp: App {
             TabsContainerView(navigationState: navigationState)
                 .isLoading($isLoading)
                 .environmentObject(dataStore)
+                .environmentObject(notificationScheduler) // todo when/if i remove the debug view
                 .environment(\.userDefaults, userDefaults)
                 .environment(\.isAppLoading, $isLoading)
                 // Required to prevent `Context in environment is not connected to a persistent store coordinator`

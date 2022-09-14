@@ -24,14 +24,16 @@
 		A187994728B0353300223F6F /* DelinterComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A187994628B0353300223F6F /* DelinterComponents */; };
 		A1A5F11C28C7C5F800999DCB /* DelinterLocalStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A1A5F11B28C7C5F800999DCB /* DelinterLocalStorage */; };
 		A1A5F11E28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */; };
-		A1A5F12028C7CA6800999DCB /* UserDefaults+AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */; };
+		A1B3B25E28CD160900C9C818 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3B25D28CD160900C9C818 /* DebugView.swift */; };
+		A1B3B26128CD341F00C9C818 /* DebugItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3B26028CD341F00C9C818 /* DebugItem.swift */; };
+		A1B3B26328CD382E00C9C818 /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3B26228CD382E00C9C818 /* ListSection.swift */; };
+		A1B3B26528CD760D00C9C818 /* DebugSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B3B26428CD760D00C9C818 /* DebugSection.swift */; };
 		A1E304A028BABE7D004A015E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E3049F28BABE7D004A015E /* Colors.xcassets */; };
 		A1E304A228BAC000004A015E /* Color+ColorAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A128BAC000004A015E /* Color+ColorAssets.swift */; };
 		A1E304A428BAC074004A015E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A328BAC074004A015E /* String+Localized.swift */; };
 		A1E304BA28BD0E69004A015E /* DelinterNotifications in Frameworks */ = {isa = PBXBuildFile; productRef = A1E304B928BD0E69004A015E /* DelinterNotifications */; };
 		A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */; };
 		A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95728B05CD600FACCDA /* SettingsView.swift */; };
-		A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95928B167D200FACCDA /* SettingsRow.swift */; };
 		A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */; };
 		A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */; };
 		A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E95F28B17B1100FACCDA /* Tab.swift */; };
@@ -75,14 +77,16 @@
 		A187993E28AF201300223F6F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A187994228B02B7000223F6F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+DelinterValues.swift"; sourceTree = "<group>"; };
-		A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppSettings.swift"; sourceTree = "<group>"; };
 		A1B3B25C28C969EA00C9C818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1B3B25D28CD160900C9C818 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		A1B3B26028CD341F00C9C818 /* DebugItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugItem.swift; sourceTree = "<group>"; };
+		A1B3B26228CD382E00C9C818 /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
+		A1B3B26428CD760D00C9C818 /* DebugSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSection.swift; sourceTree = "<group>"; };
 		A1E3049F28BABE7D004A015E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A1E304A128BAC000004A015E /* Color+ColorAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+ColorAssets.swift"; sourceTree = "<group>"; };
 		A1E304A328BAC074004A015E /* String+Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
 		A1F6E95328B0588100FACCDA /* BrainDelinterConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrainDelinterConstants.swift; sourceTree = "<group>"; };
 		A1F6E95728B05CD600FACCDA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A1F6E95928B167D200FACCDA /* SettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRow.swift; sourceTree = "<group>"; };
 		A1F6E95B28B16DF800FACCDA /* ListRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRouterView.swift; sourceTree = "<group>"; };
 		A1F6E95D28B17AB300FACCDA /* AppNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationState.swift; sourceTree = "<group>"; };
 		A1F6E95F28B17B1100FACCDA /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
@@ -206,6 +210,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A1B3B25F28CD33F400C9C818 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				A1B3B25D28CD160900C9C818 /* DebugView.swift */,
+				A1B3B26028CD341F00C9C818 /* DebugItem.swift */,
+				A1B3B26428CD760D00C9C818 /* DebugSection.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		A1E304A528BAC09D004A015E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +232,6 @@
 		A1E304B528BC1A65004A015E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */,
 				A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */,
 			);
 			path = Extensions;
@@ -231,6 +244,7 @@
 				A1F6E95528B05C7600FACCDA /* List */,
 				A16D3B8D28B98CC400DB8EA3 /* Stats */,
 				A1F6E95628B05C7F00FACCDA /* Settings */,
+				A1B3B25F28CD33F400C9C818 /* Debug */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 		A1F6E95028B0572700FACCDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A1B3B26228CD382E00C9C818 /* ListSection.swift */,
 				A1F6E95F28B17B1100FACCDA /* Tab.swift */,
 			);
 			path = Models;
@@ -278,7 +293,6 @@
 			children = (
 				A1F6E96828B1D43600FACCDA /* SettingsRouterView.swift */,
 				A1F6E95728B05CD600FACCDA /* SettingsView.swift */,
-				A1F6E95928B167D200FACCDA /* SettingsRow.swift */,
 				A16D3B9228B9905900DB8EA3 /* SettingsItem.swift */,
 			);
 			path = Settings;
@@ -446,21 +460,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				A187991728AF1DBE00223F6F /* ListView.swift in Sources */,
+				A1B3B26528CD760D00C9C818 /* DebugSection.swift in Sources */,
 				A16D3B9A28BA957200DB8EA3 /* TabsContainerView.swift in Sources */,
 				A1F6E95828B05CD600FACCDA /* SettingsView.swift in Sources */,
 				A1F6E96928B1D43600FACCDA /* SettingsRouterView.swift in Sources */,
-				A1F6E95A28B167D200FACCDA /* SettingsRow.swift in Sources */,
+				A1B3B26128CD341F00C9C818 /* DebugItem.swift in Sources */,
+				A1B3B26328CD382E00C9C818 /* ListSection.swift in Sources */,
 				A187994328B02B7000223F6F /* ListItemView.swift in Sources */,
 				A1A5F11E28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift in Sources */,
 				A1E304A228BAC000004A015E /* Color+ColorAssets.swift in Sources */,
 				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
 				A16D3B9128B98CF100DB8EA3 /* StatsRouterView.swift in Sources */,
-				A1A5F12028C7CA6800999DCB /* UserDefaults+AppSettings.swift in Sources */,
 				A16D3B8A28B9867D00DB8EA3 /* Assets.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
 				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,
 				A1F6E95E28B17AB300FACCDA /* AppNavigationState.swift in Sources */,
 				A16D3B9328B9905900DB8EA3 /* SettingsItem.swift in Sources */,
+				A1B3B25E28CD160900C9C818 /* DebugView.swift in Sources */,
 				A16D3B8F28B98CDB00DB8EA3 /* StatsView.swift in Sources */,
 				A1E304A428BAC074004A015E /* String+Localized.swift in Sources */,
 				A1F6E95C28B16DF800FACCDA /* ListRouterView.swift in Sources */,

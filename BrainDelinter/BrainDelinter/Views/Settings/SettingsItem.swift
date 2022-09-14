@@ -48,7 +48,7 @@ enum SettingsActionItem: String, CaseIterable {
     var title: String {
         switch self {
         case .showCompleted:
-            return "show completed items"
+            return Localized.Settings.ShowComplete.title
         case .clearList:
             return Localized.Settings.Delete.title
         }
@@ -57,9 +57,9 @@ enum SettingsActionItem: String, CaseIterable {
     var description: String {
         switch self {
         case .showCompleted:
-            return "Display the day's completed items in your lint list"
+            return Localized.Settings.ShowComplete.description
         case .clearList:
-            return Localized.Settings.Delete.body
+            return Localized.Settings.Delete.description
         }
     }
     

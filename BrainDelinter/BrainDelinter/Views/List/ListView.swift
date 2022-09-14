@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DelinterComponents
 import DelinterLocalStorage
 
 struct ListView<DataStore: LocalDataStoring>: View {
@@ -16,16 +17,16 @@ struct ListView<DataStore: LocalDataStoring>: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            LazyVStack(spacing: Padding.medium.rawValue, pinnedViews: .sectionHeaders) {
+            LazyVStack(spacing: Padding.mediumSmall.rawValue, pinnedViews: .sectionHeaders) {
                 Section {
                     Text(Localized.List.description)
                         .multilineTextAlignment(.center)
                         .font(.Rounded.Medium.body)
-                        .padding(.horizontal, Padding.medium.rawValue)
+                        .padding(.horizontal, Padding.mediumSmall.rawValue)
                 }
                 
                 Section {
-                    FilteredList(showComplete: showCompleted) { item in
+                    FilteredItemsList(showComplete: showCompleted) { item in
                         ListItemView(
                             item: .init { item } set: { dataStore.updateItem($0) }
                         )
@@ -39,13 +40,11 @@ struct ListView<DataStore: LocalDataStoring>: View {
             }
             .headerProminence(.increased)
         }
-        .padding(.horizontal, Padding.medium.rawValue)
+        .padding(.horizontal, Padding.mediumSmall.rawValue)
         .background(Color.blue.opacity(0.2))
         .navigationTitle(Localized.List.title)
         .navigationBarTitleDisplayMode(.inline)
-        .onDisappear {
-            dataStore.save()
-        }
+        .onDisappear(perform: dataStore.save)
     }
     
     private var stickyHeader: some View {
@@ -59,15 +58,15 @@ struct ListView<DataStore: LocalDataStoring>: View {
             }
             .accentColor(.alwaysBlack)
             .foregroundColor(.alwaysBlack)
-            .padding(.all, Padding.medium.rawValue)
+            .padding(.all, Padding.mediumSmall.rawValue)
             .background(
-                RoundedRectangle(cornerRadius: Padding.medium.rawValue)
+                RoundedRectangle(cornerRadius: Padding.mediumSmall.rawValue)
                     .strokeBorder(lineWidth: 2)
                     .foregroundColor(.accentColor.opacity(0.7))
                     .shadow(color: .white.opacity(0.8), radius: 4, x: 0, y: 4)
             )
             .background(
-                RoundedRectangle(cornerRadius: Padding.medium.rawValue)
+                RoundedRectangle(cornerRadius: Padding.mediumSmall.rawValue)
                     .foregroundColor(.lightBlueOpaque)
             )
             .padding(.bottom, Padding.small.rawValue)

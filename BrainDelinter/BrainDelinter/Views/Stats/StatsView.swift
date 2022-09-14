@@ -5,15 +5,23 @@
 //  Created by Rachel Schneebaum on 8/26/22.
 //
 
+import DelinterComponents
 import SwiftUI
+
+// TODO: This is temporary!
 
 struct StatsView: View {
     var body: some View {
+        DebugView()
+            .navigationTitle("debuggin 🐛🐞")
+            .navigationBarTitleDisplayMode(.inline)
+        
+        /*
         ZStack {
             Color.teal.opacity(0.3)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack(spacing: Padding.medium.rawValue) {
+            VStack(spacing: Padding.mediumSmall.rawValue) {
                 Text(Localized.Stats.wipExplainerHeader)
                     .font(.Rounded.Light.header)
                 
@@ -27,10 +35,11 @@ struct StatsView: View {
                 
                 Spacer()
             }
-            .padding(.top, Padding.xLarge.rawValue)
+            .padding(.top, Padding.large.rawValue)
         }
         .navigationTitle(Localized.Stats.title)
         .navigationBarTitleDisplayMode(.inline)
+         */
     }
 }
 

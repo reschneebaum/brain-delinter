@@ -10,6 +10,36 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Localized {
+  internal enum Debug {
+    /// Delete all the things
+    internal static let clearCache = Localized.tr("Localizable", "Debug.clearCache", fallback: "Delete all the things")
+    /// Local (local, local) storage
+    internal static let defaults = Localized.tr("Localizable", "Debug.defaults", fallback: "Local (local, local) storage")
+    /// Notification Center
+    internal static let notifications = Localized.tr("Localizable", "Debug.notifications", fallback: "Notification Center")
+    internal enum Clear {
+      /// clear core data
+      internal static let coreData = Localized.tr("Localizable", "Debug.Clear.coreData", fallback: "clear core data")
+      /// clear user defaults
+      internal static let defaults = Localized.tr("Localizable", "Debug.Clear.defaults", fallback: "clear user defaults")
+      /// clear notification center
+      internal static let notifications = Localized.tr("Localizable", "Debug.Clear.notifications", fallback: "clear notification center")
+    }
+    internal enum Defaults {
+      /// persisted duration
+      internal static let duration = Localized.tr("Localizable", "Debug.Defaults.duration", fallback: "persisted duration")
+      /// persisted end time
+      internal static let endTime = Localized.tr("Localizable", "Debug.Defaults.endTime", fallback: "persisted end time")
+      /// persisted start time
+      internal static let startTime = Localized.tr("Localizable", "Debug.Defaults.startTime", fallback: "persisted start time")
+    }
+    internal enum Notifications {
+      /// pending notification ids
+      internal static let pending = Localized.tr("Localizable", "Debug.Notifications.pending", fallback: "pending notification ids")
+      /// notification permission?
+      internal static let permission = Localized.tr("Localizable", "Debug.Notifications.permission", fallback: "notification permission?")
+    }
+  }
   internal enum List {
     /// 🧹 write down any task taking up space in your head... then ignore it!
     internal static let description = Localized.tr("Localizable", "List.description", fallback: "🧹 write down any task taking up space in your head... then ignore it!")
@@ -31,7 +61,7 @@ internal enum Localized {
     }
     internal enum Delete {
       /// careful, this can't be undone! 😬
-      internal static let body = Localized.tr("Localizable", "Settings.Delete.body", fallback: "careful, this can't be undone! 😬")
+      internal static let description = Localized.tr("Localizable", "Settings.Delete.description", fallback: "careful, this can't be undone! 😬")
       /// clear all list items
       internal static let title = Localized.tr("Localizable", "Settings.Delete.title", fallback: "clear all list items")
     }
@@ -44,6 +74,12 @@ internal enum Localized {
     internal enum List {
       /// list settings
       internal static let sectionHeader = Localized.tr("Localizable", "Settings.List.sectionHeader", fallback: "list settings")
+    }
+    internal enum ShowComplete {
+      /// display the day's completed items in your lint list
+      internal static let description = Localized.tr("Localizable", "Settings.ShowComplete.description", fallback: "display the day's completed items in your lint list")
+      /// show completed items
+      internal static let title = Localized.tr("Localizable", "Settings.ShowComplete.title", fallback: "show completed items")
     }
     internal enum Snooze {
       /// if checked, we'll notify you again in 5 minutes

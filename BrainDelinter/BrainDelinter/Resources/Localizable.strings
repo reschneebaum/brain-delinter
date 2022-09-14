@@ -13,7 +13,10 @@
 
 "Settings.List.sectionHeader" = "list settings";
 "Settings.Delete.title" = "clear all list items";
-"Settings.Delete.body" = "careful, this can't be undone! 😬";
+"Settings.Delete.description" = "careful, this can't be undone! 😬";
+
+"Settings.ShowComplete.title" = "show completed items";
+"Settings.ShowComplete.description" = "display the day's completed items in your lint list";
 
 "Stats.title" = "stats 📈";
 "Stats.wipExplainerHeader" = "coming soon...";
@@ -22,3 +25,17 @@
 "Tab.list" = "list";
 "Tab.stats" = "stats";
 "Tab.settings" = "settings";
+
+// Debug (tem?)
+"Debug.notifications" = "Notification Center";
+"Debug.defaults" = "Local (local, local) storage";
+"Debug.clearCache" = "Delete all the things";
+
+"Debug.Notifications.permission" = "notification permission?";
+"Debug.Notifications.pending" = "pending notification ids";
+"Debug.Defaults.startTime" = "persisted start time";
+"Debug.Defaults.endTime" = "persisted end time";
+"Debug.Defaults.duration" = "persisted duration";
+"Debug.Clear.defaults" = "clear user defaults";
+"Debug.Clear.coreData" = "clear core data";
+"Debug.Clear.notifications" = "clear notification center";
