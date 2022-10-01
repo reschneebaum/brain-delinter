@@ -79,8 +79,7 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                                 Text("\($0) min").font(.Rounded.Light.body)
                             }
                         }
-                        .pickerStyle(.menu)
-                        .labelStyle(.titleOnly)
+                        .pickerStyle(.automatic)
                         .onChange(of: duration) { newValue in
                             userDefaults.duration = newValue
                         }
