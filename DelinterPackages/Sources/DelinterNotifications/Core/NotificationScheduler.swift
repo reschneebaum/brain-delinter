@@ -20,7 +20,7 @@ public class NotificationScheduler: NSObject, ObservableObject {
         self.userDefaults = userDefaults
         super.init()
         
-        let startPublisher = userDefaults.publisher(for: \.scheduledStartTime)
+        let startPublisher = userDefaults.publisher(for: \.startTime)
             .removeDuplicates()
             .dropFirst()
             .eraseToAnyPublisher()

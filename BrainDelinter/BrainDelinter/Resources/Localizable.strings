@@ -8,12 +8,14 @@
 "Settings.Alarm.description" = "pick a time to start Getting Things Done!";
 "Settings.Snooze.title" = "allow snooze?";
 "Settings.Snooze.description" = "if checked, we'll notify you again in 5 minutes";
-"Settings.Duration.title" = "how long?";
-"Settings.Duration.description" = "we strongly recommend a 'do things' time of 20 minutes; much longer (or shorter) won't have the desired effect.";
+"Settings.Duration.title" = "productivity duration";
+"Settings.Duration.description" = "20 minutes is the recommended duration: short enough to feel doable, long enough to accomplish something(s)!";
 
 "Settings.List.sectionHeader" = "list settings";
-"Settings.Delete.title" = "clear all list items";
-"Settings.Delete.body" = "careful, this can't be undone! 😬";
+"Settings.ShowComplete.title" = "show completed items";
+"Settings.ShowComplete.body" = "display the day's completed items in your lint list";
+"Settings.ClearAll.title" = "clear all list items";
+"Settings.ClearAll.body" = "careful, this can't be undone! 😬";
 
 "Stats.title" = "stats 📈";
 "Stats.wipExplainerHeader" = "coming soon...";

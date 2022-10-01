@@ -6,17 +6,19 @@
 //
 //
 
-import Foundation
 import CoreData
-
+import Foundation
 
 extension ManagedListItem {
+    static let entityName = "ManagedListItem"
+    
     @nonobjc class func fetchRequest() -> NSFetchRequest<ManagedListItem> {
-        .init(entityName: "ManagedListItem")
+        .init(entityName: Self.entityName)
     }
+    
     @nonobjc class func itemFetchRequest(id: String) -> NSFetchRequest<ManagedListItem> {
-        let request = NSFetchRequest<ManagedListItem>.init(entityName: "ManagedListItem")
-        request.predicate = NSPredicate(format: "id == %@", id)
+        let request: NSFetchRequest<ManagedListItem> = .init(entityName: Self.entityName)
+        request.predicate = .init(format: "id == %@", id)
         return request
     }
 
@@ -27,13 +29,9 @@ extension ManagedListItem {
     @NSManaged var text: String?
 
     override var description: String {
-        "ManagedListItem"
+        Self.entityName
     }
 }
-
-// MARK: Identifiable
-
-extension ManagedListItem: Identifiable {}
 
 // MARK: Helpers
 

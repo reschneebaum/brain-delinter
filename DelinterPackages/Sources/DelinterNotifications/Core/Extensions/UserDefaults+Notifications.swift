@@ -2,23 +2,23 @@ import Foundation
 
 public extension UserDefaults {
     var isStartTimeSet: Bool {
-        scheduledStartTime != nil
+        startTime != nil
     }
     
     var startTimeComponents: DateComponents? {
-        scheduledStartTime?.dateComponents
+        startTime?.dateComponents
     }
     
     var endTimeComponents: DateComponents? {
         endTime?.dateComponents
     }
     
-    @objc var scheduledStartTime: Date? {
+    @objc var startTime: Date? {
         get {
             object(forKey: Keys.startTime) as? Date
         }
         set {
-            guard let newValue = newValue else { return }
+            guard let newValue else { return }
             set(newValue, forKey: Keys.startTime)
         }
     }
@@ -34,8 +34,8 @@ public extension UserDefaults {
     }
     
     private var endTime: Date? {
-        guard let scheduledStartTime else { return nil }
-        return Calendar.current.date(byAdding: .minute, value: duration, to: scheduledStartTime)
+        guard let startTime else { return nil }
+        return Calendar.current.date(byAdding: .minute, value: duration, to: startTime)
     }
 }
 

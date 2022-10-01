@@ -5,30 +5,30 @@
 //  Created by Rachel Schneebaum on 8/26/22.
 //
 
-enum SettingsItem: String, CaseIterable {
-    case alarmTime
-    case snooze
+enum AlarmSetting: String, RowRepresenting, CaseIterable {
+    case startTime
     case duration
+    case snooze
     
     var title: String {
         switch self {
-        case .alarmTime:
+        case .startTime:
             return Localized.Settings.Alarm.title
-        case .snooze:
-            return Localized.Settings.Snooze.title
         case .duration:
             return Localized.Settings.Duration.title
+        case .snooze:
+            return Localized.Settings.Snooze.title
         }
     }
     
     var description: String {
         switch self {
-        case .alarmTime:
+        case .startTime:
             return Localized.Settings.Alarm.description
-        case .snooze:
-            return Localized.Settings.Snooze.description
         case .duration:
             return Localized.Settings.Duration.description
+        case .snooze:
+            return Localized.Settings.Snooze.description
         }
     }
     
@@ -41,29 +41,25 @@ enum SettingsItem: String, CaseIterable {
     }
 }
 
-enum SettingsActionItem: String, CaseIterable {
-    case showCompleted
-    case clearList
+enum ListSetting: String, RowRepresenting, CaseIterable {
+    case showComplete
+    case clearAll
     
     var title: String {
         switch self {
-        case .showCompleted:
-            return "show completed items"
-        case .clearList:
-            return Localized.Settings.Delete.title
+        case .showComplete:
+            return Localized.Settings.ShowComplete.title
+        case .clearAll:
+            return Localized.Settings.ClearAll.title
         }
     }
     
     var description: String {
         switch self {
-        case .showCompleted:
-            return "Display the day's completed items in your lint list"
-        case .clearList:
-            return Localized.Settings.Delete.body
+        case .showComplete:
+            return Localized.Settings.ShowComplete.body
+        case .clearAll:
+            return Localized.Settings.ClearAll.body
         }
-    }
-    
-    var enabled: Bool {
-        true
     }
 }

@@ -13,6 +13,12 @@ enum Constants {
     static let defaultTimeInterval = 20
     /// 10...60 (minutes)
     static let durationRange = 10...60
+    /// 11 am in the user's locale/timezone
+    static let defaultStartTime: Date = {
+        var components = DateComponents()
+        components.hour = 11
+        return Calendar.current.date(from: components) ?? .now
+    }()
 }
 
 enum Padding: CGFloat {

@@ -29,21 +29,27 @@ internal enum Localized {
       /// daily alarm
       internal static let title = Localized.tr("Localizable", "Settings.Alarm.title", fallback: "daily alarm")
     }
-    internal enum Delete {
+    internal enum ClearAll {
       /// careful, this can't be undone! 😬
-      internal static let body = Localized.tr("Localizable", "Settings.Delete.body", fallback: "careful, this can't be undone! 😬")
+      internal static let body = Localized.tr("Localizable", "Settings.ClearAll.body", fallback: "careful, this can't be undone! 😬")
       /// clear all list items
-      internal static let title = Localized.tr("Localizable", "Settings.Delete.title", fallback: "clear all list items")
+      internal static let title = Localized.tr("Localizable", "Settings.ClearAll.title", fallback: "clear all list items")
     }
     internal enum Duration {
-      /// we strongly recommend a 'do things' time of 20 minutes; much longer (or shorter) won't have the desired effect.
-      internal static let description = Localized.tr("Localizable", "Settings.Duration.description", fallback: "we strongly recommend a 'do things' time of 20 minutes; much longer (or shorter) won't have the desired effect.")
-      /// how long?
-      internal static let title = Localized.tr("Localizable", "Settings.Duration.title", fallback: "how long?")
+      /// 20 minutes is the recommended duration: short enough to feel doable, long enough to accomplish something(s)!
+      internal static let description = Localized.tr("Localizable", "Settings.Duration.description", fallback: "20 minutes is the recommended duration: short enough to feel doable, long enough to accomplish something(s)!")
+      /// productivity duration
+      internal static let title = Localized.tr("Localizable", "Settings.Duration.title", fallback: "productivity duration")
     }
     internal enum List {
       /// list settings
       internal static let sectionHeader = Localized.tr("Localizable", "Settings.List.sectionHeader", fallback: "list settings")
+    }
+    internal enum ShowComplete {
+      /// display the day's completed items in your lint list
+      internal static let body = Localized.tr("Localizable", "Settings.ShowComplete.body", fallback: "display the day's completed items in your lint list")
+      /// show completed items
+      internal static let title = Localized.tr("Localizable", "Settings.ShowComplete.title", fallback: "show completed items")
     }
     internal enum Snooze {
       /// if checked, we'll notify you again in 5 minutes

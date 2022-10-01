@@ -23,15 +23,15 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
     @Environment(\.isAppLoading) var isAppLoading
     @EnvironmentObject var dataStore: DataStore
     
-    @State private var selectedDate: Date = .now
+    @State private var selectedDate: Date = Constants.defaultStartTime
     @State private var allowSnooze = false
     @State private var duration = Constants.defaultTimeInterval
     @State private var showCompleted = true
     @State private var isAlertPresented = false
     
     private let durationRange = Constants.durationRange
-    private let alarmSettings = SettingsItem.allCases
-    private let listSettings = SettingsActionItem.allCases
+    private let alarmSettings = AlarmSetting.allCases
+    private let listSettings = ListSetting.allCases
     
     var body: some View {
         List {
@@ -56,11 +56,22 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
             SettingsRow(description: setting.description) {
                 Group {
                     switch setting {
-                    case .alarmTime:
+                    case .startTime:
                         TimePicker(selectedTime: $selectedDate, label: setting.title, font: .Rounded.Medium.body)
                             .onChange(of: selectedDate) { newValue in
-                                userDefaults.scheduledStartTime = newValue
+                                userDefaults.startTime = newValue
                             }
+                        
+                    case .duration:
+                        Picker(setting.title, selection: $duration) {
+                            ForEach(durationRange, id: \.self) {
+                                Text("\($0) min").font(.Rounded.Light.body)
+                            }
+                        }
+                        .pickerStyle(.automatic)
+                        .onChange(of: duration) { newValue in
+                            userDefaults.duration = newValue
+                        }
                         
                     case .snooze:
                         CheckboxToggle(
@@ -72,24 +83,13 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                         .onChange(of: allowSnooze) { newValue in
                             userDefaults.allowSnooze = newValue
                         }
-                        
-                    case .duration:
-                        Picker(SettingsItem.duration.title, selection: $duration) {
-                            ForEach(durationRange, id: \.self) {
-                                Text("\($0) min").font(.Rounded.Light.body)
-                            }
-                        }
-                        .pickerStyle(.automatic)
-                        .onChange(of: duration) { newValue in
-                            userDefaults.duration = newValue
-                        }
                     }
                 }
             }
             .disabledAppearance(!setting.enabled)
         }
         .onAppear {
-            selectedDate = userDefaults.scheduledStartTime ?? .now
+            selectedDate = userDefaults.startTime ?? Constants.defaultStartTime
             duration = userDefaults.duration > 0 ? userDefaults.duration : Constants.defaultTimeInterval
             allowSnooze = userDefaults.allowSnooze
             showCompleted = userDefaults.showCompleted
@@ -101,13 +101,13 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
             SettingsRow(description: setting.description) {
                 Group {
                     switch setting {
-                    case .showCompleted:
+                    case .showComplete:
                         CheckboxToggle(isOn: $showCompleted, label: setting.title, font: .Rounded.Medium.body)
                             .onChange(of: showCompleted) { newValue in
                                 userDefaults.showCompleted = newValue
                             }
                         
-                    case .clearList:
+                    case .clearAll:
                         HStack {
                             Text(setting.title)
                                 .padding(.bottom, Padding.xSmall.rawValue)
