@@ -6,30 +6,22 @@
 //
 
 import Combine
+import DelinterLocalStorage
 import UserNotifications
 
 public class NotificationScheduler: NSObject, ObservableObject {
     private let notificationCenter: UNUserNotificationCenter
-    private let userDefaults: UserDefaults
+    private let defaults: DefaultsCacheing
     private var disposables: Set<AnyCancellable> = []
     
     // MARK: Init
     
-    public init(notificationCenter: UNUserNotificationCenter = .current(), userDefaults: UserDefaults = .standard) {
+    public init(notificationCenter: UNUserNotificationCenter = .current(), userDefaults: DefaultsCacheing = UserDefaults.standard) {
         self.notificationCenter = notificationCenter
-        self.userDefaults = userDefaults
+        self.defaults = userDefaults
         super.init()
         
-        let startPublisher = userDefaults.publisher(for: \.scheduledStartTime)
-            .removeDuplicates()
-            .dropFirst()
-            .eraseToAnyPublisher()
-        let durationPublisher = userDefaults.publisher(for: \.duration)
-            .removeDuplicates()
-            .dropFirst()
-            .eraseToAnyPublisher()
-        
-        Publishers.CombineLatest(startPublisher, durationPublisher).sink { [weak self] _ in
+        Publishers.CombineLatest(defaults.startTimePublisher, defaults.durationPublisher).sink { [weak self] _ in
             self?.updateNotificationTimes()
         }
         .store(in: &disposables)
@@ -56,6 +48,19 @@ public class NotificationScheduler: NSObject, ObservableObject {
         
         Task.detached(priority: .background) {
             await self.scheduleNotifications()
+        }
+    }
+    
+    public func clearCurrentScheduledNotifications() {
+        notificationCenter.removePendingNotificationRequests(
+            withIdentifiers: NotificationConfig.allCases.map(\.rawValue)
+        )
+//        notificationCenter.removeAllPendingNotificationRequests()
+    }
+    
+    public func pendingNotifications(completion: @escaping ([UNNotificationRequest]) -> Void) {
+        Task.detached {
+            completion(await self.notificationCenter.pendingNotificationRequests())
         }
     }
 }
@@ -100,8 +105,8 @@ private extension NotificationScheduler {
         }
         
         // Can't schedule a notification with no start/end times
-        guard let startTime = userDefaults.startTimeComponents,
-              let endTime = userDefaults.endTimeComponents else {
+        guard let startTime = defaults.startTimeComponents,
+              let endTime = defaults.endTimeComponents else {
             return
         }
         
@@ -112,12 +117,6 @@ private extension NotificationScheduler {
             // TODO: Better error handling
             print("error scheduling notifications: \(error.localizedDescription)")
         }
-    }
-    
-    func clearCurrentScheduledNotifications() {
-        notificationCenter.removePendingNotificationRequests(
-            withIdentifiers: NotificationConfig.allCases.map(\.rawValue)
-        )
     }
 }
 

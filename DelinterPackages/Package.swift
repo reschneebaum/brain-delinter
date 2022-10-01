@@ -40,7 +40,7 @@ let package = Package(
         .target(name: "DelinterNavigation", dependencies: []),
         .target(
             name: "DelinterNotifications",
-            dependencies: [],
+            dependencies: ["DelinterLocalStorage"],
             resources: [
                 .process("Resources"),
             ]

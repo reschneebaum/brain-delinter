@@ -5,13 +5,14 @@
 //  Created by Rachel Schneebaum on 8/28/22.
 //
 
+import DelinterLocalStorage
 import Foundation
 import SwiftUI
 
 extension EnvironmentValues {
     /// The current environment's user defaults
     /// - Note: the value only changes in unit tests and previews — i.e., when we shouldn't use `.standard`
-    var userDefaults: UserDefaults {
+    var defaults: DefaultsCacheing {
         get {
             self[UserDefaultsKey.self]
         }
@@ -40,7 +41,7 @@ extension EnvironmentValues {
 }
 
 private struct UserDefaultsKey: EnvironmentKey {
-    static var defaultValue: UserDefaults = .standard
+    static var defaultValue: DefaultsCacheing = LocalData.defaults
 }
 
 private struct SelectedTabKey: EnvironmentKey {

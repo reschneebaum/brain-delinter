@@ -18,18 +18,18 @@ import SwiftUI
 
 struct SettingsView<DataStore: LocalDataStoring>: View {
     // TODO: Use @AppStorage instead??
-    @Environment(\.userDefaults) var userDefaults
+    @Environment(\.defaults) var defaults
     @Environment(\.selectedTab) var selectedTab
     @Environment(\.isAppLoading) var isAppLoading
     @EnvironmentObject var dataStore: DataStore
     
     @State private var selectedDate: Date = .now
     @State private var allowSnooze = false
-    @State private var duration = Constants.defaultTimeInterval
+    @State private var duration = AppConstants.defaultTimeInterval
     @State private var showCompleted = true
     @State private var isAlertPresented = false
     
-    private let durationRange = Constants.durationRange
+    private let durationRange = AppConstants.durationRange
     private let alarmSettings = SettingsItem.allCases
     private let listSettings = SettingsActionItem.allCases
     
@@ -59,7 +59,7 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                     case .alarmTime:
                         TimePicker(selectedTime: $selectedDate, label: setting.title, font: .Rounded.Medium.body)
                             .onChange(of: selectedDate) { newValue in
-                                userDefaults.scheduledStartTime = newValue
+                                defaults.updateValue(newValue, for: .startTime)
                             }
                         
                     case .snooze:
@@ -70,7 +70,7 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                             enabled: setting.enabled
                         )
                         .onChange(of: allowSnooze) { newValue in
-                            userDefaults.allowSnooze = newValue
+                            defaults.updateValue(newValue, for: .snooze)
                         }
                         
                     case .duration:
@@ -82,7 +82,7 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                         .pickerStyle(.menu)
                         .labelStyle(.titleOnly)
                         .onChange(of: duration) { newValue in
-                            userDefaults.duration = newValue
+                            defaults.updateValue(newValue, for: .duration)
                         }
                     }
                 }
@@ -90,10 +90,10 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
             .disabledAppearance(!setting.enabled)
         }
         .onAppear {
-            selectedDate = userDefaults.scheduledStartTime ?? .now
-            duration = userDefaults.duration > 0 ? userDefaults.duration : Constants.defaultTimeInterval
-            allowSnooze = userDefaults.allowSnooze
-            showCompleted = userDefaults.showCompleted
+            selectedDate = defaults.startTime ?? .now
+            duration = defaults.duration > 0 ? defaults.duration : AppConstants.defaultTimeInterval
+            allowSnooze = defaults.allowSnooze
+            showCompleted = defaults.showCompleted
         }
     }
     
@@ -105,7 +105,7 @@ struct SettingsView<DataStore: LocalDataStoring>: View {
                     case .showCompleted:
                         CheckboxToggle(isOn: $showCompleted, label: setting.title, font: .Rounded.Medium.body)
                             .onChange(of: showCompleted) { newValue in
-                                userDefaults.showCompleted = newValue
+                                defaults.updateValue(newValue, for: .showCompleted)
                             }
                         
                     case .clearList:
@@ -155,6 +155,6 @@ struct SettingsView_Previews: PreviewProvider {
             SettingsView<MockDataStore>()
         }
         .environmentObject(MockDataStore())
-        .environment(\.userDefaults, .mocked)
+        .environment(\.defaults, MockUserDefaults())
     }
 }

@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-enum Constants {
+enum AppConstants {
     static let oneDayInSeconds: TimeInterval = 24 * 60 * 60 * 60
     /// 20 minutes
     static let defaultTimeInterval = 20
     /// 10...60 (minutes)
     static let durationRange = 10...60
+    
+    /// Whether or not this code is running within Xcode SwiftUI Previews, which has limited functionality.
+    static let isXcodePreview: Bool = {
+        #if DEBUG
+            ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+        #else
+            false
+        #endif
+    }()
+    
+    /// Whether or not the app is running unit tests.
+    static var isRunningTests: Bool {
+        NSClassFromString("XCTestCase") != nil
+    }
 }
 
 enum Padding: CGFloat {

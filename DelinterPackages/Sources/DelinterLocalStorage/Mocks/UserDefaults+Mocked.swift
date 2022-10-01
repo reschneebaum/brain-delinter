@@ -5,9 +5,6 @@
 //  Created by Rachel Schneebaum on 8/28/22.
 //
 
-// FIXME: Figure out why #if DEBUG doesn't work here
-
-//#if DEBUG
 import Foundation
 
 public extension UserDefaults {
@@ -23,4 +20,3 @@ public extension UserDefaults {
         return defaults
     }()
 }
-//#endif

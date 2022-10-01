@@ -24,7 +24,7 @@
 		A187994728B0353300223F6F /* DelinterComponents in Frameworks */ = {isa = PBXBuildFile; productRef = A187994628B0353300223F6F /* DelinterComponents */; };
 		A1A5F11C28C7C5F800999DCB /* DelinterLocalStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A1A5F11B28C7C5F800999DCB /* DelinterLocalStorage */; };
 		A1A5F11E28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */; };
-		A1A5F12028C7CA6800999DCB /* UserDefaults+AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */; };
+		A1A5F12028C7CA6800999DCB /* DelinterDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5F11F28C7CA6800999DCB /* DelinterDefaults.swift */; };
 		A1E304A028BABE7D004A015E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1E3049F28BABE7D004A015E /* Colors.xcassets */; };
 		A1E304A228BAC000004A015E /* Color+ColorAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A128BAC000004A015E /* Color+ColorAssets.swift */; };
 		A1E304A428BAC074004A015E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E304A328BAC074004A015E /* String+Localized.swift */; };
@@ -75,7 +75,7 @@
 		A187993E28AF201300223F6F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A187994228B02B7000223F6F /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+DelinterValues.swift"; sourceTree = "<group>"; };
-		A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+AppSettings.swift"; sourceTree = "<group>"; };
+		A1A5F11F28C7CA6800999DCB /* DelinterDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelinterDefaults.swift; sourceTree = "<group>"; };
 		A1B3B25C28C969EA00C9C818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1E3049F28BABE7D004A015E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		A1E304A128BAC000004A015E /* Color+ColorAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+ColorAssets.swift"; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 				A1F6E95228B0577D00FACCDA /* App */,
 				A1F6E94F28B0571D00FACCDA /* Views */,
 				A1F6E95028B0572700FACCDA /* Models */,
-				A1E304B528BC1A65004A015E /* Extensions */,
+				A1E304B528BC1A65004A015E /* Delinter+LocalStorage */,
 				A16D3B7C28B96FAC00DB8EA3 /* Autogen */,
 				A1F6E95128B0576A00FACCDA /* Resources */,
 				A1B3B25C28C969EA00C9C818 /* Info.plist */,
@@ -215,13 +215,13 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		A1E304B528BC1A65004A015E /* Extensions */ = {
+		A1E304B528BC1A65004A015E /* Delinter+LocalStorage */ = {
 			isa = PBXGroup;
 			children = (
-				A1A5F11F28C7CA6800999DCB /* UserDefaults+AppSettings.swift */,
+				A1A5F11F28C7CA6800999DCB /* DelinterDefaults.swift */,
 				A1A5F11D28C7C6C300999DCB /* EnvironmentValues+DelinterValues.swift */,
 			);
-			path = Extensions;
+			path = "Delinter+LocalStorage";
 			sourceTree = "<group>";
 		};
 		A1F6E94F28B0571D00FACCDA /* Views */ = {
@@ -455,7 +455,7 @@
 				A1E304A228BAC000004A015E /* Color+ColorAssets.swift in Sources */,
 				A1F6E95428B0588100FACCDA /* BrainDelinterConstants.swift in Sources */,
 				A16D3B9128B98CF100DB8EA3 /* StatsRouterView.swift in Sources */,
-				A1A5F12028C7CA6800999DCB /* UserDefaults+AppSettings.swift in Sources */,
+				A1A5F12028C7CA6800999DCB /* DelinterDefaults.swift in Sources */,
 				A16D3B8A28B9867D00DB8EA3 /* Assets.swift in Sources */,
 				A187991528AF1DBE00223F6F /* BrainDelinterApp.swift in Sources */,
 				A1F6E96028B17B1100FACCDA /* Tab.swift in Sources */,

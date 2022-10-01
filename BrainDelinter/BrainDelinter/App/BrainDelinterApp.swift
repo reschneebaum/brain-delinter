@@ -16,7 +16,7 @@ struct BrainDelinterApp: App {
     @StateObject private var navigationState: AppNavigationState = .init()
     @StateObject private var dataStore: LocalDataStore = .init()
     private let notificationScheduler: NotificationScheduler = .init()
-    private let userDefaults: UserDefaults = .standard
+    private let defaults: DefaultsCacheing
     
     @State private var isLoading = false
     
@@ -25,7 +25,7 @@ struct BrainDelinterApp: App {
             TabsContainerView(navigationState: navigationState)
                 .isLoading($isLoading)
                 .environmentObject(dataStore)
-                .environment(\.userDefaults, userDefaults)
+                .environment(\.defaults, defaults)
                 .environment(\.isAppLoading, $isLoading)
                 // Required to prevent `Context in environment is not connected to a persistent store coordinator`
                 .environment(\.managedObjectContext, dataStore.context)
@@ -58,7 +58,9 @@ struct BrainDelinterApp: App {
     }
     
     init() {
-        if userDefaults.isStartTimeSet {
+        defaults = LocalData.defaults
+        
+        if defaults.hasStartTime {
             // we already have a scheduled time; check permission (+ schedule if needed)
             notificationScheduler.configureNotificationsSession()
         }

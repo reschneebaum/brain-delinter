@@ -9,7 +9,7 @@ import SwiftUI
 import DelinterLocalStorage
 
 struct ListView<DataStore: LocalDataStoring>: View {
-    @Environment(\.userDefaults) var defaults
+    @Environment(\.defaults) var defaults
     @EnvironmentObject var dataStore: DataStore
     @State private var newItemText = ""
     @State private var showCompleted = true
@@ -30,7 +30,7 @@ struct ListView<DataStore: LocalDataStoring>: View {
                             item: .init { item } set: { dataStore.updateItem($0) }
                         )
                     }
-                    .onReceive(defaults.publisher(for: \.showCompleted)) {
+                    .onReceive(defaults.showCompletedPublisher) {
                         showCompleted = $0
                     }
                 } header: {
@@ -79,7 +79,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView {
             ListView<MockDataStore>()
         }
-        .environment(\.userDefaults, .mocked)
+        .environment(\.defaults, UserDefaults.mocked)
         .environmentObject(MockDataStore())
     }
 }
